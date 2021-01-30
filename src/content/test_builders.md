@@ -4,7 +4,7 @@ title: Test Builder Pattern
 image: img/dandelion.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-01-30T10:00:00.000Z
-tags: [.NET, Testing, Builders, Best Practice]
+tags: [.NET]
 draft: false
 excerpt: Test builders to deal with test maintanance hell.
 ---
