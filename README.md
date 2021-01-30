@@ -1,12 +1,26 @@
-# gatsby-casper
+| Feature      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CI           | [![Netlify Status](https://api.netlify.com/api/v1/badges/77978775-9dcc-4470-9b7a-03549c2fcd6f/deploy-status)](https://app.netlify.com/sites/hardcore-wozniak-f0f942/deploys) [![CodeFactor](https://www.codefactor.io/repository/github/chivandikwa/gatsby-casper/badge)](https://www.codefactor.io/repository/github/chivandikwa/gatsby-casper/badge)                                                                                                                                                                                                                               |
+| Bots         | [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/chivandikwa/gatsby-casper)](https://mergify.io) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=chivandikwa/gatsby-casper)](https://dependabot.com)                                                                                                                                                                                                                                                                                                          |
+| Repo Details | ![GitHub last commit](https://img.shields.io/github/last-commit/chivandikwa/gatsby-casper.svg?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/chivandikwa/gatsby-casper.svg?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/chivandikwa/gatsby-casper.svg?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/chivandikwa/gatsby-casper.svg?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/chivandikwa/gatsby-casper.svg?style=for-the-badge) |
+| Social       | ![Twitter Follow](https://img.shields.io/twitter/follow/thulanidotnet.svg?style=social) ![GitHub followers](https://img.shields.io/github/followers/chivandikwa.svg?style=social) ![GitHub stars](https://img.shields.io/github/stars/chivandikwa/gatsby-casper.svg?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/chivandikwa/gatsby-casper.svg?style=social) ![GitHub forks](https://img.shields.io/github/forks/chivandikwa/gatsby-casper.svg?style=social)                                                                                              |
+| Live Edit    | [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/chivandikwa/gatsby-casper)                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
-Demo: https://gatsby-casper.netlify.app
+### [VISIT BLOG](http://www.drunkonmonads.com/)
+
+This is the repository for my blog found [here](http://www.drunkonmonads.com/).
+
+My blog is powered by [Gatsby](https://www.gatsbyjs.org/),a free and open source framework based on ReactGatsby is a free and open source framework based on React and by [Netlify](https://www.netlify.com/), everything you need to build fast, modern websites: continuous deployment, serverless functions, and so much more.
+
+The blog is a customized version of the gatbsy-casper [template](https://gatsby-casper.netlify.com/https://gatsby-casper.netlify.com/) a port of [Casper](https://github.com/TryGhost/Casper) v2 a theme from [Ghost](https://ghost.org/) for [GatsbyJS](https://www.gatsbyjs.org/) using [TypeScript](https://www.typescriptlang.org/).
+
+# gatsby-casper
 
 This is a static blog generator and starter gatsby repo. A port of [Casper](https://github.com/TryGhost/Casper) v3 a theme from [Ghost](https://ghost.org/) for [GatsbyJS](https://www.gatsbyjs.org/) using [TypeScript](https://www.typescriptlang.org/).
 
 ## Getting Started
 
-Clone this repo.
+Clone the parent repo.
 
 ```
 git clone https://github.com/scttcper/gatsby-casper.git --depth=1
