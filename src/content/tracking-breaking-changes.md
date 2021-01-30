@@ -3,7 +3,7 @@ layout: post
 title: API breaking changes in .net
 image: img/lion.jpg
 author: [Thulani S. Chivandikwa]
-date: 2021-29-01T00:00:00.000Z
+date: 2021-01-29T00:00:00.000Z
 tags: [python]
 draft: false
 excerpt: prevent accidental breaking changes in your public api with roslyn
