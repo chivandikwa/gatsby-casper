@@ -1,21 +1,6 @@
-- id: .NET
-  description: A software framework developed by Microsoft that runs primarily on Microsoft Windows.
+- id: .net
+  description: A software development framework developed by Microsoft
   image: img/blog-cover.jpg
-- id: Microsoft Bot Framework
-  description: AI and natural language creation.
-  image: img/blog-cover.jpg
-- id: React
-  description: A JavaScript library for building user interfaces maintained by Facebook.
-  image: img/blog-cover.jpg
-- id: Dependabot
-  description: Automated dependency updates.
-  image: img/blog-cover.jpg
-- id: Netlify
-  description: Hosting and serverless backend services for static websites.
-  image: img/blog-cover.jpg
-- id: Feature Flags
-  description: A powerful technique allowing developers to modify system behavior without changing code.
-  image: img/blog-cover.jpg
-- id: Generic Host
-  description: Generic Host will replace Web Host in a future release and act as the primary host API in both HTTP and non-HTTP scenarios.
+- id: python
+  description: An interpreted, high-level and general-purpose programming language
   image: img/blog-cover.jpg

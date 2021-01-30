@@ -4,9 +4,9 @@ title: Test Builder Pattern
 image: img/dandelion.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-01-30T10:00:00.000Z
-tags: [.NET]
+tags: [.net]
 draft: false
-excerpt: Test builders to deal with test maintanance hell.
+excerpt: test builders to deal with test maintanance hell
 ---
 
 While working with DTOs and entities, particularly those that are used throughout your domain and boundaries, you will find that they are required in a multitude of tests. A natural approach is to call the constructor of each when required and hydrate them with required setup. While this is very easy and straightforward there are a couple of challenges. There is always a caveat.
