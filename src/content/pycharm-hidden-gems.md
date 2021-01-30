@@ -81,3 +81,62 @@ while a:
 ```
 
 > To my disappointment Pycharm currently does not support the adding new post fix template targetting python, but somehow does for SQL.
+
+### File Templates
+
+File templates are a sort of specification for the default contents of new files you create. Adding your own for the commonly bootstrapped files types can really increase your creativity.
+
+Adding/Editing is easy (File -> Settings [ctrl + alt + s] -> Editor -> File and Code Templates)
+
+![settings](https://raw.githubusercontent.com/chivandikwa/gatsby-thulani-chivandikwa/master/src/content/img/pycharm_file_templates.png)
+
+Here are a few examples for context.
+
+Bootstrap a new new unit test file
+
+```python
+import unittest
+
+class #[[$Title$]]#Tests(unittest.TestCase):
+    def test_x_given_when_then(self):
+        self.assertEqual(True, False)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Bootstrap a new sanic api
+
+```python
+import logging
+
+from sanic import Sanic, response
+from sanic.request import Request
+from sanic.response import HTTPResponse
+from sanic_openapi import doc, swagger_blueprint
+from sanic_openapi.doc import summary
+
+logger = logging.getLogger(__name__)
+app = Sanic(__name__)
+app.logger = logger
+
+app.blueprint(swagger_blueprint)
+app.config['API_SCHEMES'] = ['http', 'https']
+app.config['API_TITLE'] = APP_NAME
+app.config['API_DESCRIPTION'] = ''
+
+
+@summary('')
+@doc.produces(doc.List(doc.String))
+@app.get('/test')
+async def test(_: Request) -> HTTPResponse:
+    return response.json(['a', 'b'])
+
+
+if __name__ == '__main__':
+    app.run(host=HOST, port=PORT, threaded=True)
+
+
+def api() -> Sanic:
+    return app
+```
