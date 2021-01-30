@@ -52,7 +52,7 @@ const config: WebsiteConfig = {
   title: 'drunk on monads',
   description: 'software development banter!',
   coverImage: 'img/blog-cover.jpg',
-  logo: 'img/ghost-logo.png',
+  logo: '',
   lang: 'en',
   siteUrl: 'http://www.drunkonmonads.com/',
   facebook: 'http://www.drunkonmonads.com/',

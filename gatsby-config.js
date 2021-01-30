@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Thulani S. Chivandikwa',
-    description: 'Software development banter!',
+    description: 'software development banter!',
     siteUrl: 'http://www.drunkonmonads.com/', // full path to blog - no ending slash
   },
   mapping: {
