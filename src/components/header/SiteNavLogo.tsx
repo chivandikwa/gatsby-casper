@@ -19,20 +19,16 @@ export const SiteNavLogo = () => (
       query HeadingQuery {
         logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
           childImageSharp {
-            fixed(quality: 100 width: 500) {
+            fixed(quality: 100, width: 500) {
               ...GatsbyImageSharpFixed
             }
           }
         }
       }
     `}
-    render={(data: SiteNavLogoProps) => (
+    render={() => (
       <Link className="site-nav-logo" css={SiteNavLogoStyles} to="/">
-        {data.logo ? (
-          <img src={data.logo.childImageSharp.fixed.src} alt={config.title} />
-        ) : (
-          config.title
-        )}
+        {config.title}
       </Link>
     )}
   />
@@ -62,4 +58,3 @@ const SiteNavLogoStyles = css`
     height: 21px;
   }
 `;
-
