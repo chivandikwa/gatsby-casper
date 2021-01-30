@@ -146,17 +146,6 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
                       {totalCount === 1 && '1 post'}
                       {totalCount === 0 && 'No posts'}
                     </div>
-                    {author.website && (
-                      <AuthorSocialLink className="author-social-link">
-                        <AuthorSocialLinkAnchor
-                          href={author.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Website
-                        </AuthorSocialLinkAnchor>
-                      </AuthorSocialLink>
-                    )}
                     {author.twitter && (
                       <AuthorSocialLink className="author-social-link">
                         <AuthorSocialLinkAnchor
@@ -165,17 +154,6 @@ const Author = ({ data, location }: AuthorTemplateProps) => {
                           rel="noopener noreferrer"
                         >
                           Twitter
-                        </AuthorSocialLinkAnchor>
-                      </AuthorSocialLink>
-                    )}
-                    {author.facebook && (
-                      <AuthorSocialLink className="author-social-link">
-                        <AuthorSocialLinkAnchor
-                          href={`https://www.facebook.com/${author.facebook}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Facebook
                         </AuthorSocialLinkAnchor>
                       </AuthorSocialLink>
                     )}
