@@ -27,33 +27,14 @@ In turn the TradeValue properties will be as follows:
 - A currency iso code of type <code>string</code>
 
 ```c#
-    public class TradePosition
-    {
-        public TradePosition(Guid identifier,
-            PositionValue fixedLegNotional,
-            PositionValue floatLegNotional)
-        {
-            Identifier = identifier;
-            FixedLegNotional = fixedLegNotional;
-            FloatLegNotional = floatLegNotional;
-        }
+    public record TradePosition(
+        Guid Identifier,
+        TradeValue FixedLegNotional,
+        TradeValue FloatLegNotional);
 
-        public Guid Identifier { get; }
-        public PositionValue FloatLegNotional { get; }
-        public PositionValue FixedLegNotional { get; }
-    }
-
-    public class TradeValue
-    {
-        public TradeValue(double value, string currencyIsoCode)
-        {
-            CurrencyIsoCode = currencyIsoCode;
-            Value = value;
-        }
-
-        public string CurrencyIsoCode { get; }
-        public double Value { get; }
-    }
+    public record TradeValue(
+        double Value,
+        string CurrencyIsoCode);
 ```
 
 Now what could go wrong with the simple approach? Well the following:
@@ -221,15 +202,10 @@ Let's have a look at what is going on behind the scenes to power this and to als
 The first one is something that will not need to be changed often, if at all. You would have noticed the two builders above have a generic builder base class. The base class is as follows:
 
 ```c#
-   public abstract class Builder<T>
+    public abstract class Builder<T>
     {
-        private readonly Dictionary<string, object> _properties;
-
-        protected Builder()
-        {
-            _properties = new Dictionary<string, object>();
-        }
-
+        private readonly Dictionary<string, object> _properties =
+            new();
 
         protected abstract T Build();
 
@@ -249,7 +225,7 @@ The first one is something that will not need to be changed often, if at all. Yo
             var expression = (MemberExpression)action.Body;
             var name = expression.Member.Name;
 
-            _properties.Add(name, value);
+            _properties[name] = value;
         }
 
         /// <summary>
