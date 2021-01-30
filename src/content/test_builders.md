@@ -11,9 +11,9 @@ excerpt: test builders to deal with test maintanance hell
 
 While working with DTOs and entities, particularly those that are used throughout your domain and boundaries, you will find that they are required in a multitude of tests. A natural approach is to call the constructor of each when required and hydrate them with required setup. While this is very easy and straightforward there are a couple of challenges. There is always a caveat.
 
-To illustrate these challenges let us introduce an example of a simple domain object. Let's take a dummed down conceptual take at a financial trade position, that has an identifier and monetary values for fixed and float legs.
+To illustrate these challenges let us introduce an example of a simple domain object. Let's take a dumbed down conceptual take at a financial trade position, that has an identifier and monetary values for fixed and float legs.
 
-> Investopedia defines a positon as follows. A trade position is the amount of a security, commodity or currency which is owned by an individual, dealer, institution, or other fiscal entity.
+> Investopedia defines a position as follows. A trade position is the amount of a security, commodity or currency which is owned by an individual, dealer, institution, or other fiscal entity.
 
 The TradePosition properties will be as follows:
 
@@ -154,7 +154,7 @@ Let's get straight to it and look at a different pattern in code.
 OK so why is this better? I'm glad you asked, here we go.
 
 - **Communication of intent.** The methods we see here are very clear on what we are building and while we kept this simple, they can start to cater for scenario like a mature trade position with say 'ThatIsMatured' or an invalid trade with 'ThatIsInvalid'. This makes it easy in tests especially in scenarios where the trade position is not primary to the test but still required for the scenario.
-- **Fluent.** Who does not love fluent code, this one makes this even easier to use and very natural to read. If there is anything you should strive for it is readeable tests. Recall that when we ditched explicit documentation in code, we made an oath to write self documenting code, one of which is through tests, so they better be easy to read and understand.
+- **Fluent.** Who does not love fluent code, this one makes this even easier to use and very natural to read. If there is anything you should strive for it is readable tests. Recall that when we ditched explicit documentation in code, we made an oath to write self documenting code, one of which is through tests, so they better be easy to read and understand.
 - **Less code.** So if the auxiliary act of creating objects for our tests is not key to the tests why should that mess make the test hard to read? I would rather see <code>var tradePosition = A.TradePosition.ThatIsMature()</code> than see all the code that entails this. It is quite rare from a 'reading through test code' perspective that I even want to see that at all.
 - **Ease of refactoring.** This approach isolates the actual creation of something to one place and one place only much like a factory. So now as your domain evolves and you change the meaning of things, ctors change, etc among many change and as far as your tests are concerned this change only needs to be done in one place.
 - **Clean and simple.\*\*** In particular this caters very well for scenarios were you want a valid object without need to control the actual values. Now you do not need to have this copy pasted all over the place.
@@ -268,6 +268,6 @@ If you were paying close attention you would have noticed the readability added 
 
 Notice the use of <code>=></code> and not <code>=</code>. This is intentional and care must be taken to do it this way. You want to ensure that each call to this property makes a new builder. This isolation for tests is essential especially considering that the builders have state.
 
-> This pattern is very simple. However given that **1.** this involves _'only tests'_ and _2._ the problem does not seem that complex and pressing, this tends to be highly neglected. Thconsequenceses are however dire and do not discriminate because this is only tests. The amount of time lost to go around the challenges of not handling this problem properly can be great.
+> This pattern is very simple. However given that **1.** this involves _'only tests'_ and _2._ the problem does not seem that complex and pressing, this tends to be highly neglected. The consequences are however dire and do not discriminate because this is only tests. The amount of time lost to go around the challenges of not handling this problem properly can be great.
 
 That's all folks!

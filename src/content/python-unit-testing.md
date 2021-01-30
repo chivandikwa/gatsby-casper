@@ -83,7 +83,7 @@ class TestSamples:
 
 ### Test that creates temp files
 
-If you are writting a test that creates temp files or any other scenario that requires a temp folder, pytest has your back, no need to jump through hoops. This can be achieved by using a parameter named tmpdir that will be fulfilled by a fixture to inject a LocalPath to your test.
+If you are writing a test that creates temp files or any other scenario that requires a temp folder, pytest has your back, no need to jump through hoops. This can be achieved by using a parameter named tmpdir that will be fulfilled by a fixture to inject a LocalPath to your test.
 
 ```python
 from py._path.local import LocalPath
