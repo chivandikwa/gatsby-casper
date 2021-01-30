@@ -62,11 +62,11 @@ namespace PublicApiSample
 
 You will now notice a warning on the various types indicating that they are not part of the public API.
 
-![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-thulani-chivandikwa/master/src/content/img/screenshots/tracking-breaking-changes/1.jpg)
+![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/tracking-breaking-changes/1.jpg)
 
 You can proceed to add everything in this document to the public API.
 
-![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-thulani-chivandikwa/master/src/content/img/screenshots/tracking-breaking-changes/2.jpg)
+![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/tracking-breaking-changes/2.jpg)
 
 The `PublicAPI.Unshipped.txt` file should now have the following.
 
@@ -80,7 +80,7 @@ PublicApiSample.TagsAppender
 
 Now if you for instance blindly add a new constructor that replaces the default constructor it would be breaking the public API. You will have the warning again to add this to the public API and doing so would raise a question in the pull request.
 
-![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-thulani-chivandikwa/master/src/content/img/screenshots/tracking-breaking-changes/3.jpg)
+![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/tracking-breaking-changes/3.jpg)
 
 If again you delete the first of the two methods in the Metrics class and build the project you will have the following warning in the build output:
 `Symbol 'PublicApiSample.Metrics.Timer(string key, System.TimeSpan elapsed, PublicApiSample.TagsAppender tags = null) -> void' is part of the declared API, but is either not public or could not be found`
