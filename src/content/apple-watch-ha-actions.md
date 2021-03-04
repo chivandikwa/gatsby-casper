@@ -20,11 +20,11 @@ It's pretty cool and also suprisingly useful to be able to control your smart ho
 
 First you will need to setup actions from the Home Assistant [iOS app](https://apps.apple.com/us/app/home-assistant/id1099568401). Open the app, navigate to settings -> Actions and there you will be able to add actions. You will need to specify a name for your action, which will be used as tag and a text description, which will be displayed on the watch , and optionally you can specify and icon and a color for both the text and icon.
 
-![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/apple-watch-actions/1.jpg)
+![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/apple-watch-actions/1.png)
 
-![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/apple-watch-actions/2.jpg)
+![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/apple-watch-actions/2.png)
 
-![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/apple-watch-actions/3.jpg)
+![screenshot](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/screenshots/apple-watch-actions/3.png)
 
 You should then see something like the following when opening the Home Assistant app on your Apple Watch.
 
