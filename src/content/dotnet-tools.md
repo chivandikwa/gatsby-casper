@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python type hints
+title: Dotnet Tools
 image: img/water-tower.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-12-01T00:00:00.000Z
