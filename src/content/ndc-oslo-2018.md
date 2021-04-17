@@ -5,7 +5,7 @@ image: img/maastricht.jpeg
 author: [Thulani S. Chivandikwa]
 date: 2018-12-29T00:00:00.000Z
 tags: [conference]
-draft: false
+draft: true
 excerpt: ndc oslo 2018
 ---
 
@@ -98,31 +98,4 @@ Another notable speaker I got to meet after talks where Venkat Subramaniam. Venk
 
 ## The really cool things...
 
-To really make my trip complete I ensured that I used every opportunity outside of the NDC programme to see the city of Oslo. The weather was perfect and it really is a lovely city. It was a relief to see some mountains for a change after being in The Netherlands for 7 months. Oslo may just be learning a thing or two from Rotterdam architecture as there are a lot of interesting and new building up plus a whole project in place to redefine the city and particularly water fronts. Everything is a bit pricey out there but all worth the extra penny. See below a few pictures I took.
-
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/a.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/b.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/c.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/d.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/e.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/f.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/g.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/h.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/i.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/j.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/k.jpg" alt="drawing" width="200"/>
-
-<img src="https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/oslo-2018/l.jpg" alt="drawing" width="200"/>
-
-
+To really make my trip complete I ensured that I used every opportunity outside of the NDC programme to see the city of Oslo. The weather was perfect and it really is a lovely city. It was a relief to see some mountains for a change after being in The Netherlands for 7 months. Oslo may just be learning a thing or two from Rotterdam architecture as there are a lot of interesting and new building up plus a whole project in place to redefine the city and particularly water fronts. Everything is a bit pricey out there but all worth the extra penny.
