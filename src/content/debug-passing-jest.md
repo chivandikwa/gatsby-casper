@@ -16,11 +16,9 @@ I do love jest and make use of the vscode-jest extension in VS Code which is sup
 The good news is it's super easy to configure this. Add or update the settings.json file in .vscode to include the following:
 
 ```json
-
 {
     "jest.debugCodeLens.showWhenTestStateIn":["fail", "pass", "unknown"]
 }
-
 ```
 
 Now you can debug tests in any state, sweet!
