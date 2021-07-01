@@ -17,12 +17,12 @@ There are two ways to kill these zombie processes
 
 To kill all node processes run the command
 
-```
+```cmd
 taskkill /f /im node.exe
 ```
 
 This has proven to be a bit problematic for me as I sometime have node processes that I want to keep alive such as those from running VS Code and extensions or other apps. I therefore prefer to target specific node apps based on the command that is used to spawn them. For instance if using `react-app-rewired start` to run the app I would target that by running the following script.
 
-```
+```powershell
 Get-WmiObject Win32_Process | Where-Object {$_.CommandLine -like '*react-app-rewired*start*' -and $_.Name -eq 'node.exe' } | ForEach-Object {$_.terminate(0)}
 ```

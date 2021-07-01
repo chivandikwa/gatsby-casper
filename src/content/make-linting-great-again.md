@@ -19,7 +19,7 @@ The answer is simple, I use git and one easy way to narrow down these files is t
 
 [Lint staged](https://www.npmjs.com/package/lint-staged) is a tool that runs linters against git files that are staged to stop the 💩 from slipping into your code. Notice I said linters, not eslint, so this can be used with various linting tools. Install it with `npm i lint-staged --save-dev`. To set it up for the first time run `npx mrm lint-staged`. I prefer to use the .linstagedrc file for configuration and if you are using eslint you can set it up as
 
-```
+```json
 {
     "*": "eslint --cache"
 }

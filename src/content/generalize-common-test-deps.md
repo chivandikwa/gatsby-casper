@@ -14,7 +14,8 @@ The Directory.Build.props offers a lot of interesting features for targeted proj
 Test project dependencies test to be mostly the same across multiple projects and annoyingly can be quite easy to point to different versions and require consolidating. I use the Directory.Build.props at the root of a solution to target all test projects, in my case by the suffix .Tests in the name, and apply the generic dependencies in one place.
 
 Example:
-```
+
+```csharp
 <Project>
     <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
         <IsPackable>False</IsPackable>
