@@ -2,10 +2,11 @@
 layout: post
 title: Debugging all jest tests
 image: img/computer.jpg
-author: Thulani S. Chivandikwa
+author: [Thulani S. Chivandikwa]
 date: 2021-07-01T10:00:00.000Z
 tags: [jest, javascript]
 draft: false
+excerpt: debugging jest in vs code
 ---
 
 ### Debugging all jest tests in VS Code
