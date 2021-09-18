@@ -106,7 +106,7 @@ const getUser = (): User => {
 
 ```typescript
 useEffect(() => {
-  const promises = Promise.all([userClient.getProfile(), lookupService.get(LookupKeys.People)]);
+  const promises = Promise.all([userClient.getProfile(), proposalClient.getAll()]);
 
   promises.then(response => {
     let profile = response[0].data;
@@ -116,7 +116,7 @@ useEffect(() => {
 
 // BETTER
 useEffect(() => {
-  const promises = Promise.all([userClient.getProfile(), lookupService.get(LookupKeys.People)]);
+  const promises = Promise.all([userClient.getProfile(), proposalClient.getAll()]);
 
   promises.then(([{ data: profile }, people]) => {});
 }, []);
@@ -235,7 +235,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 ⛔ **DO AVOID** uncontrolled components, that is those that access the dom directly i.e refs unless absolutely necessary.
 
-⛔ **DO AVOID** using render functions, this should be done sparingly and with care. Not that splitting component renders with functions can be good but largely an anti-pattern that can hide the fact that a component has gotten too large or has multiple concerns. This approach should be highly avoided for declarative code. Certain react specific heuristics are not applied when you use render functions, i.e if you have a map and call a render function React cannot and will not warn you about the need for a key and you can get away with passing unstable values like indexes to use as a key and again React cannot and will not warn you.
+⛔ **DO AVOID** using render functions, this should be done sparingly and with care. Not that splitting component renders with functions can be good but largely an anti-pattern that can hide the fact that a component has gotten too large or has multiple concerns. This approach should be highly avoided for declarative code. Certain react specific heuristics are not applied when you use render functions, i.e if you have a map and call a render function React cannot and will not warn you about the need for a key and you can get away with passing unstable values like indexes to use as a key and again React cannot and will not warn you. Another really nasty thing that happens with render functions is that if you are using react dev tools, they will not show up.
 
 ⛔ **DO NOT** have constants scattered all over component file. Neatly place all constants at the top of the component.
 
