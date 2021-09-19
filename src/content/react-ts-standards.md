@@ -213,7 +213,18 @@ export const Component: React.FunctionComponent<{}> = () => {
 
 ✅ **DO** ensure that element keys are always stable, predictable, and unique. Unstable keys (like those produced by Math.random() or use of array indexes) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components. See [example](https://jsbin.com/wohima/edit?output).
 
-✅ **DO** apply care when writing conditional renders on variables, use of falsy numbers will be rendered i.e `numberValue && <Component>' given 0 for numberValue will render 0. This however works well with bools null undefined.
+✅ **DO** apply care when writing conditional renders on variables, use of falsy numbers will be rendered i.e `numberValue && <Component>' given 0 for numberValue will render 0. This however works well with bools null undefined.Alternatively you can apply the following:
+
+```typescript
+// BAD
+names.length && <Users names={names}>
+
+// ALTERNATIVE
+names.length > 0 && <Users names={names}>
+
+// ALTERNATIVE
+Boolean(names.length) && <Users names={names}>
+```
 
 ✅ **DO** pass all props down to a child component when implementing the render props pattern.
 
@@ -230,12 +241,13 @@ export const Component: React.FunctionComponent<{}> = () => {
 ```typescript
 import '@testing-library/jest-dom/extend-expect';
 ```
+⛔ **DO NOT** use the React qualifier unnecessarily, i.e `React.Fragment`. Imports can be handled acorrdingly to make use of just `Fragment`.
 
 ⛔ **DO AVOID** customizing 3rd party components such extensively via css. Instead the customization should be done via props, css mainly reserved for layout in this cases. Such customizations are not upgrade friendly.
 
 ⛔ **DO AVOID** uncontrolled components, that is those that access the dom directly i.e refs unless absolutely necessary.
 
-⛔ **DO AVOID** using render functions, this should be done sparingly and with care. Not that splitting component renders with functions can be good but largely an anti-pattern that can hide the fact that a component has gotten too large or has multiple concerns. This approach should be highly avoided for declarative code. Certain react specific heuristics are not applied when you use render functions, i.e if you have a map and call a render function React cannot and will not warn you about the need for a key and you can get away with passing unstable values like indexes to use as a key and again React cannot and will not warn you. Another really nasty thing that happens with render functions is that if you are using react dev tools, they will not show up.
+⛔ **DO AVOID** using render functions, this should be done sparingly and with care. Not that splitting component renders with functions can be good but largely an anti-pattern that can hide the fact that a component has gotten too large or has multiple concerns. This approach should be highly avoided for declarative code. Certain react specific heuristics are not applied when you use render functions, i.e if you have a map and call a render function React cannot and will not warn you about the need for a key and you can get away with passing unstable values like indexes to use as a key and again React cannot and will not warn you. Another really nasty thing that happens with render functions is that if you are using react dev tools, they will not show up but their children will.
 
 ⛔ **DO NOT** have constants scattered all over component file. Neatly place all constants at the top of the component.
 
