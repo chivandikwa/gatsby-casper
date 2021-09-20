@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Debugging all jest tests
-image: img/computer.jpg
+image: img/clean/used/bee.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-07-01T10:00:00.000Z
 tags: [jest, javascript]
