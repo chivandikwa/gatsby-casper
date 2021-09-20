@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Test Builder Pattern
-image: img/dandelion.jpg
+image: img/used/clean/deer.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-01-30T10:00:00.000Z
 tags: [.net]
 draft: false
-excerpt: test builders to deal with test maintanance hell
+excerpt: test builders to deal with test maintenance hell
 ---
 
 While working with DTOs and entities, particularly those that are used throughout your domain and boundaries, you will find that they are required in a multitude of tests. A natural approach is to call the constructor of each when required and hydrate them with required setup. While this is very easy and straightforward there are a couple of challenges. There is always a caveat.
@@ -17,14 +17,14 @@ To illustrate these challenges let us introduce an example of a simple domain ob
 
 The TradePosition properties will be as follows:
 
-- A unique identifier of type <code>Guid</code>
-- A floating leg notional of custom type <code>PositionValue</code>
-- A fixed leg notional of type <code>PositionValue</code>
+- A unique identifier of type `Guid`
+- A floating leg notional of custom type `PositionValue`
+- A fixed leg notional of type `PositionValue`
 
 In turn the TradeValue properties will be as follows:
 
-- A numeric value of type <code>double</code>
-- A currency iso code of type <code>string</code>
+- A numeric value of type `double`
+- A currency iso code of type `string`
 
 ```c#
     public record TradePosition(
@@ -155,7 +155,7 @@ OK so why is this better? I'm glad you asked, here we go.
 
 - **Communication of intent.** The methods we see here are very clear on what we are building and while we kept this simple, they can start to cater for scenario like a mature trade position with say 'ThatIsMatured' or an invalid trade with 'ThatIsInvalid'. This makes it easy in tests especially in scenarios where the trade position is not primary to the test but still required for the scenario.
 - **Fluent.** Who does not love fluent code, this one makes this even easier to use and very natural to read. If there is anything you should strive for it is readable tests. Recall that when we ditched explicit documentation in code, we made an oath to write self documenting code, one of which is through tests, so they better be easy to read and understand.
-- **Less code.** So if the auxiliary act of creating objects for our tests is not key to the tests why should that mess make the test hard to read? I would rather see <code>var tradePosition = A.TradePosition.ThatIsMature()</code> than see all the code that entails this. It is quite rare from a 'reading through test code' perspective that I even want to see that at all.
+- **Less code.** So if the auxiliary act of creating objects for our tests is not key to the tests why should that mess make the test hard to read? I would rather see `var tradePosition = A.TradePosition.ThatIsMature()` than see all the code that entails this. It is quite rare from a 'reading through test code' perspective that I even want to see that at all.
 - **Ease of refactoring.** This approach isolates the actual creation of something to one place and one place only much like a factory. So now as your domain evolves and you change the meaning of things, ctors change, etc among many change and as far as your tests are concerned this change only needs to be done in one place.
 - **Clean and simple.\*\*** In particular this caters very well for scenarios were you want a valid object without need to control the actual values. Now you do not need to have this copy pasted all over the place.
 
@@ -246,13 +246,13 @@ The first one is something that will not need to be changed often, if at all. Yo
     }
 ```
 
-This base class has an abstract Build method returning the generic type. What this means is that if you have <code>TradePositionsBuilder: Builder\<TradePosition\></code>, the implementation must have a build method returning a trade position. This makes sense to be enforced as that is the core purpose of the builder. More interestingly however you will notice that there is an implicit operator overload from the builder itself to the generic type that calls this build method. This allows us to use the builder and have it implicitly cast to the target type in the end, making for succinct code. An alternative would have been to explicitly call build.
+This base class has an abstract Build method returning the generic type. What this means is that if you have `TradePositionsBuilder: Builder\<TradePosition\>`, the implementation must have a build method returning a trade position. This makes sense to be enforced as that is the core purpose of the builder. More interestingly however you will notice that there is an implicit operator overload from the builder itself to the generic type that calls this build method. This allows us to use the builder and have it implicitly cast to the target type in the end, making for succinct code. An alternative would have been to explicitly call build.
 
 > Whilst this pattern is simple, effort is made here clearly to make this as powerful out of the box as possible. As this is used in the practice take care to ensure patterns are observed especially the pain points of making builders and using them and address them as you go along.
 
 You would have taken notice of the Get and Set methods that work with a backing dictionary. This is in place to further make creating your own builders easy. Remember that as someone uses your builder they call the fluent methods one at a time before the implicit call to build. That means the values for each property need to be saved somewhere until build is called. If you are working with mutable types like DTOs this is easy as you can create the object and set the properties for each call, however this cannot be for immutable types like domain objects and as you can guess I am promoting immutability wherever possible, so this has to be supported out of the box for my pattern. The builder can call set providing the property and value and call get providing property to get back the previously stored value. Have another look at the two builders above to see this more clearly. Behind the scenes Expressions are used to make this approach clean, easy and tied to whatever type the builder is returning via the generic use. From that the property name is used to store the values in the dictionary and to get them back all in an efficient and type safe manner.
 
-If you were paying close attention you would have noticed the readability added by the use of the <code>A</code> and <code>Some</code> to give results like <code>A.TradePosition</code> and <code>Some.PositionValue</code> that conform to natural language. While optional this can be the cherry on the top to make the calls natural to read.
+If you were paying close attention you would have noticed the readability added by the use of the `A` and `Some` to give results like `A.TradePosition` and `Some.PositionValue` that conform to natural language. While optional this can be the cherry on the top to make the calls natural to read.
 
 ```c#
     public class A
@@ -266,7 +266,7 @@ If you were paying close attention you would have noticed the readability added 
     }
 ```
 
-Notice the use of <code>=></code> and not <code>=</code>. This is intentional and care must be taken to do it this way. You want to ensure that each call to this property makes a new builder. This isolation for tests is essential especially considering that the builders have state.
+Notice the use of `=>` and not `=`. This is intentional and care must be taken to do it this way. You want to ensure that each call to this property makes a new builder. This isolation for tests is essential especially considering that the builders have state.
 
 > This pattern is very simple. However given that **1.** this involves _'only tests'_ and _2._ the problem does not seem that complex and pressing, this tends to be highly neglected. The consequences are however dire and do not discriminate because this is only tests. The amount of time lost to go around the challenges of not handling this problem properly can be great.
 
