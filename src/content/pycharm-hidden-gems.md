@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pycharm hidden gems
-image: img/de-hef.jpg
+image: img/clean/used/zebra.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-04-01T00:00:00.000Z
 tags: [python]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unit Testing with pytest
-image: img/windmill.jpg
+image: img/clean/used/rocks.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-04-04T00:00:00.000Z
 tags: [python]
