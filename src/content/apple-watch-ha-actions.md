@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Control Home Assistant with an Apple Watch
-image: img/used/clean/coffee.jpg
+image: img/clean/used/coffee.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-03-04T10:00:00.000Z
 tags: [home-assistant]

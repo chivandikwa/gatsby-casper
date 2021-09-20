@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Test Builder Pattern
-image: img/used/clean/deer.jpg
+image: img/clean/used/deer.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-01-30T10:00:00.000Z
 tags: [.net]
