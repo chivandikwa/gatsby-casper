@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python type hints
-image: img/minimal.jpg
+image: img/clean/used/star.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-04-01T00:00:00.000Z
 tags: [python]
