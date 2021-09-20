@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Control Home Assistant with your Apple Watch
-image: img/llama.jpg
+title: Control Home Assistant with an Apple Watch
+image: img/used/clean/coffee.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-03-04T10:00:00.000Z
 tags: [home-assistant]
@@ -9,7 +9,7 @@ draft: false
 excerpt: smart home on your wrist
 ---
 
-It's pretty cool and also suprisingly useful to be able to control your smart home from your wrist. What you control really depends on your use cases but I get to show you how to control it and maybe inspire your with how I use it. We will work based on the following use cases
+It's pretty nifty and also surprisingly useful to be able to control your smart home from your wrist. What you control really depends on your use cases but I get to show you how to control it and maybe inspire your with how I use it. We will work based on the following use cases
 
 - Get Dustbin Bieber busy
 - Set lounge lights to a relax mode
