@@ -1,9 +1,9 @@
 ---
 layout: post
 title: TypeScript and React standards
-image: img/dandelion.jpg
+image: img/clean/used/.oslo-statue.jpg
 author: [Thulani S. Chivandikwa]
-date: 2021-06-30T10:00:00.000Z
+date: 2021-09-17T10:00:00.000Z
 tags: [vscode, extensions]
 draft: false
 excerpt: personal take on how best to work with TypeScript and React
