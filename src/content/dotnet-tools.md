@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dotnet Tools
-image: img/water-tower.jpg
+image: img/clean/used/deltse.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-12-01T00:00:00.000Z
 tags: [.net]
