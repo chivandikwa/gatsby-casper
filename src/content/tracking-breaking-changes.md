@@ -1,7 +1,7 @@
 ---
 layout: post
-title: API breaking changes in .net
-image: img/lion.jpg
+title: Track API breaking changes in .net
+image: img/clean/used/builder.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-01-29T00:00:00.000Z
 tags: [python]
