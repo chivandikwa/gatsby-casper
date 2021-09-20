@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Killing node processes
-image: img/dandelion.jpg
+image: img/clean/used/houses.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-06-30T10:00:00.000Z
 tags: [node]
@@ -12,6 +12,7 @@ excerpt: killing node processes
 Visual Studio has this annoying tendency to leave zombie node processes after you have run a node app from it. This can be quite expensive and leave your machine very laggy as they accumulate from multiple runs. You may also run into this situation for different reason.
 
 There are two ways to kill these zombie processes
+
 1. Kill all node processes running
 2. Target specific node processes
 
