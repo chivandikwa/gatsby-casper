@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TypeScript and React standards
-image: img/clean/used/.oslo-statue.jpg
+image: img/clean/used/oslo-statue.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-09-17T10:00:00.000Z
 tags: [vscode, extensions]
