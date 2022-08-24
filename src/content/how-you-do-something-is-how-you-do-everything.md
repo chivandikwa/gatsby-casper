@@ -4,9 +4,9 @@ title: How you do something, is how you do everything
 image: img/clean/used/windmill.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-24T18:00:00.000Z
-tags: [philosophy]
+tags: [philosophy, leadership, accountability]
 draft: false
-excerpt: philosophy management leadership
+excerpt: Holding yourself accountable
 ---
 
 # How you do something is how you do everything
