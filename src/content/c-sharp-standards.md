@@ -1135,6 +1135,8 @@ var name = sample?.child?.child?.name;
             .ToListAsync();
 ```
 
+✅ **DO** prefer pure functions. Given the same input, the same data should always be retrieved. Avoid mutations or any other side effects in functions. The effect will be functions that are easy to reason about, easy to consume with no assumptions and certainly easier to test as well.
+
 # Web APIs
 
 ✅ **DO** name controllers with a Controller suffix and use plural names for the RESTful APIs, e.g. UsersController instead of UserController.
