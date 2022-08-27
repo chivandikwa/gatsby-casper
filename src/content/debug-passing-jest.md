@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Debugging all jest tests
+title: Debugging all jest test states
 image: img/clean/used/bee.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-07-01T10:00:00.000Z
 tags: [jest, javascript]
 draft: false
-excerpt: debugging jest in vs code
+excerpt: debugging jest tests with VS Code
 ---
 
 ### Debugging all jest tests in VS Code
@@ -17,7 +17,7 @@ The good news is it's super easy to configure this. Add or update the settings.j
 
 ```json
 {
-    "jest.debugCodeLens.showWhenTestStateIn":["fail", "pass", "unknown"]
+  "jest.debugCodeLens.showWhenTestStateIn": ["fail", "pass", "unknown"]
 }
 ```
 

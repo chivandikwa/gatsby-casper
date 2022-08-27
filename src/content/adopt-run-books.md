@@ -6,7 +6,7 @@ author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [runbook, incidents, documentation]
 draft: false
-excerpt: reproducible steps to know situations
+excerpt: documenting steps to know situations
 ---
 
 # Adopt run books

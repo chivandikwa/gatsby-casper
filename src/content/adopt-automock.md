@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Adopt AutoMock with Autofac
+title: Adopt AutoMock with Autofac and Moq
 image: img/clean/used/bird-3.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [automock, autofac, moq]
 draft: false
-excerpt: maintenance  free mocking
+excerpt: hassle free mocking
 ---
 
-# Adopt AutoMock in dotnet tests for Autofac
+# Adopt AutoMock in dotnet tests for Autofac and Moq
 
 ## Context
 
