@@ -163,7 +163,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-142159836-1',
+        trackingId: 'G-JXKC1BH4DB',
         // Puts tracking script in the head instead of the body
         head: true,
         // IP anonymization for GDPR compliance
