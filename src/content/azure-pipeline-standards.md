@@ -9,7 +9,7 @@ draft: false
 excerpt: practices for disciplined CI/CD
 ---
 
-# Azure Pipelines
+# Azure Pipelines Standards and Practices
 
 A list of recommendations around working with Azure Pipelines that can potentially be adopted by a team as standards. I highly recommend a team has very clear and explicit standards documented as below that are agreed upon and enforced.
 
