@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Secure AWS instance metadata
-image: img/clean/used/dog.jpg
+image: img/clean/used/dog.JPG
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [aws, security, EC2]
@@ -15,7 +15,7 @@ Instance metadata is data about your instance that you can use to configure or m
 
 ## Solution
 
--   Do not trust user data in web server configuration. For example in [NGINX configs the $host variable which is set from the 'Host' header can be controlled by an attacker]([Trust No One: Trusting User Input Opens the Cloud Metadata Attack (nginx.com)](https://www.nginx.com/blog/trust-no-one-perils-of-trusting-user-input/))
+-   Do not trust user data in web server configuration. For example in [NGINX configs the $host variable which is set from the 'Host' header can be controlled by an attacker](https://www.nginx.com/blog/trust-no-one-perils-of-trusting-user-input/)
 -   Disable instance metadata. This is not always an option, for example, in AWS there are services such as Systems Manager that rely on this metadata to correctly identify instances.
 -   Secure the instance metadata. That is what we shall be focusing on.
 
