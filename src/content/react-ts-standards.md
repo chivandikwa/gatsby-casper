@@ -17,29 +17,29 @@ I thought it might be worthwhile to share my very opinionated take on how best t
 
 > ℹ `lint-staged` with `--verbose` flag will run linting only on git staged files showing you both warning and errors.
 
-✅ DO run eslint with the cache flag `--cache` enabled which will only lint files changed since last run. This may have a big impact on developer setups. Continuous integration setups will benefit if you do not use clean build agents for each run which can greatly reduce pipeline run times.
+✅ DO run eslint with the cache flag `--cache` enabled which will only lint files changed since the last run. This may have a big impact on developer setups. Continuous integration setups will benefit if you do not use clean build agents for each run which can greatly reduce pipeline run times.
 
-✅ **DO** prefer use of interfaces over type aliases. Use type when you need specific features offered by types. The key driver is that interfaces can always be extendable while types cannot. Because interfaces map more closely to how objects work these are a good default. However if you cannot express a type with an interface and need to use union or tuple types then type aliases would be a better choice.
+✅ **DO** prefer the use of interfaces over type aliases. Use type when you need specific features offered by types. The key driver is that interfaces can always be extendable while types cannot. Because interfaces map more closely to how objects work these are a good default. However, if you cannot express a type with an interface and need to use union or tuple types then type aliases would be a better choice.
 
-✅ **DO** check for console runtime errors and warnings as part of your manual testing before committing to a task, there could be useful things that show up there that are easily overlooked and often easier to action when you notice them when issues are introduced.
+✅ **DO** check for console runtime errors and warnings as part of your manual testing before committing to a task, there could be useful things that show up there that are easily overlooked and often easier to act when you notice them when issues are introduced.
 
-✅ **DO** prefer pure functions. Given the same input, the same data should always be retrieved. Avoid mutations or any other side effects in functions. The effect will be functions that are easy to reason about, easy to consume with no assumptions and certainly easier to test as well.
+✅ **DO** prefer pure functions. Given the same input, the same data should always be retrieved. Avoid mutations or any other side effects in functions. The effect will be functions that are easy to reason about, easy to consume with no assumptions, and certainly easier to test as well.
 
-✅ **DO** use `const` and `let` over `var`, using let only where mutation is expected. The scoping semantics of var lead to bugs.
+✅ **DO** use `const` and `let` over `var`, using let only where a mutation is expected. The scoping semantics of var leads to bugs.
 
-> ℹ Utilize linting to enforce low hanging fruit standards like this.
+> ℹ Utilize linting to enforce low-hanging fruit standards like this.
 
-> ℹ️ In many case you can avoid mutable variables altogether, hence let, by thinking in a more functional way when write code.
+> ℹ️ In many cases you can avoid mutable variables altogether, hence let, by thinking in a more functional way when writing code.
 
-✅ **DO** use `!x` instead of `x==null`. The avoids the confusion with `x===null`, the former is intentionally meant to catch both null and undefined but that situation is not exactly idiomatic and can accidentally get refactored or written incorrectly in the first place as the latter.
+✅ **DO** use `!x` instead of `x==null`. This avoids the confusion with `x===null`, the former is intentionally meant to catch both null and undefined but that situation is not exactly idiomatic and can accidentally get refactored or written incorrectly in the first place as the latter.
 
 ```typescript
 if (!x) {
-  //'x' is falsey, so it will evaluate to false when undefined, null or zero (0)
+  //'x' is falsey, so it will evaluate to false when undefined, null, or zero (0)
 }
 ```
 
-✅ **DO** favor the use of the use of modern Javascript features over the more classic counterparts. Examples of features to be familiar with:
+✅ **DO** favor the use of modern Javascript features over the more classic counterparts. Examples of features to be familiar with:
 
 - Template literals (string interpolation)
 - Rest and spread operators
@@ -62,7 +62,7 @@ if (!x) {
 - filter
 - reduce
 
-> ℹ Favor functional map, filter, reduce, forEach, some ect over collection mutation
+> ℹ Favor functional map, filter, reduce, forEach, some etc over collection mutation
 
 ✅ **DO** favor the use of absolute imports over relative imports.
 
@@ -84,7 +84,7 @@ Can be achieved by adding the following to tsconfig.json
 }
 ```
 
-If we want to tell local imports apart from rest we can use aliasing
+If we want to tell local imports apart from the rest we can use aliasing
 
 ```json
  "compilerOptions": {
@@ -97,7 +97,7 @@ If we want to tell local imports apart from rest we can use aliasing
 // import {Login} from ‘~component/Login;
 ```
 
-✅ **DO** avoid direct mutations on arrays like calling sort. Instead make copies with the spread operator or use slicing before calling these mutations.
+✅ **DO** avoid direct mutations on arrays like calling sort. Instead, make copies with the spread operator or use slicing before calling these mutations.
 
 ✅ **DO** Favor arrow functions for consistent lexical scoping (no mix of lexical and dynamic scoping).
 
@@ -105,7 +105,7 @@ If we want to tell local imports apart from rest we can use aliasing
 
 > See [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for more detailed comparison between arrow functions and traditional functions.
 
-✅ **DO** favor Sets for array operations like querying, uniqueness etc.
+✅ **DO** favor Sets for array operations like querying, uniqueness, etc.
 
 ✅ **DO** favor await of async methods over the traditional `then` and `catch`.
 
@@ -126,7 +126,7 @@ try {
 
 > ℹ This can be enforced with eslint prefer-object-spread rule.
 
-✅ **DO** familiarize yourself with the collection entries method use with destructuring.
+✅ **DO** familiarize yourself with the collection entries method and its use with destructuring.
 
 ```typescript
 var data = [1, 2, 3];
@@ -137,17 +137,17 @@ for (const [index, element] of data.entries())
 
 ✅ **DO** use double quotes for strings.
 
-⛔ **DO NOT** use arrow functions for class methods or object literal (this will be scoped to caller).
+⛔ **DO NOT** use arrow functions for class methods or object literal (this will be scoped to the caller).
 
-⛔ **DO NOT** use objects as maps. Make use of the JavaScript Map object when a dictionary like type is required.
+⛔ **DO NOT** use objects as maps. Make use of the JavaScript Map object when a dictionary-like type is required.
 
-> ℹ See [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) a comparison of maps to objects.
+> ℹ See [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) for a comparison of maps to objects.
 
 ⛔ **DO NOT** abuse optional chaining (Elvis Operator). Use it to show intent (that the object is nullable) and not as a safety net for cases where something would not be null.
 
 ```typescript
 // should be intentional
-// falsy used gives impression whole chain from user can be nullable
+// falsy used gives impression the whole chain from the user can be nullable
 // the typing of what is being operated on should reflect this as well
 const streetName = user?.address?.street?.name;
 ```
@@ -167,7 +167,7 @@ interface User {
 }
 
 // BAD
-// adding a new property on User for instance would not case an error here
+// adding a new property on User for instance would not cause an error here
 const getUser = () => {
   return {
     name: 'John Doe',
@@ -182,11 +182,11 @@ const getUser = (): User => {
 };
 ```
 
-⛔ **DO NOT** use `Partial<T>` unless absolutely required. This would be similar to abusing the as keyword to map types.
+⛔ **DO NOT** use `Partial<T>` unless absolutely required. This would be similar to abusing the `as` keyword to map types.
 
-> ℹ `as` should hardly be used unless 'type inference' is indeed intended for instance if you receive something from a 3rd party lib such as a value on an event and you know the type and want TS to infer that then such would arguably be a valid casesfor as but can still actually be avoided.
+> ℹ `as` should hardly be used unless 'type inference' is indeed intended for instance if you receive something from a 3rd party lib such as a value on an event and you know the type and want TS to infer that then such would arguably be a valid case for `as` but can still actually be avoided.
 
-⛔ **DO NOT** favor the use of indexes when working with arrays if avoidable. Using an exmaple with axios responses, while type inference can help pinpoint when wrong index is used, there are a lot of edge cases where this would not help out.
+⛔ **DO NOT** favor the use of indexes when working with arrays if avoidable. Using an example with Axios responses, while type inference can help pinpoint when the wrong index is used, there are a lot of edge cases where this would not help out.
 
 ```typescript
 useHook(() => {
@@ -206,13 +206,13 @@ useHook(() => {
 
 # Feature best practices
 
-✅ **DO** consider localizing all user visible strings. If you go with localization then this should be done consistently.
+✅ **DO** consider localizing all user-visible strings. If you go with localization then this should be done consistently.
 
 ✅ **DO** consider adding dirty checks to UIs that require explicit saving and provide user prompts on navigating away with changes.
 
 # Components
 
-✅ **DO** create small composable components, much like lego pieces that plug together, over large monolithic components. This allows for easier to reason about components that are easy to reuse and test. This can also make responsibility boundaries very clear and in particular help isolate state. This can also lead to more readable JSX.
+✅ **DO** create small composable components, much like lego pieces that plug together, over large monolithic components. This allows for easier to reason about components that are easy to reuse and test. This can also make responsibility boundaries very clear and in particular help isolate the state. This can also lead to more readable JSX.
 
 ```typescript
 
@@ -230,7 +230,7 @@ useHook(() => {
         </div>
     </div>
 </div>
-// contents above removed for brevity, but imagine the mess!
+// contents above were removed for brevity, but imagine the mess!
 
 // same component with composition
 <ActivityPanel>
@@ -246,7 +246,7 @@ useHook(() => {
 </ActivityPanel>
 ```
 
-✅ **DO** create `safe` defaults to state. This can make for cleaner code as opposed to say handling of undefined in multiple areas. One less obvious problem when working with side effects such as network calls is that you may have your calls returning fast a majority of the times but could have edge cases were is the component renders faster than the side effect and it may have unhandled cases of undefined.
+✅ **DO** create `safe` defaults to state. This can make for cleaner code as opposed to say handling undefined in multiple areas. One less obvious problem when working with side effects such as network calls is that you may have your calls returning fast a majority of the time but could have edge cases were the component renders faster than the side effect and it may have unhandled cases of undefined.
 
 ```typescript
 // FROM
@@ -258,18 +258,18 @@ const [state, setState] = useState<Type[]>([]);
 
 ✅ **DO** identify generic parts of a component upfront that can be reused and code these generically enough to be shared.
 
-✅ **DO** constrain what a user can enter in the UI to what the rest of the system can accept. For example do not allow input that is larger than database constraint, file uploads larger than allowed in backend. Validating such cases and showing specific and clean messages is a good UX practice.
+✅ **DO** constrain what a user can enter in the UI to what the rest of the system can accept. For example, do not allow input that is larger than the database constraint, file uploads are larger than allowed in the backend. Validating such cases and showing specific and clean messages is a good UX practice.
 
 ✅ **DO** make use of TypeScript generics to expose typed props accordingly when you wrap around a component or accept a render component.
 
 ```typescript
 export interface SampleComponentProps<T> {
-  smampleProp: ComponentType<T> | ElementType;
+  sampleProp: ComponentType<T> | ElementType;
 }
 
 export const SampleComponent = <T extends {}>(props: SampleComponentProps<T>) => {};
 
-// based on usage, will infer type of T and expose component props
+// based on usage, will infer the type of T and expose component props
 <SampleComponent smampleProp={Input} />;
 ```
 
@@ -277,13 +277,13 @@ export const SampleComponent = <T extends {}>(props: SampleComponentProps<T>) =>
 
 ✅ **DO** ensure that the component file name is the same as the default export component.
 
-✅ **DO** make use of CSS modules. Keep this consistent and in particular do not make use of inline styles.
+✅ **DO** make use of CSS modules. Keep this consistent and in particular, do not make use of inline styles.
 
-✅ **DO** favor functional components. They have a simpler syntax, no confusing lifecycle methods, constructors or boilerplate and due to being succinct are more readable.
+✅ **DO** favor functional components. They have a simpler syntax, no confusing lifecycle methods, constructors, or boilerplate and due to being succinct are more readable.
 
-✅ **DO** favor multiple useEffect hook sections to make code more readable, over a single use with multiple responsibilities.
+✅ **DO** favor multiple useEffect hook sections to make code more readable, over a single useEffect hook with multiple responsibilities.
 
-> ℹ A good heuristic for this refactoring is when you have dependencies that do not apply to everything in the useEffect, for instance you could have a dependency on an id changing but in addition to fetching entity with that id you fetch data that would not have changed or be dependant on the id in the same hook. This is also applicable with custom hooks that wrap around useEffect,
+> ℹ A good heuristic for this refactoring is when you have dependencies that do not apply to everything in the useEffect, for instance, you could have a dependency on an id changing but in addition to fetching an entity with that id you fetch data that would not have changed or be dependant on the id in the same hook. This is also applicable with custom hooks that wrap around useEffect,
 
 ✅ **DO** consider virtualizing long lists. Unvirtualized long lists can make for a very horrible user experience with performance in many cases.
 
@@ -296,11 +296,11 @@ export const SampleComponent: FunctionComponent<SampleComponentProps> = memo((pr
 }
 ```
 
-> ℹ️ An alternative is to create readonly props. This can prove challenging when considering nested properties and one would need to be carefull about collection types used as well.
+> ℹ️ An alternative is to create read-only props. This can prove challenging when considering nested properties and one would need to be careful about collection types used as well.
 
-> ℹ️ In many scenarios knowing that something came from a prop vs say state should not be a detail that should be exposed in the usage as many will justify `props.x` communicates this.
+> ℹ️ In many scenarios knowing that something came from a prop vs say the state should not be a detail that should be exposed in the usage as many will justify `props.x` communicates this.
 
-✅ **DO** mark state type properties as readonly accordingly to avoid direct mutations.
+✅ **DO** mark state type properties as read-only accordingly to avoid direct mutations.
 
 ```typescript
 interface ComponentState {
@@ -398,17 +398,17 @@ import '@testing-library/jest-dom/extend-expect';
 
 ✅ **DO** move any logic that is not React specific and does not need to be reinitialized on rerender out of function component. Keep in mind that the function component body is recalled on each render, calling that logic over and over unnecessarily.
 
-⛔ **DO NOT** make all fields optional or add coalescing operators on something that is not nullable as a way to go around state that can initially be null. Instead make this explicit.
+⛔ **DO NOT** make all fields optional or add coalescing operators on something that is not nullable as a way to go around a state that can initially be null. Instead, make this explicit.
 
 > ℹ By making this explicit anyone who updates this code later will know to handle null in the render.
 
 ⛔ **DO NOT** add to state or props data than can be derived/calculated from elsewhere.
 
-⛔ **DO NOT** break HTML semantics with unnecessary elements like divs that do not carry the semantic meaning of divs for other reason like a container in which case `Fragment` would have been better. Abuse of HTML tag can also break a11y and can result in an unnecessarily messy DOM.
+⛔ **DO NOT** break HTML semantics with unnecessary elements like divs that do not carry the semantic meaning of divs for other reasons like a container in which case `Fragment` would have been better. Abuse of HTML tags can also break a11y and can result in an unnecessarily messy DOM.
 
-⛔ **DO NOT** handle navigation with click event handling unless this is absolutely desired. First prize is to make use of HTML semantics that the browsers have support for like hyperlinks/anchor tags. This will preserve expected browser behavior like center mouse click or right click open new tab giving user more control, mouse icon change other current or future features.
+⛔ **DO NOT** handle navigation with click event handling unless this is absolutely desired. The first prize is to make use of HTML semantics that the browsers have support for like hyperlinks/anchor tags. This will preserve expected browser behavior like center mouse click or right click open new tab giving the user more control, mouse icon change other current or future features.
 
-⛔ **DO NOT** use React fully qualified name for types, i.e. `React.Fragment`, `React.FunctionComponent`. This is not necessary and in particular is not used consistently, i.e. you may not find `React.useState` or `React.useEffect` in the same code base that uses the latter.
+⛔ **DO NOT** use React fully qualified name for types, i.e. `React.Fragment`, `React.FunctionComponent`. This is not necessary and in particular, is not used consistently, i.e. you may not find `React.useState` or `React.useEffect` in the same code base that uses the latter.
 
 ```typescript
 const [user, setUser] = React.useState<User>({});
@@ -417,7 +417,7 @@ const [user, setUser] = React.useState<User>({});
 const [user, setUser] = useState<User>({});
 ```
 
-⛔ **DO NOT** work be explicit about state that can null in some cases. It will be easier for anyone using that state to know to handle possible nulls.
+⛔ **DO NOT** work around about state that can null in some cases, be explicit about. It will be easier for anyone using that state to know to handle possible nulls.
 
 ```typescript
 // BAD
@@ -427,17 +427,17 @@ const [user, setUser] = useState<User>({});
 const [user, setUser] = useState<User | null>({});
 ```
 
-⛔ **DO AVOID** customizing 3rd party components via CSS. Instead the customization should be done via props where applicable. Such customizations are not upgrade friendly.
+⛔ **DO AVOID** customizing 3rd party components via CSS. Instead, the customization should be done via props where applicable. Such customizations are not upgrade-friendly.
 
 ⛔ **DO AVOID** uncontrolled components, that is those that access the DOM directly i.e. refs unless absolutely necessary.
 
-⛔ **DO AVOID** the urge to replace JSX with call to custom functions that return JSX, this should be done sparingly and with care. If this is desired then the custom function should be a component.
+⛔ **DO AVOID** the urge to replace JSX with call-to-custom functions that return JSX, this should be done sparingly and with care. If this is desired then the custom function should be a component.
 
-> ⚠ Note that splitting component renders with functions can be good but largely an anti-pattern that can hide the fact that a component has gotten too large or has multiple concerns. This approach should be highly avoided in favor of declarative code. Certain React specific heuristics are not applied when you use render functions, i.e. if you have a map and call a function React cannot and will not warn you about the need for a key and you can get away with passing unstable values like indexes to use as a key and again React cannot and will not warn you. Another really nasty thing that happens with such functions is that if you are using react dev tools, they will not show up.
+> ⚠ Note that splitting component renders with functions can be good but largely an anti-pattern that can hide the fact that a component has gotten too large or has multiple concerns. This approach should be highly avoided in favor of a declarative code. Certain React-specific heuristics are not applied when you use render functions, i.e. if you have a map and call a function React cannot and will not warn you about the need for a key and you can get away with passing unstable values like indexes to use as a key and again React cannot and will not warn you. Another really nasty thing that happens with such functions is that if you are using react dev tools, they will not show up.
 
 ⛔ **DO NOT** have constants scattered all over a component file. Neatly place all constants at the top of the component.
 
-✅ **DO** create an order to how things flow in a component and stick to it consistently. For example you could have the order state, hooks, event handlers, functions, render body. Applying the same order in all your components make it quick and easy to navigate around.
+✅ **DO** create an order to how things flow in a component and stick to it consistently. For example, you could have the order state, hooks, event handlers, functions, and render body. Applying the same order in all your components makes it quick and easy to navigate around.
 
 # Hooks
 
@@ -448,29 +448,29 @@ const [user, setUser] = useState<User | null>({});
 - Only Call Hooks from React Functions
   > 🛑 Don’t call Hooks from regular JavaScript functions. Instead, you can call Hooks from React function components or from custom Hooks
 
-> ℹ These rules canand should be enforced with linting.
+> ℹ These rules can and should be enforced with linting.
 
 ✅ **DO** name hooks with use prefix i.e. `useRestoreHook.
 
-✅ **DO** consider creating custom hooks to encapsulate custom logic that is/can be duplicated in multiple place where applicable i.e. `useYourImagination`
+✅ **DO** consider creating custom hooks to encapsulate custom logic that is/can be duplicated in multiple places where applicable i.e. `useYourImagination`
 
 ⛔ **DO NOT** have hooks scattered all over a component file. Neatly place these at the top of the component.
 
-> ℹ When reading through a component you will get the most out of immediately knowing of its side effects and what it renders. Seeing hooks at the top and scrolling all the way down to see the render return make this very easy. When hooks are scattered in between other methods like event handler that becomes harder.
+> ℹ When reading through a component you will get the most out of immediately knowing its side effects and what it renders. Seeing hooks at the top and scrolling all the way down to see the render return makes this very easy. When hooks are scattered in between other methods like event handler that becomes harder.
 
 ⛔ **DO NOT** use complex objects as dependencies on the hooks
 
 > You can read more on it [here](https://www.benmvp.com/blog/object-array-dependencies-react-useEffect-hook/)
 
-# Jest and React Testing library
+# Jest and React Testing Library
 
 ✅ **DO** group related tests under a `describe` if you have multiple tests in one file.
 
-✅ **DO** locate the tests very close to the file being tested. For example you could have the `_tests_` folder in each sub folder with something to test.
+✅ **DO** locate the tests very close to the file being tested. For example, you could have the `_tests_` folder in each subfolder with something to test.
 
 ✅ **DO** name test files with suffix tests i.e. `userService.test.ts`, `breadCrumbs.test.tsx`
 
-✅ **DO** favor data driven tests with `test.each` over duplicated tests.
+✅ **DO** favor data-driven tests with `test.each` over duplicated tests.
 
 ```typescript
 test.each([
@@ -483,11 +483,11 @@ test.each([
 });
 ```
 
-✅ **DO** favor naming tests in the format `given then should` or `given when then should`. Long test names are perfectly fine and in particular the ability to use an characters including spaces in jest test names makes this very flexible.
+✅ **DO** favor naming tests in the format `given then should` or `given when then should`. Long test names are perfectly fine and in particular, the ability to use any characters including spaces in jest test names makes this very flexible.
 
-✅ **DO** make it easy to tell apart the `Arrange`, `Act` and `Assert` sections of your test and in particular to clearly tell what the system under test (`sut`) is.
+✅ **DO** make it easy to tell apart the `Arrange`, `Act`, and `Assert` sections of your test and in particular to clearly tell what the system under test (`sut`) is.
 
-✅ **DO NOT** have `magic values` in tests. Simple things like inlining variables to have name can go a long way in test readability.
+✅ **DO NOT** have `magic values` in tests. Simple things like inlining variables to have a name can go a long way in test readability.
 
 ```typescript
 // BAD - why is this value of significance?
@@ -496,9 +496,9 @@ expect(result.count).toBe(24);
 
 ✅ **DO** use the most specific assertions, these give the most specific and useful failure messages as well. If there is an assertion call for it, avoid the alternative of a more generic assertion with added logic in it.
 
-⛔ **DO NOT** suppress linting rules, these are in place for a reason. Do consult other developers before suppressing rules, whether for specific code lines, files or entire workspace
+⛔ **DO NOT** suppress linting rules, these are in place for a reason. Do consult other developers before suppressing rules, whether for specific code lines, files, or entire workspace
 
-⛔ **DO NOT** write tests with a multiple responsibilities, instead a test should have a single focus. Multiple unrelated assertions are a red flag.
+⛔ **DO NOT** write tests with multiple responsibilities, instead a test should have a single focus. Multiple unrelated assertions are a red flag.
 
 ⛔ **DO NOT** use `ReactTestUtils`. Use `React Testing Library` which is designed to enable and encourage writing tests that use your components as the end users would. `ReactTestUtils` has features like mocking elements, which do not simulate how a user would use the components and encourages very bad and brittle testing patterns.
 
@@ -506,7 +506,7 @@ expect(result.count).toBe(24);
 
 ## Jest
 
-✨ When setting up a mock with `jest.mock`, ideally you may want to setup one of the properties based on a variable so that you can use the same value in you assertions. Jest will however fail the test complaining that mocks cannot access outside variables. This is in place to avoid dirty mocks, however you can by pass this by simply naming the variables with the `mock` suffix i.e. `mockUser`
+✨ When setting up a mock with `jest.mock`, ideally you may want to set up one of the properties based on a variable so that you can use the same value in your assertions. Jest will however fail the test complaining that mocks cannot access outside variables. This is in place to avoid dirty mocks, however, you can bypass this by simply naming the variables with the `mock` suffix i.e. `mockUser`
 
 ```typescript
 const mockUnknown = '#9E9E9E';
@@ -526,7 +526,7 @@ jest.mock('../../redux/store', () => ({
 
 ✅ **DO** make use of yup schemas for validation and mutations related to forms.
 
-✅ **DO** move the yup schema outside a component unless it requires access to something in component like state (which can be avoided with a different design). This avoids a new schema being created on each render. Given the inner workings on yup on each mutation the schema is cloned, so an object schema composed of multiple property schemas is cloned for each, not ideal.
+✅ **DO** move the yup schema outside a component unless it requires access to something in a component, like a state (which can be avoided with a different design). This avoids a new schema being created on each render. Given the inner workings of yup on each mutation the schema is cloned, so an object schema composed of multiple property schemas is cloned for each, not ideal.
 
 ```typescript
 // from this
@@ -542,7 +542,7 @@ const formSchema = object<User>({
 });
 ```
 
-⛔ **DO** not use the `shape` unless it is desired, ideally for merging multiple schemas together. This affects the Typescript type coersion and will fail to pick up mismatches in the schema to the target type.
+⛔ **DO** not use the `shape` unless it is desired, ideally for merging multiple schemas together. This affects the Typescript type coercion and will fail to pick up mismatches in the schema to the target type.
 
 ```typescript
 // from this
