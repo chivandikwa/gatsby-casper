@@ -163,18 +163,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingIds: ['UA-142159836-1'],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
+        trackingIds: ['G-JXKC1BH4DB'],
         pluginConfig: {
           // Puts tracking script in the head instead of the body
-          head: false,
+          head: true,
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
-          exclude: [],
+          // exclude: [],
           // Defaults to https://www.googletagmanager.com
           // origin: "YOUR_SELF_HOSTED_ORIGIN",
         },
