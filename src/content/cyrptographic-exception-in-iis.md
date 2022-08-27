@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Resolve CyrpographicException in IIS
+title: Resolve Cyrptographic Exception in IIS
 image: img/clean/used/white-house.JPG
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
@@ -9,11 +9,11 @@ draft: false
 excerpt: joys of working with IIS
 ---
 
-# Resolve CyrpographicException in IIS
+# Resolve Cryptographic Exception in IIS
 
 ## Situation
 
-An IIS deployed application is throwing a `CryptographicException` with message `System cannot find the specified file`. Not a very useful message now is it?!
+An IIS deployed application is throwing a `CryptographicException` with the message `System cannot find the specified file`. Not a very useful message now is it?!
 
 ## Remedy
 
@@ -21,18 +21,18 @@ This is most likely because the Windows Cryptographic Service Provider was tryin
 
 > ⚠️ The Load User Profile setting only applies to user accounts. Service Accounts like NETWORK SERVICE and ApplicationPoolIdentity have special handling.
 
-### What exactly happens when I set LoadUserProfile in IIS pool?
+### What exactly happens when I set Load User Profile in the IIS pool?
 
 The user profile is loaded. This includes their cryptographic store, environment variables such as %TEMP%, and other ones.
 
 ### To enable the setting
 
-1. Go to IIS Manager
+1. Go to the IIS Manager
 
 1. Go to the application pool instance
 
 1. Click advanced settings
 
-1. Under Process model, set Load User Profile to true
+1. Under the Process model, set Load User Profile to true
 
-1. Recycle the application pool and restart linked web application for changes to reflect
+1. Recycle the application pool and restart the linked web application for changes to reflect
