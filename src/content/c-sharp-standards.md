@@ -6,7 +6,7 @@ author: [Thulani S. Chivandikwa]
 date: 2022-08-24T19:00:00.000Z
 tags: [c#, best practices, standards]
 draft: false
-excerpt: Standards for disciplined development
+excerpt: practices for disciplined development
 ---
 
 # C# Standards and Best Practice
