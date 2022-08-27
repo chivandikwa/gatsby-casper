@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Reason for Outage tracking
-image: img/clean/used/deer-2.JPG
+title: Azure Pipelines Standards
+image: img/clean/used/llama.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [azure, pipeline, cicd]
