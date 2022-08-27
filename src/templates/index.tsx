@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { FixedObject } from 'gatsby-image';
+import { getSrc, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -27,21 +27,14 @@ import config from '../website-config';
 import { PageContext } from './post';
 
 export interface IndexProps {
+  children: React.ReactNode;
   pageContext: {
     currentPage: number;
     numPages: number;
   };
   data: {
-    logo: {
-      childImageSharp: {
-        fixed: FixedObject;
-      };
-    };
-    header: {
-      childImageSharp: {
-        fixed: FixedObject;
-      };
-    };
+    logo: any;
+    header: any;
     allMarkdownRemark: {
       edges: Array<{
         node: PageContext;
@@ -50,8 +43,9 @@ export interface IndexProps {
   };
 }
 
-const IndexPage: React.FC<IndexProps> = props => {
-  const { width, height } = props.data.header.childImageSharp.fixed;
+function IndexPage(props: IndexProps) {
+  const width = getImage(props.data.header)?.width;
+  const height = getImage(props.data.header)?.height;
 
   return (
     <IndexLayout css={HomePosts}>
@@ -64,10 +58,8 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:title" content={config.title} />
         <meta property="og:description" content={config.description} />
         <meta property="og:url" content={config.siteUrl} />
-        <meta
-          property="og:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
-        />
+        <meta property="og:image" content={`${config.siteUrl}${getSrc(props.data.header)}`} />
+        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         {config.googleSiteVerification && (
           <meta name="google-site-verification" content={config.googleSiteVerification} />
         )}
@@ -75,31 +67,38 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta name="twitter:title" content={config.title} />
         <meta name="twitter:description" content={config.description} />
         <meta name="twitter:url" content={config.siteUrl} />
-        <meta
-          name="twitter:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
-        />
+        <meta name="twitter:image" content={`${config.siteUrl}${getSrc(props.data.header)}`} />
         {config.twitter && (
           <meta
             name="twitter:site"
             content={`@${config.twitter.split('https://twitter.com/')[1]}`}
           />
         )}
-        <meta property="og:image:width" content={width.toString()} />
-        <meta property="og:image:height" content={height.toString()} />
+        <meta property="og:image:width" content={width?.toString()} />
+        <meta property="og:image:height" content={height?.toString()} />
       </Helmet>
       <Wrapper>
         <div
           css={[outer, SiteHeader, SiteHeaderStyles]}
           className="site-header-background"
           style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
+            backgroundImage: `url('${getSrc(props.data.header)}')`,
           }}
         >
           <div css={inner}>
             <SiteNav isHome />
-            <SiteHeaderContent className="site-header-conent">
-              <SiteTitle className="site-title">{config.title}</SiteTitle>
+            <SiteHeaderContent className="site-header-content">
+              <SiteTitle className="site-title">
+                {props.data.logo ? (
+                  <img
+                    style={{ maxHeight: '55px' }}
+                    src={getSrc(props.data.logo)}
+                    alt={config.title}
+                  />
+                ) : (
+                  config.title
+                )}
+              </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
           </div>
@@ -107,15 +106,15 @@ const IndexPage: React.FC<IndexProps> = props => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) => {
+              {props.data.allMarkdownRemark.edges.map((post, index) =>
                 // filter out drafts in production
-                return (
-                  (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
+                (
+                  (post.node.frontmatter.draft !== true
+                    || process.env.NODE_ENV !== 'production') && (
                     <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
                   )
-                );
-              })}
+                ),
+              )}
             </div>
           </div>
         </main>
@@ -130,26 +129,18 @@ const IndexPage: React.FC<IndexProps> = props => {
       </Wrapper>
     </IndexLayout>
   );
-};
+}
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: FIXED)
       }
     }
     header: file(relativePath: { eq: "img/blog-cover.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 2000, quality: 100) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 2000, quality: 100, layout: FIXED)
       }
     }
     allMarkdownRemark(
@@ -160,7 +151,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          timeToRead
           frontmatter {
             title
             date
@@ -169,27 +159,24 @@ export const pageQuery = graphql`
             excerpt
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
             author {
-              id
+              name
               bio
               avatar {
-                children {
-                  ... on ImageSharp {
-                    fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH, breakpoints: [40, 80, 120])
                 }
               }
             }
           }
           excerpt
           fields {
+            readingTime {
+              text
+            }
             layout
             slug
           }

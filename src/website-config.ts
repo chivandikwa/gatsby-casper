@@ -46,13 +46,18 @@ export interface WebsiteConfig {
    * Appears alongside the footer, after the credits
    */
   footer?: string;
+  /**
+   * Shows all post tags in main index view and post view if true
+   * Otherwise only shows first (primary) tag
+   */
+  showAllTags: boolean;
 }
 
 const config: WebsiteConfig = {
   title: 'drunk on monads',
   description: 'software development banter!',
   coverImage: 'img/blog-cover.jpg',
-  logo: '',
+  logo: 'img/ghost-logo.png',
   lang: 'en',
   siteUrl: 'http://www.drunkonmonads.com/',
   facebook: 'http://www.drunkonmonads.com/',
@@ -64,6 +69,7 @@ const config: WebsiteConfig = {
   mailchimpEmailFieldName: 'MERGE0',
   googleSiteVerification: 'GoogleCode',
   footer: 'is based on Gatsby Casper',
+  showAllTags: true,
 };
 
 export default config;
