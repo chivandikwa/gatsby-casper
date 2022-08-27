@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adopt AutoMock with Autofac
-image: img/clean/used/cat.jpg
+image: img/clean/used/bird-3.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [automock, autofac, moq]
