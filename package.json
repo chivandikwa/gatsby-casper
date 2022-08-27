@@ -43,6 +43,7 @@
     "gatsby-transformer-sharp": "4.18.1",
     "gatsby-transformer-yaml": "4.18.0",
     "gatsby-remark-embed-gist": "^1.2.1",
+    "gatsby-remark-emojis": "^0.4.3",
     "lodash": "4.17.21",
     "normalize.css": "8.0.1",
     "polished": "4.2.2",
