@@ -76,14 +76,6 @@ function IndexPage(props: IndexProps) {
         )}
         <meta property="og:image:width" content={width?.toString()} />
         <meta property="og:image:height" content={height?.toString()} />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142159836-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){{ dataLayer.push(arguments); }}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-142159836-1');
-        </script>
       </Helmet>
       <Wrapper>
         <div
