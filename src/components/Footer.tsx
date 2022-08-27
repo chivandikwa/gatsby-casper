@@ -8,7 +8,7 @@ import { colors } from '../styles/colors';
 import { outer, inner } from '../styles/shared';
 import config from '../website-config';
 
-export const Footer: React.FC = () => {
+export function Footer() {
   return (
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
@@ -22,6 +22,11 @@ export const Footer: React.FC = () => {
         </section>
         <SiteFooterNav>
           <Link to="/">Latest Posts</Link>
+          {config.facebook && (
+            <a href={config.facebook} target="_blank" rel="noopener noreferrer">
+              Facebook
+            </a>
+          )}
           {config.twitter && (
             <a href={config.twitter} target="_blank" rel="noopener noreferrer">
               Twitter
@@ -35,11 +40,13 @@ export const Footer: React.FC = () => {
           >
             Casper
           </a>
+
+          <a href="/rss.xml">RSS</a>
         </SiteFooterNav>
       </div>
     </footer>
   );
-};
+}
 
 const SiteFooter = css`
   position: relative;

@@ -10,7 +10,7 @@ export interface SubscribeProps {
   title: string;
 }
 
-export const Subscribe: React.FC<SubscribeProps> = props => {
+export function Subscribe(props: SubscribeProps) {
   return (
     <SubscribeFormSection>
       <h3 css={SubscribeFormTitle}>Subscribe to {props.title}</h3>
@@ -18,7 +18,7 @@ export const Subscribe: React.FC<SubscribeProps> = props => {
       <SubscribeForm />
     </SubscribeFormSection>
   );
-};
+}
 
 const SubscribeFormSection = styled.section`
   margin: 1.5em 0;
