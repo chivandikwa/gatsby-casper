@@ -1,7 +1,7 @@
 ---
 layout: post
 title: General Software Development Standards and Practices
-image: img/clean/used/b7bd55f6d-4e41-47cf-a2d3-0f97a1ac7a7d.jpg
+image: img/clean/used/7bd55f6d-4e41-47cf-a2d3-0f97a1ac7a7d.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-02-19T00:00:00.000Z
 tags: [software, standards, practices]
