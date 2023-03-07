@@ -174,7 +174,7 @@ Would you knock down the Burj Khalifa to install a sewage system? The answer is 
 
 ![](Clean-Architecture-Attachments/mohit-kumar-6M9xiVgkoN0-unsplash.jpg)
 
-Photo by [Mohit Kumar](https://unsplash.com/@98mohitkumar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/6M9xiVgkoN0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> ©️ Photo by [Mohit Kumar](https://unsplash.com/@98mohitkumar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/6M9xiVgkoN0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 In the given example, we have an Order class with a method called CalculateTotal, which calculates the total cost of an order. However, the method violates the Open/Closed Principle because it's not closed for modification.
 
@@ -263,7 +263,7 @@ The LSP is particularly important for achieving modularity and ensuring that the
 
 ![](Clean-Architecture-Attachments/derek-steen-8SxsQfeKkHY-unsplash.jpg)
 
-Photo by [Derek Steen](https://unsplash.com/@djsteen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/8SxsQfeKkHY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> ©️ Photo by [Derek Steen](https://unsplash.com/@djsteen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/8SxsQfeKkHY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Suppose we have a billing service that generates reports on active licenses, and the service deals with licenses without knowledge of different types of licenses. In this case, different types of licenses can be substituted without affecting the function of the billing service because they all follow the same contract.
 
@@ -298,7 +298,7 @@ The ISP states that clients should not be forced to depend on interfaces they do
 
 ![](Clean-Architecture-Attachments/john-barkiple-l090uFWoPaI-unsplash.jpg)
 
-Photo by [John Barkiple](https://unsplash.com/@barkiple?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/l090uFWoPaI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> ©️ Photo by [John Barkiple](https://unsplash.com/@barkiple?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/l090uFWoPaI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 
 Suppose we have a Customer Operations class that has information about deliveries and payments. We also have two reporting services, a Delivery Reporting Service that consumes information about deliveries, and a Billing Reporting Service that consumes information about payments. The Customer Operations class has a method that returns all the information, and both reporting services depend on this method.
@@ -330,7 +330,7 @@ The key takeaway from the DIP is that we should program to the interfaces or abs
 
 ![](Clean-Architecture-Attachments/dmitriy-zub-jibUsRaauLY-unsplash.jpg)
 
-Photo by [Dmitriy Zub](https://unsplash.com/@dimitryzub?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/jibUsRaauLY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> ©️ Photo by [Dmitriy Zub](https://unsplash.com/@dimitryzub?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/jibUsRaauLY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 The analogy of the excavator is a good illustration of how the DIP works in practice. By depending on the abstract concept of a fixture rather than a specific fixture, the excavator can be easily adapted to different tasks without having to replace the entire machine. This approach enables us to reuse the excavator and make it more flexible and adaptable to different situations. If this were violated, imagine having to get a new excavator each time a task requires a different fixture.
 
@@ -519,7 +519,7 @@ The million-dollar question is whether you can break these rules and still be fo
 
 ![](Clean-Architecture-Attachments/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg)
 
-Photo by [Tingey Injury Law Firm](https://unsplash.com/@tingeyinjurylawfirm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/veNb0DDegzE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> ©️ Photo by [Tingey Injury Law Firm](https://unsplash.com/@tingeyinjurylawfirm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/veNb0DDegzE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 > ⚠️ The above is a very bold remark but very good advice. Once you have a firm understanding of this and have respected the rules enough to gain experience you will stumble upon interesting scenarios that may require trade-offs, like the classic EF Core problem in . NET. You can make a trade-off and break the rule(s), but tread with care.
 
