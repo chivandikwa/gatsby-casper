@@ -4,7 +4,7 @@ title: Clean Architecture
 image: img/clean/used/4B8BA6A7-61B9-49FF-9DD1-2803A91A1DE2.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-03-07T10:00:00.000Z
-tags: [architecture, clean architecture, ports and adapters, onion architecture]
+tags: [clean architecture, ports & adapters, onion]
 draft: false
 excerpt: Clean Architecture done right
 ---
@@ -309,7 +309,7 @@ In this scenario, we have violated the ISP because the reporting services depend
 
 To fix this, we can introduce two interfaces, IDeliveries and IPayments, that contain only the relevant methods for each reporting service. The Customer Operations class can then implement both interfaces and provide the necessary information to the reporting services via these interfaces.
 
-![ISP Violation Fix](isp-violation-fix.jpg)
+![](Clean-Architecture-Attachments/isp-violation-fix.jpg)
 
 By doing this, we have eliminated the unnecessary dependencies between the reporting services and the Customer Operations class. The Delivery Reporting Service only depends on the IDeliveries interface, and the Billing Reporting Service only depends on the IPayments interface. This makes the interfaces simple, focused, and relevant to the client, and it also makes the reporting services easier to test and validate.
 
