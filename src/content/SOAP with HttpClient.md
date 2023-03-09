@@ -412,3 +412,81 @@ Running this integration test will ensure that our SOAP service client is workin
 In this article, we discussed how to consume legacy SOAP services using the `HttpClient` in .NET. We saw how to create the SOAP request message and send it to the `SOAP` service using an HTTP POST request. We also saw how to deserialize the XML response message into a .NET object.
 
 By using the `HttpClient` class, we could easily integrate with SOAP services in .NET and process their responses. While SOAP services are being phased out in favour of RESTful services, there are still many legacy systems that use SOAP services, and it is important to know how to integrate with them using modern tools and technologies.
+
+# Bonus Section - Working with CData
+
+CDATA (short for Character Data) is a way to include unescaped character data, including markup characters such as `<`, `>`, and `&`, within an XML document. CDATA sections begin with the string `<![CDATA[ and end with ]]>`. Within a CDATA section, characters are not parsed as markup, but are instead treated as normal character data.
+
+Using CDATA sections can be useful when including text that contains reserved characters or markup that should be preserved as-is, without being parsed as XML. In the context of SOAP web services, CDATA can be used to include XML fragments in messages without causing parsing errors or losing information.
+
+```
+    public class SampleObject
+    {
+        [XmlElement(ElementName = "CDataSection")]
+        public XmlCDataSection Transaction
+        {
+            get
+            {
+                var xDocument = SampleNestedObjectInternal.ToXDocument();
+                xDocument.RemoveNamespaceAttributes();
+
+                return new XmlDocument().CreateCDataSection(xDocument.ToString());
+            }
+            set => _ = value; // Without an explicit setter the serializer ignores this
+        }
+
+        [XmlIgnore]
+        public SampleNestedObject SampleNestedObjectInternal { get; set; }
+    }
+
+    public class SampleNestedObject
+    {
+        [XmlElement(ElementName = "Name")]
+        public string Name { get; set; }
+    }
+```
+
+This code shows an example of how to serialize an object to XML and include a property that contains a CDATA section. In this case, the object being serialized is `SampleObject`, which contains a nested object of type `SampleNestedObject`. This code can be useful when working with SOAP services that expect CDATA sections in their XML payloads. The `Transaction` field in the `SampleObject` is required to be CDATA and to achieve this we create a property for the SampleNestedObject with the `XmlIgnore` attribute, then a separate utility that does the bidding to CDATA
+
+If we were to serialize this, we would get the following xml
+
+```xml
+<SampleObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <CDataSection><![CDATA[<SampleNestedObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Name>Dummy</Name>
+  </SampleNestedObject>]]></CDataSection>
+</SampleObject>
+
+```
+
+Notice that we used the extension `RemoveNamespaceAttributes`, to avoid getting an empty namespace sections on the CData section, specifically getting back the following:
+
+```xml
+<SampleObject xmlns:xsi=" http:// www.w3.org/ 2001/ XMLSchema-instance"
+    xmlns:xsd=" http:// www.w3.org/ 2001/ XMLSchema"
+    xmlns=" http:// schemas.xmlsoap.org/ soap/ envelope/">
+    <CDataSection><![CDATA[<SampleNestedObject>
+    <Name>Dummy</Name>
+  </SampleNestedObject>]]></CDataSection>
+</SampleObject>
+```
+
+This uses the following extension method:
+
+```csharp
+    public static void RemoveNamespaceAttributes(this XDocument xDocument)
+    {
+        xDocument.Descendants()
+            .Attributes()
+            .Where(x => x.IsNamespaceDeclaration)
+            .Remove();
+
+        foreach (var elem in xDocument.Descendants())
+            elem.Name = elem.Name.LocalName;
+    }
+```
+
+The method works by using LINQ to iterate over all elements in the document, removing the namespace attributes, and then setting the element name to only the local name (i.e., without the namespace). This essentially flattens the document, removing all references to namespaces.
+
+> Note that removing namespace attributes can have unintended consequences, such as removing the ability to distinguish between two elements with the same local name in different namespaces. Therefore, this method should be used with caution and only when necessary.
