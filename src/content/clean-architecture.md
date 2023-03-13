@@ -419,6 +419,8 @@ Starting with the most stable, we would have what is critical to our operations,
 
 Next, the Use Cases represent the application-specific business rules that are responsible for orchestrating the flow of information and actions between different components in the system. These rules are typically specific to a given application and may involve many moving parts, including entities, interfaces, and other components.
 
+> ℹ️ The direction of the arrows points into the direction of a dependency. That is to say `A -> B`, should be read as `A` depends on `B`, or that `A` knows of `B`. Inversely, this means `B` does not depend on `A` and is not aware of the existence of `A`. This is not to be confused with flow of control, which will be discussed separately.
+
 In the architecture diagram, the Use Cases are shown as being dependent on the entities, which contain the critical business rules that underpin the entire system. Notice the direction of the arrow, which indicates that the Use Cases depend on the entities, but the entities do not depend on the Use Cases.
 
 This direction of the arrow is important because it represents the direction of stability in the system. As we move in the diagram from lower-level components to higher-level ones, the components become more abstract and less volatile. This means that they are less likely to change and are therefore more stable.
@@ -545,6 +547,12 @@ Then you choose pain or sorts:
 To see Clean Architecture at play let us run with a scenario where we are creating a voucher system for a retail company. Initially, the requirement is to be able to generate vouchers that can be applied for free delivery. It should be possible to validate and redeem these vouchers, with the latter only being possible once.
 
 We want to be able to store these vouchers but we are not sure about the details yet so we want to defer this requirement. As for generating the vouchers we have identified [shortid](https://github.com/bolorundurowb/shortid/) as the library that we shall be using. For this example, let us assume this is a complex integration.
+
+> The demo examples will make use of the terminology from Ports and Adapters
+>
+> **Port**: an interface between the application and the external world, which defines a set of operations or services that the application provides or requires.
+>
+> **Adapter**: a component that implements a specific port interface, adapting it to the application's internal architecture (This is infrastructure!).
 
 Let us start with identifying the inner circle, the domain entities.
 
@@ -897,6 +905,54 @@ The `CodeGenerator` class implements the `IVoucherGenerator` interface and uses 
 The `VoucherGeneratorAdapter` class is an adapter class that initializes and sets up the `IVoucherGenerator` object using the `CodeGenerator` class.
 
 Overall, these classes provide a basic framework for generating voucher codes using the `ShortId` library.
+
+Let us look at how this can be consumed, by observing some bootstrapping and a sample ASP.NET Core controller.
+
+```csharp
+private void SetupAdapter(IServiceCollection services)
+{
+    var settings = Configuration.Get<ApplicationOptions>();
+    var persistenceAdapter = new PersistenceAdapter();
+    var voucherGeneratorAdapter =
+        new VoucherGeneratorAdapter(settings!.VoucherGeneratorOptions.VoucherVoucherGenerator);
+    persistenceAdapter.Initialize(services); voucherGeneratorAdapter.Initialize(services);
+}
+
+public class ApplicationOptions
+{
+    public VoucherGeneratorOptions VoucherGeneratorOptions { get; set; }
+}
+```
+
+```csharp
+[ApiController]
+[Route("[controller]")]
+public class VouchersController : ControllerBase
+{
+   private readonly ILogger<VouchersController> _logger;
+
+    public VouchersController(ILogger<VouchersController> logger) => _logger = logger;
+
+    [HttpGet(Name = "/vouchers/delivery/generate")]
+    public async Task<IActionResult> Get([FromServices] GenerateVoucherUseCase useCase,
+        CancellationToken cancellationToken)
+    {
+        var request = GenerateVoucherRequest.ForFreeDelivery();
+
+        using (_logger.BeginScope(new Dictionary<string, object>
+               {
+                   ["query"] = request
+               }))
+        {
+            var response = await useCase.Handle(request, cancellationToken);
+
+            return Created(string.Empty, response);
+        }
+    }
+}
+```
+
+The code shows how to consume the `Adapters/Infrastructure` in an ASP.NET Core application. The `SetupAdapter` method sets up the necessary adapters and initializes them with the services required for the application to work. The `ApplicationOptions` class is used to define options for the voucher generator adapter. The `VouchersController` is a sample ASP.NET Core controller that demonstrates flow of control.
 
 We have all the moving parts, what about the project structure? This is quite flexible, and a decision you can make based on your project context or preferences and can leverage onto other patterns and practices you may be using like CQRS (Command Query Responsibility Segregation), DDD (Domain Driven Design), Vertical Slices etc. The key thing is however to continue to respect the dependencies' rules. Let us look at an example project structure.
 
