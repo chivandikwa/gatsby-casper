@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Control Home Assistant with an Apple Watch
-image: img/clean/used/coffee.jpg
+image: img/unsplash/luke-chesser-vCF5sB7QecM-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-03-04T10:00:00.000Z
 tags: [home-assistant]
 draft: false
 excerpt: smart home on your wrist
 ---
+
+Photo by <a href="https://unsplash.com/@lukechesser?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luke Chesser</a> on <a href="https://unsplash.com/wallpapers/iphone/apple-watch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 It's pretty nifty and also surprisingly useful to be able to control your smart home from your wrist. What you control depends on your use cases but I get to show you how to control it and maybe inspire you with how I use it. We will work based on the following use cases
 

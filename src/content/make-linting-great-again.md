@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Make linting great again
-image: img/clean/used/horse-status.jpg
+image: img/unsplash/bruno-martins-i6Ynmfi6UBg-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-06-29T10:00:00.000Z
 tags: [eslint, linting, node]
 draft: false
 excerpt: make linting great again
 ---
+
+Photo by <a href="https://unsplash.com/@brunus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bruno Martins</a> on <a href="https://unsplash.com/photos/i6Ynmfi6UBg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 I am a firm believer in the role of linting in keeping code bases from decaying and enforcing standards and consistency. Particularly, I feel linting tools really shine as code bases age. For JavaScript based projects, I find eslint to be pretty powerful but acknowledge that one thing that can keep developers from using it often is that it can be slow in running if not setup properly, especially with regards with caching and is hooked up to commits with something like husky, and if linting violations have been ignored for a while one can drown in a lot errors and warnings.
 

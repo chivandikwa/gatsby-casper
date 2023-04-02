@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Generalize .net test dependencies
-image: img/clean/used/dandelion.jpg
+image: img/unsplash/shubham-dhage-nMcqssE0eA0-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-06-29T10:00:00.000Z
 tags: [.net, Directory.Build.props]
 draft: false
 excerpt: generalize .net test dependencies with Directory.Build.props
 ---
+
+Photo by <a href="https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shubham Dhage</a> on <a href="https://unsplash.com/photos/nMcqssE0eA0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Generalize .net test dependencies with Directory.Build.props
 

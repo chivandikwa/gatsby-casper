@@ -1,13 +1,16 @@
 ---
 layout: post
 title: Track API breaking changes in .net
-image: img/clean/used/builder.jpg
+image: img/unsplash/jackson-simmer-Vqg809B-SrE-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-01-29T00:00:00.000Z
 tags: [python]
 draft: false
 excerpt: prevent accidental breaking changes in your public api with roslyn
 ---
+
+Photo by <a href="https://unsplash.com/@simmerdownjpg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jackson Simmer</a> on <a href="https://unsplash.com/photos/Vqg809B-SrE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 
 If you have ever maintained a public API, in particular a large one, you may know just how easy it is to accidentally make breaking changes and roll them out. I have found some interesting ways in the past to avoid this, but I won't bore you with those as I found a better way. Microsoft rolled out a Roslyn Analyzer, PublicApiAnalyzers, that solves just this problem.
 
