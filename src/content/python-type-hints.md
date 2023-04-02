@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Python type hints
-image: img/clean/used/star.jpg
+image: img/unsplash/javier-allegue-barros-C7B-ExXpOIE-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-04-01T00:00:00.000Z
 tags: [python]
 draft: false
 excerpt: a primer to statically indicating types in python
 ---
+
+Photo by <a href="https://unsplash.com/pt-br/@soymeraki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Javier Allegue Barros</a> on <a href="https://unsplash.com/photos/C7B-ExXpOIE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 This is my hopefully simple to follow Python type hints primer. I will only cover a few of the common types hints that should get a beginner started.
 

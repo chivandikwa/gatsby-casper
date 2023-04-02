@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Dotnet Tools
-image: img/clean/used/deltse.jpg
+image: img/unsplash/cesar-carlevarino-aragon-NL_DF0Klepc-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-12-01T00:00:00.000Z
 tags: [.net]
 draft: false
 excerpt: some really handy dotnet tools
 ---
+
+Photo by <a href="https://unsplash.com/@carlevarino?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cesar Carlevarino Aragon</a> on <a href="https://unsplash.com/photos/NL_DF0Klepc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Dotnet tools are awesome and cover quite a broad range of uses. I have a couple that I cannot do without that I would like to share.
 

@@ -1,13 +1,16 @@
 ---
 layout: post
 title: Pycharm hidden gems
-image: img/clean/used/zebra.jpg
+image: img/unsplash/artturi-jalli-g5_rxRjvKmg-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-04-01T00:00:00.000Z
 tags: [python]
 draft: false
 excerpt: a few simple things in pycharm that can increase your productivity
 ---
+
+Photo by <a href="https://unsplash.com/@artturijalli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artturi Jalli</a> on <a href="https://unsplash.com/photos/g5_rxRjvKmg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 
 Here are a few interesting features of Pycharm that are otherwise not commonly known or used.
 
