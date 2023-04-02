@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Intent Architect
-image: img/clean/used/maastricht.jpeg
+image: img/unsplash/anshu-a-SIhqhxUA2_c-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-01-14T00:00:00.000Z
 tags: [architecture,intent architect,automation]
