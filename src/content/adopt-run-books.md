@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Adopt run books
-image: img/clean/used/cat.jpg
+image: img/unsplash/calle-macarone-15wIddvL5dU-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [runbook, incidents, documentation]
 draft: false
 excerpt: documenting steps to know situations
 ---
+
+Photo by <a href="https://unsplash.com/ja/@callemac?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Calle Macarone</a> on <a href="https://unsplash.com/photos/15wIddvL5dU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Adopt run books
 

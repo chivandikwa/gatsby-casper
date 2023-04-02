@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Adopting decision records
-image: img/clean/used/bird-2.jpg
+image: img/unsplash/maksym-kaharlytskyi-Q9y3LRuuxmg-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [decisions, records, documentation]
 draft: false
 excerpt: track all decisions of architectural significance
 ---
+
+Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/photos/Q9y3LRuuxmg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Adopt decision records
 

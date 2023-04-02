@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Adopt AutoMock with Autofac and Moq
-image: img/clean/used/bird-3.jpg
+image: img/unsplash/sander-sammy-q7ZlbWbDnYo-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [automock, autofac, moq]
 draft: false
 excerpt: hassle free mocking
 ---
+
+Photo by <a href="https://unsplash.com/@sammywilliams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sander Sammy</a> on <a href="https://unsplash.com/photos/q7ZlbWbDnYo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Adopt AutoMock in dotnet tests for Autofac and Moq
 

@@ -1,13 +1,15 @@
 ---
 layout: post
 title: How to assume an AWS IAM role via the CLI
-image: img/clean/used/umbrella.jpg
+image: img/unsplash/engin-akyurt-8sM2SsANvKk-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [aws, iam, cli]
 draft: false
 excerpt: aws iam roles
 ---
+
+Photo by <a href="https://unsplash.com/pt-br/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/photos/8sM2SsANvKk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # How to assume an AWS IAM role via the CLI
 

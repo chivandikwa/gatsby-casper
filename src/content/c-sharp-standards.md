@@ -1,13 +1,15 @@
 ---
 layout: post
 title: C# Standards and Best Practices
-image: img/clean/used/otter.jpg
+image: img/unsplash/gabriel-vasiliu-K-dqI8-cUMQ-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-24T19:00:00.000Z
 tags: [c#, best practices, standards]
 draft: false
 excerpt: practices for disciplined development
 ---
+
+Photo by <a href="https://unsplash.com/@gabimedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Gabriel Vasiliu</a> on <a href="https://unsplash.com/photos/K-dqI8-cUMQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # C# Standards and Best Practice
 

@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Debugging all jest test states
-image: img/clean/used/bee.jpg
+image: img/unsplash/nina-mercado-Y_t0n-T4H5M-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-07-01T10:00:00.000Z
 tags: [jest, javascript]
 draft: false
 excerpt: debugging jest tests with VS Code
 ---
+
+Photo by <a href="https://unsplash.com/@nina_mercado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nina Mercado</a> on <a href="https://unsplash.com/photos/Y_t0n-T4H5M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ### Debugging all jest tests in VS Code
 

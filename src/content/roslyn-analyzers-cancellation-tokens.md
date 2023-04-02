@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Must know Roslyn rules - Cancellation Tokens
-image: img/clean/used/3d9b78f5-7c4a-44a5-88ef-53f2fc47beb7.jpg
+image: img/unsplash/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-03-17T10:00:00.000Z
 tags: [roslyn rules, coding standards, cancellation]
 draft: false
 excerpt: Must know Roslyn rules - Cancellation Tokens
 ---
+
+Photo by <a href="https://unsplash.com/pt-br/@tingeyinjurylawfirm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tingey Injury Law Firm</a> on <a href="https://unsplash.com/photos/veNb0DDegzE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Must know Roslyn rules - Cancellation Tokens
 

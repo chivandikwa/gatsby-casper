@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Effective Git Management Guide
-image: img/clean/used/85531E80-05AF-4668-8F89-8DEED1C03AE9.jpg
+image: img/unsplash/yancy-min-842ofHC6MaI-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-04-01T19:00:00.000Z
 tags: [git, best practices, standards]
 draft: false
 excerpt: practices for disciplined development with git and PRs
 ---
+
+Photo by <a href="https://unsplash.com/@yancymin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yancy Min</a> on <a href="https://unsplash.com/photos/842ofHC6MaI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Effective Git Management Guide
 

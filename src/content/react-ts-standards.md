@@ -1,13 +1,15 @@
 ---
 layout: post
 title: TypeScript and React standards
-image: img/clean/used/oslo-statue.jpg
+image: img/unsplash/scott-rodgerson-ffH_GkINfyY-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2021-09-17T10:00:00.000Z
 tags: [vscode, extensions]
 draft: false
 excerpt: personal take on how best to work with TypeScript and React
 ---
+
+Photo by <a href="https://unsplash.com/@scottrodgerson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Rodgerson</a> on <a href="https://unsplash.com/photos/ffH_GkINfyY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 I thought it might be worthwhile to share my very opinionated take on how best to work with TypeScript and React.
 

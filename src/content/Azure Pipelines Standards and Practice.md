@@ -1,13 +1,16 @@
 ---
 layout: post
 title: Azure Pipelines Standards and Practices
-image: img/clean/used/llama.jpg
+image: img/unsplash/jj-ying-4XvAZN8_WHo-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-02-19T00:00:00.000Z
 tags: [azure, pipelines, ci/cd]
 draft: false
 excerpt: Azure pipelines standards and practices
 ---
+
+Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/photos/4XvAZN8_WHo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 
 # Azure Pipelines Standards and Practices
 

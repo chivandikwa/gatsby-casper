@@ -1,13 +1,15 @@
 ---
 layout: post
 title: GDPR technological implementation research (AWS Cloud)
-image: img/clean/used/97d29415-bfae-4abf-bcd5-4a373cccc2c7.jpg
+image: img/unsplash/towfiqu-barbhuiya-FnA5pAzqhMM-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-02-19T00:00:00.000Z
 tags: [GDPR, technological, aws]
 draft: false
 excerpt: GDPR technological implementation research (AWS Cloud)
 ---
+
+Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/photos/FnA5pAzqhMM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 #  GDPR technological implementation research (AWS Cloud)
 

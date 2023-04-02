@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Reason for Outage tracking
-image: img/clean/used/deer-2.JPG
+image: img/unsplash/ehmitrich-y4aUBTWgzgQ-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [production, tracking, incidents]
 draft: false
 excerpt: history of production issues
 ---
+
+Photo by <a href="https://unsplash.com/@ehmitrich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Антон Дмитриев</a> on <a href="https://unsplash.com/photos/y4aUBTWgzgQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Reason For Outage (RFO) tracking
 

@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Testing Best Practices
-image: img/clean/used/2c4aedfc-35df-4f4b-8256-c7ba5c422d79.jpg
+image: img/unsplash/thisisengineering-raeng-AvGIBmvdcac-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-02-19T00:00:00.000Z
 tags: [testing, xunit, jest, fluentassertions]
 draft: false
 excerpt: Testing Best Practices
 ---
+
+Photo by <a href="https://unsplash.com/@thisisengineering?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ThisisEngineering RAEng</a> on <a href="https://unsplash.com/photos/AvGIBmvdcac?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Testing Best Practices
 

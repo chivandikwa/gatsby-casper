@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Secure AWS instance metadata
-image: img/clean/used/dog.JPG
+image: img/unsplash/regularguy-eth--o90yRQoXAM-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
 tags: [aws, security, EC2]
 draft: false
 excerpt: avoiding cloud metadata attacks
 ---
+
+Photo by <a href="https://unsplash.com/@moneyphotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">regularguy.eth</a> on <a href="https://unsplash.com/photos/-o90yRQoXAM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Secure AWS EC2 instance metadata
 

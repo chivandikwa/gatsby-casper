@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Clean Architecture
-image: img/clean/used/4B8BA6A7-61B9-49FF-9DD1-2803A91A1DE2.jpg
+image: img/unsplash/kimon-maritz-mQiZnKwGXW0-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-03-07T10:00:00.000Z
 tags: [clean architecture, ports & adapters, onion]
 draft: false
 excerpt: Clean Architecture done right
 ---
+
+Photo by <a href="https://unsplash.com/@kimonmaritz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kimon Maritz</a> on <a href="https://unsplash.com/photos/mQiZnKwGXW0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Clean Architecture
 

@@ -1,13 +1,15 @@
 ---
 layout: post
 title: How you do something, is how you do everything
-image: img/clean/used/windmill.jpg
+image: img/unsplash/alex-rodriguez-VR-wUq_JYAk-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-24T18:00:00.000Z
 tags: [philosophy, leadership, accountability]
 draft: false
 excerpt: Holding yourself accountable
 ---
+
+Photo by <a href="https://unsplash.com/@alexabad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Àlex Rodriguez</a> on <a href="https://unsplash.com/wallpapers/cool/good?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # How you do something is how you do everything
 

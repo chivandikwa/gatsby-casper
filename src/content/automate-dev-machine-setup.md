@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Automating developer machine setup
-image: img/clean/used/lion.jpg
+image: img/unsplash/charlesdeluvio-pjAH2Ax4uWk-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T09:00:00.000Z
 tags: [setup, automation, productivity]
 draft: false
 excerpt: Setup automation
 ---
+
+Photo by <a href="https://unsplash.com/@charlesdeluvio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">charlesdeluvio</a> on <a href="https://unsplash.com/photos/pjAH2Ax4uWk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Optimizing new developer machine setup
 

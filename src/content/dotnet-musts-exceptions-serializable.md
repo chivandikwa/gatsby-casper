@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Dotnet must know - Serializable Exceptions
-image: img/clean/used/B8B3F620-5565-4DAB-8B5A-2D255936ADDF.jpg
+image: img/unsplash/ux-indonesia-WCID2JWoxwE-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-03-17T10:00:00.000Z
 tags: [dotnet must know,.net, exceptions]
 draft: false
 excerpt: Dotnet must know - Serializable Exceptions
 ---
+
+Photo by <a href="https://unsplash.com/@uxindo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">UX Indonesia</a> on <a href="https://unsplash.com/photos/WCID2JWoxwE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Ensuring Custom Exceptions are Serializable and Implement the Four Core Constructors
 

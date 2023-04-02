@@ -1,13 +1,15 @@
 ---
 layout: post
 title: AWS Best Practices
-image: img/clean/used/light-house.jpg
+image: img/unsplash/jon-tyson-1Mq4QQaVhis-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-06-30T10:00:00.000Z
 tags: [.net]
 draft: false
 excerpt: navigate the cloud right
 ---
+
+Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jon Tyson</a> on <a href="https://unsplash.com/backgrounds/cool/best?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # AWS Best Practices
 

@@ -1,13 +1,15 @@
 ---
 layout: post
 title: General Software Development Standards and Practices
-image: img/clean/used/7bd55f6d-4e41-47cf-a2d3-0f97a1ac7a7d.jpg
+image: img/unsplash/call-me-fred-fJSRg-r7LuI-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-02-19T00:00:00.000Z
 tags: [software, standards, practices]
 draft: false
 excerpt: General Software Development Standards and Practices
 ---
+
+Photo by <a href="https://unsplash.com/@callmefred?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Call Me Fred</a> on <a href="https://unsplash.com/photos/fJSRg-r7LuI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # General Software Development Standards and Practices
 
