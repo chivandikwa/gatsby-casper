@@ -15,14 +15,14 @@ Photo by <a href="https://unsplash.com/@yancymin?utm_source=unsplash&utm_medium=
 
 ## Commits
 
-✅ **DO** push your commits often, in case `Murphy's Law decides to visit`.
+✅ **DO** push your commits often, in case **Murphy** *(Murphy's Law)* decides to visit.
 
 ✅ **DO** break your work into smaller, logical pieces as commits.
 
 This helps with:
 
 - Making it possible to cherry pick and revert specific changes
-- Makes `git blame` easier when trying to track a change, especially around bug fixes, which will then tie nicely with a matching commit message
+- Making `git blame` easier when trying to track a change, especially around bug fixes, which will then tie nicely with a matching commit message
 - Making it possible to review code by commits which can be useful for large Pull Requests
 
 Overall, this approach helps maintain a clean and understandable commit history, making it easier to track the origin of changes and simplifying the review process.
