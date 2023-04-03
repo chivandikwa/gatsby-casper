@@ -71,6 +71,8 @@ Examples of useful branch prefixes:
 
 ✅ **DO** use a pull PR template to enforce the desired structure and information.
 
+Example:
+
 ```markdown
 # Description
 
