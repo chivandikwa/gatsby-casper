@@ -21,6 +21,36 @@ There are multiple ways to enforce standards
 - Automated checks like linters, Roslyn analyzers, etc.
 - Code scanning tools like Sonar
 
+✅ **DO** make use of `EditorConfig` with .NET and leveraging Roslyn analyzers. This brings a powerful combination that enforces coding standards and promotes consistent code quality across your projects.
+
+- **Consistent Coding Standards**: EditorConfig provides a standardized format to define and enforce coding conventions such as indentation style, line endings, and whitespace usage.
+
+- **Team Collaboration and Onboarding**: When multiple developers work on a project, maintaining a shared understanding of coding standards becomes critical. EditorConfig allows you to specify and communicate these standards effectively, promoting collaboration and reducing time spent on code reviews. New team members can quickly adapt to the project's coding style by simply configuring their editor to read the shared EditorConfig file.
+
+- **Automated Standards Validation**: Integrating EditorConfig with Roslyn analyzers takes consistency to the next level. Roslyn analyzers are powerful static analysis tools that can automatically validate your code against a set of rules defined in the EditorConfig file.
+
+- **Customizable and Extensible**: Both EditorConfig and Roslyn analyzers are highly customizable to fit your project's unique needs. Additionally, you can create custom analyzers to enforce project-specific guidelines, ensuring that your codebase adheres to your organization's best practices.
+
+- **Cross-Editor and Cross-Platform Support**: EditorConfig is supported by a wide range of popular editors, including Visual Studio, Visual Studio Code, and JetBrains IDEs.
+
+Example
+```bash
+root = true
+
+[*]
+guidelines = 120
+
+# All files
+[*]
+indent_style = space
+# cancellation tokens must be forwarded to methods that accept them
+dotnet_diagnostic.CA2016.severity = error
+# cancellation tokens must come last in method signatures
+dotnet_diagnostic.CA1068.severity = error
+```
+
+> On creating an `editorconfig` for the first time using Visual Studio, it will infer some rules by analyzing the code, which gives a good head start.
+
 # Working with secrets
 
 ⛔ **DO NOT** store secrets within the source code or source code directories. These can be accidentally committed by introducing surface area for leakage. Make use of user secrets that are managed outside of a repository.
@@ -43,40 +73,102 @@ Do adhere to a strict structure of managing projects and consistently/religiousl
 
 ✅ **Consider** adding changes that affect multiple projects and need to be consolidated such as project version numbers and dependencies to `Directory.Build.props` or `Directory.Build.targets`.
 
-Examples `Directory.Build.props` files
+**directory.build.props**
 
-Located in the root of tests to affect all projects in that hierarchy
-
-```xml
-<Project>
-
-    <!--Enforce IsPackable false for all tests projects-->
-	<PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-		<IsPackable>False</IsPackable>
-	</PropertyGroup>
-
-	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-	    <!--Enforce specific package dependencies in all tests-->
-	    <!--This is a sure way to ensure that versions are always consolidated-->
-		<PackageReference Include="FluentAssertions" Version="6.7.0" />
-		<PackageReference Include="FluentAssertions.Analyzers" Version="0.17.2" />
-	</ItemGroup>
-
-	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-	    <!--Enforce specific project dependencies in all tests, for example with common helpers-->
-		<ProjectReference Include="..\Tests.Common\Tests.Common.csproj" />
-	</ItemGroup>
-</Project>
-```
-
-Located in the root of the solution to affect all projects in that hierarchy
+This file is used to define project properties and configuration settings. It is primarily used to customize the build process at the project level. You would use `directory.build.props` when you want to define common properties, references, or other configuration settings that apply to multiple projects within a directory or solution. For example, you can use `directory.build.props` to set the default output directory, set the target framework, define preprocessor symbols, specify common package references, or enable/disable build features across multiple projects. This file helps ensure consistency and reduces duplication in the build configuration.
 
 ```xml
 <Project>
     <PropertyGroup>
-        <!--Enforce a shared assembly version for all projects in one place-->
-        <Version>2022.0.1</Version>
+        <!-- Set the target framework version for all projects -->
+        <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
+
+    <!-- Set some default usings -->
+    <ItemGroup>
+        <Using Include="System" />
+        <Using Include="System.Linq" />
+        <Using Include="System.Threading" />
+        <Using Include="System.Threading.Tasks" />
+        <Using Include="System.Collections.Generic" />
+    </ItemGroup>
+
+    <!-- Custom Build Configuration -->
+    <PropertyGroup>
+        <!-- Custom properties specific to the build configuration -->
+        <OutputPath>$(SolutionDir)Output\$(Configuration)\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Specify default package references for all projects -->
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <!-- Custom Build Features -->
+    <PropertyGroup>
+        <!-- Enable/Disable custom build features -->
+        <Optimize>true</Optimize>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <!-- Additional Properties -->
+    <PropertyGroup>
+        <!-- Additional project properties -->
+        <MyCustomProperty>Custom Value</MyCustomProperty>
+    </PropertyGroup>
+</Project>
+```
+
+In the event that you have multiple layers of `director.build.props` files, you can inherit from a base file, for example if you have one at the solution root and a more specific one in the tests folder root that only applies to tests, you can do the following:
+
+```xml
+<Project>
+
+ <!-- Inherit from one in solution root -->
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.11.0" />
+        <PackageReference Include="Microsoft.NET.Test.SDK" Version="17.6.2" />
+        <PackageReference Include="Xunit" Version="2.4.2" />
+        <PackageReference Include="Xunit.Runner.VisualStudio" Version="2.4.5">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Moq" Version="4.18.4" />
+        <PackageReference Include="Moq.AutoMock" Version="3.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Moq" />
+        <Using Include="Xunit" />
+        <Using Include="Moq.AutoMock" />
+    </ItemGroup>
+
+</Project>
+```
+
+**directory.build.targets**
+
+This file is used to customize the build process by adding or overriding build targets. It allows you to insert custom build steps at specific points in the build process or modify the behaviour of existing build targets.
+You would use `directory.build.targets` when you need to perform additional actions during the build, such as code generation, resource updates, or file copying. You can also use it to override or extend the behaviour of existing build targets provided by the default build process.
+
+For example, you can add a custom target to run a script before or after the build, modify the output files, or inject additional dependencies into the build process.
+
+```xml
+<Project>
+    <!-- Custom Build Step -->
+    <Target Name="CustomBuildStep" BeforeTargets="Build">
+        <!-- Add custom build step to run before the build -->
+        <Exec Command="echo Running custom build step..." />
+    </Target>
+
+    <!-- Copy Additional Files -->
+    <Target Name="CopyAdditionalFiles" AfterTargets="AfterBuild">
+        <!-- Copy additional files after the build completes -->
+        <Copy SourceFiles="$(ProjectDir)ExtraFiles\*" DestinationFolder="$(OutputPath)" />
+    </Target>
 </Project>
 ```
 
@@ -228,6 +320,65 @@ _logger.LogInformation("Deleting file: {FileContentId}", job.FileContentId);
 
 > An assumption that tests make use of xUnit is made here.
 
+✅ **DO** aim for your tests to meet the following positive heuristics
+
+- run fast
+- not break often or be flaky
+- not be high maintenance
+- easy to read and understand
+- have the same style and diligence as the code being tested
+- be deterministic
+- survive major refactorings
+
+
+🛑 **DO AVOID** the following negative heuristics of tests:
+
+- 🧪 Logic in tests
+- 🪄 Magic values
+- 😔 Not writing tests because `they are difficult` or something is `untestable`
+- 🔫 Shotgun surgery (has to use unhealthy ways to perform tasks like reading private methods with reflection)
+- 🌝 Eager test (exposes a lot of irrelevant details about sut that distract the test reader from what affects behavior being tested)
+- 😬 Happy path (only tests the paths where things go well)
+- 🦥 Slow Poke (where you grab a coffee while they run)
+- 🦣 Giant (super big test, the day it has issues it's commented out)
+- 🤡 Mockery (mocking on steroids)
+- 🔎 Inspector (violates black box approach)
+- 🪰 Generous left over (when separate tests do a batton exchange of data and often (but not always!) depend on run order)
+- 🦸 Local hero (only passes in a specific environment)
+- 🐜 Nitpicker (much like inspector but focuses on irrelevant specifics that are most likely to change easily/often)
+- 📢 Loud mouth (clutters console with diagnostic messages)
+- 🤥 The liar (skips red-green-refactor, mocked sut, not specific enough leading to false positives)
+- 🆓 Free ride (assertions that piggyback on an existing test when that should be split out)
+- 🔮 Mystery guest (test reader is not able to see the cause and effect between act, arrange, and assert because stuff is magically done elsewhere)
+- 🤫 Useless test (Shush) (Shush) (requires manual debugging to figure out what caused a test to fail)
+- 🪲 Flaky test (fails under specific conditions like time of day, day of the week)
+- 💹 High maintenance tests (UI-driven tests are a pathway to this hell)
+- 🐡 Lost tests (they do nothing, maybe good refactored to oblivion, they never did anything in the first place)
+- 🔏 Using uncleansed data (for example prod data as is in the test potentially exposing this)
+- ⚙️ Ignoring business needs or issues (tests or test approaches that focus only on the technology)
+- 🕔 Involving testing late
+- 🤐 Secret catcher (relies on exceptions happening in the code and being caught by the test runner)
+- 🔢 Line hitter (meant to appease the gatekeeper of the code coverage metric)
+
+
+✅ **DO** make use of **traits** to segment tests, such as marking integration tests separately from unit tests. This brings significant advantages in managing and executing tests, especially in a continuous integration (CI) environment. By using traits, like the ones available in xUnit.NET, you can easily categorize and selectively run tests based on their characteristics. This helps with granular test execution as required, test result analysis and parallel test execution control.
+
+```csharp
+[Trait("TestCategory", TestCategories.Integration)]
+public class AnalysisDatabaseTests
+{
+}
+
+public static class TestCategories
+{
+    public const string Integration = nameof(Integration);
+}
+```
+
+In CI, the tests can be targetted with a filer, for example the following command only runs integration tests
+
+`dotnet test --filter TestCategory=Integration`
+
 ✅ **DO** write more tests. In particular, areas that require tests at all times are
 
 - Algorithms
@@ -300,6 +451,10 @@ token.Should().NotBeNullOrWhiteSpace();
         }
     }
 ```
+
+✅  **DO** consider a data generator like [Bogus](https://github.com/bchavez/Bogus) paired builders.
+
+This will allow you to easily generate realistic and randomized test data. This is particularly useful when you need a large set of diverse data for your tests. Instead of manually creating test data, you can use Faker to generate it automatically, saving you time and effort
 
 ✅ **DO** make use of test builders for objects that potentially would get created over and over in tests.
 
