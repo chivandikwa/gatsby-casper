@@ -13,7 +13,44 @@ Photo by <a href="https://unsplash.com/@douglasamarelo?utm_source=unsplash&utm_m
 
 # API Design Guidelines
 
-> Author: Thulani Chivandikwa
+✅ **DO** prioritize simplicity, comprehensibility, and usability to create an irresistible appeal for consuming engineers.
+
+✅ **DO** actively improve and maintain API consistency over the long term.
+
+✅ **DO** generalized business requirement so as to avoid use case specific APIs.
+
+> Do design with this evolution in mind and specifically to avoid breaking changes to the consumers.
+
+✅ **DO**  use a standard format for date and time values.
+
+> Use the string typed formats `date`, `date-time`, `time`, `duration`, or `period` for the definition of date and time properties. The formats are based on the standard [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) internet profile -- a subset of [ISO 8601](https://datatracker.ietf.org/doc/html/rfc3339#ref-ISO8601)
+
+✅ **DO** use standard formats for country, language and currency properties.
+- [ISO 3166-1-alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for country codes
+- [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for language codes
+- [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) for currency codes
+
+✅ **DO** use `UUIDs` for IDs to avoid scaling problems in high frequency use cases.
+
+✅ **DO** consistently use plural for resource names.
+
+✅ **DO** think resources and avoid actions.
+
+```http
+PUT /users/{user-id}
+```
+
+```http
+PUT /getUser
+```
+
+✅ **DO** apply domain specific resource names.
+
+✅ **DO** identify resources and sub resources with path segments.
+
+```http
+/resources/{resource-id}/sub-resources/{sub-resource-id}
+```
 
 ✅ **DO** use nouns and **NOT verbs** for resource names.
 
@@ -35,10 +72,34 @@ Other examples
 - `PUT /users/{id}` to update a specific user
 - `DELETE /users/{id}` to delete a specific user
 
+✅ **DO** create types that convey the complete meaning for example favor types like stringified timestamps to convey relative time or types that carry the unit to explicitly communicate this.
+
+```json
+{
+  "weight": {
+    "value": 68.0388555,
+    "unit": "kg"
+  }
+}
+```
+
+```json
+# consider this as an alternative to duration format
+{
+  "timeDuration": "01:30:00"
+}
+```
+
+✅ **DO** pluralize array names.
+
+🛑 **DO NOT** use `null` for empty arrays.
+
+✅ **DO** explicitly name dates with `date` as name of suffix or consider suffixes like `at`.
+
 ✅ **DO** use casing consistently across the API for operation id, query parameters, path parameters, and property names in payloads.
 - `camelCase` for operation ids, paths and schemas properties
 - `snake_case` for parameters
-- Choose a casing and stick to it for body content and stick to it, the preferrable JSON with camelCase
+- Choose a casing and stick to it for body content and stick to it, the preferrable `JSON` with camelCase
 
 ✅ **DO** use the appropriate `HTTP` method for each operation. Standard methods include `GET` (retrieve), `POST` (create), `PUT` (update), `PATCH` (partial update), and `DELETE` (delete).
 
@@ -64,6 +125,8 @@ Bad
     {"id": 2, "name": "Product B"}
 ]
 ```
+
+✅ **DO** apply care with required types that may surface with default in `JSON` or the language of the server implementation for these like numerics and enumerations. For validation and sanity purposes it is great to make a distinction between not provided (null) vs a default especially when the values caries semantic meaning in the domain which can cause tough to track data corruption issues.
 
 ✅ **DO** return bodies for all `2xx` responses except `204`.
 
@@ -99,10 +162,13 @@ GET /api/products?offset=1&limit=20
 - `201 Created`: The request has been fulfilled, and a new resource has been created.
 - `202 Accepted`: The request has been accepted for processing, but the processing is not yet complete.
 - `204 No Content`: The server has successfully processed the request, but there is no content to send back.
+- `207 Multi-Status`: The response body contains status information for multiple different parts of a batch/bulk request
 - `400 Bad Request`: The server cannot understand the request due to invalid syntax or other client-side errors.
 - `401 Unauthorized`: The request requires user authentication or the authentication has failed.
 - `403 Forbidden`: The server understood the request but refuses to authorize it.
 - `404 Not Found`: The requested resource could not be found on the server.
+- `405 Not Found`: The method is not supported, handled out of the box by most server frameworks.
+- `409 Conflict`: The request cannot be completed due to conflict with the current state of the target resource.
 - `500 Internal Server Error`: An unexpected error occurred on the server.
 - `503 Service Unavailable`: The server is currently unable to handle the request due to temporary overload or maintenance.
 
@@ -289,11 +355,11 @@ For linting APIs, tools like Spectral can be used. It checks an OpenAPI document
 - Enforcing best practices for versioning, parameters, responses, etc.
 - Custom rules defined as per the organization's/team's standards.
 
-
-
 # Open API Spec
 
-The Open API Specification (formerly known as Swagger Specification) is an industry-standard specification for defining, documenting, and describing RESTful APIs. It is a language-agnostic and machine-readable format used to describe the structure and behaviour of APIs, making it easier for developers and computers to understand and interact with the API.
+The [Open API Specification](https://swagger.io/specification/) (formerly known as Swagger Specification) is an industry-standard specification for defining, documenting, and describing RESTful APIs. It is a language-agnostic and machine-readable format used to describe the structure and behaviour of APIs, making it easier for developers and computers to understand and interact with the API.
+
+> A good way to understand the specification is to navigate the [Open API mind map](https://openapi-map.apihandyman.io/)
 
 The specification is typically written in JSON or YAML format and defines various aspects of the API, including:
 
@@ -310,6 +376,8 @@ The specification is typically written in JSON or YAML format and defines variou
 - API Versioning: It provides a mechanism for versioning the API to support backward compatibility.
 
 - API Documentation: The Open API Specification can also include human-readable documentation to explain how to use the API effectively.
+
+✅ **DO** call for early peer/ client consumer review of the API and set clear expectations for the review process.
 
 ✅ DO consider `YAML` when creating Open API specification for the following reasons:
 
@@ -485,10 +553,16 @@ paths:
           $ref: "#/components/responses/InternalServerError"
 ```
 
+## API consumer manual
+
+✅ **DO** consider creating a user manual to complete the API to be shared with all stake holder.
+
+> This does not have to be the classic manual as a document like a `PDF`, but would be much better as a living resource like a Postman collection that can be complete with extensive documentation and use case specific examples that can easily be run on demand.
+
 ## Spectral
 
 [Spectral](https://meta.stoplight.io/docs/spectral/674b27b261c3c-overview) is an open-source tool designed to enforce API design best practices and ensure API specifications (such as Open API or Swagger) adhere to specific rules and guidelines. It acts as a linter, which means it checks API definitions against a set of pre-defined rules or custom rules to identify potential issues or deviations from best practices.
 
 The primary purpose of Spectral is to improve the quality and consistency of API specifications by providing automated checks on various aspects of the API design. This includes checking for naming conventions, validation of data types and formats, ensuring required fields are present, and detecting other common mistakes or discrepancies.
 
-See [here]() a recommended configuration that encompasses all the design guidelines discussed in this document.
+See [here](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/res/.spectral.yml) a recommended configuration that encompasses all the design guidelines discussed in this document.
