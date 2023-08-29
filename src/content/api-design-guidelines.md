@@ -36,9 +36,13 @@ Photo by <a href="https://unsplash.com/@douglasamarelo?utm_source=unsplash&utm_m
 
 ✅ **DO** think resources and avoid actions.
 
+Good
+
 ```http
 PUT /users/{user-id}
 ```
+
+Bad
 
 ```http
 PUT /getUser
@@ -142,7 +146,7 @@ GET /api/products?offset=1&limit=20
 
 ✅ **DO** ensure that all parameters for an operation are case-insensitive and unique.
 
-🛑 **DO NOT** not create `GET` operations that are long-running. The reason for this is that `GET` requests are meant to be used for retrieving data from the server, and they are expected to be relatively fast and non-blocking.
+🛑 **DO NOT** create `GET` operations that are long-running. The reason for this is that `GET` requests are meant to be used for retrieving data from the server, and they are expected to be relatively fast and non-blocking.
 
 🛑 **DO NOT** return a body with a `204` response. The HTTP status code `204 No Content` should not have a response body according to the `HTTP/1.1` specification. When a server returns a `204 No Content` status code, it indicates that the request was successful, but there is no additional content to send in the response payload.
 
@@ -379,7 +383,7 @@ The specification is typically written in JSON or YAML format and defines variou
 
 ✅ **DO** call for early peer/ client consumer review of the API and set clear expectations for the review process.
 
-✅ DO consider `YAML` when creating Open API specification for the following reasons:
+✅ **DO** consider `YAML` when creating Open API specification for the following reasons:
 
 - **Human-Readable Format**: YAML has a more human-friendly and easy-to-read syntax compared to JSON. It uses indentation and whitespace, making it visually clearer and more natural to work with, especially when dealing with complex data structures.
 
@@ -393,7 +397,7 @@ The specification is typically written in JSON or YAML format and defines variou
 
 > Some tools allow for conversion between `JSON` and `YAML`
 
-✅ DO consider Open API spec first approaches when in the design phase. This can open up many advantages
+✅ **DO** consider Open API spec first approaches when in the design phase. This can open up many advantages
 
 - **Clarity and Collaboration**: Starting with an Open API specification allows you to define the API contract clearly and comprehensively. This specification acts as a single source of truth that fosters collaboration among various stakeholders, such as developers, designers, and testers. Everyone works based on the same specification, reducing misunderstandings and miscommunications.
 - **API Design Early in the Process**: By focusing on the API specification at the beginning of the development process, you can design the API's structure, endpoints, parameters, and responses thoroughly before implementing any actual code. This helps in making informed decisions and reduces the risk of rework or changes later in the development process.
