@@ -1028,6 +1028,18 @@ public enum UserFlags
 }
 ```
 
+✅ **DO** favor `using` directives instead of fully qualified type names. This helps to make the code cleaner.
+
+```csharp
+// Avoid this
+System.Collections.Generic.List<string> names = ...
+
+// In favor of this
+using System.Collections.Generic;
+
+List<string> names = ...
+```
+
 ✅ **DO** consider adding imports into the namespace when you have multiple imports from the current project. This will clean up the imports as they will no longer need to be fully qualified imports.
 
 ✅ **DO** make use of async overloads where available i.e. `ToListAsync()` over `ToList()`.
@@ -1105,6 +1117,16 @@ public enum SampleEnum
         cmd.CommandText = ...;
         var result = await cmd.ExecuteScalarAsync();
 
+```
+
+⛔ **DO NOT** use negations in code unless necessary as those tend to be harder to read/comprehend
+
+```csharp
+// This is easer to read
+var response = isValid ? content : null;
+
+// This is harder to read
+var response = !isValid ? null : content;
 ```
 
 ⛔ **DO NOT** abuse null safety checks in a way that breaks the null semantics of a type in the interest of defensive coding. This can create confusion about what can be null and cascade from there as other developers extend the code.
