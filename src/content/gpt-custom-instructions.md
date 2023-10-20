@@ -17,8 +17,10 @@ Photo by <a href="https://unsplash.com/@jamietempleton?utm_content=creditCopyTex
 Artificial Intelligence (AI) has become an indispensable asset in various fields, including software engineering. One of the AI tools that stands out is ChatGPT, particularly due to its ability to understand and adapt to custom instructions provided by the user. This feature enhances the dialogue between the user and the AI, ensuring that the responses are tailored to the user's needs and expectations. This article dissects the custom instructions mechanism using a seasoned Software Engineering Technical Lead's instructions as a case study.
 
 ChatGPT is designed to enhance the interaction between the user and the AI by taking into consideration two key questions:
-What would you like ChatGPT to know about you to provide better responses?
-How would you like ChatGPT to respond?
+
+1. What would you like ChatGPT to know about you to provide better responses?
+1. How would you like ChatGPT to respond?
+
 These questions are critical as they form the basis of the custom instructions that guide the AI in delivering precise and useful responses.
 
 Consider a Software Engineering Technical Lead with rich expertise in a variety of technologies and methodologies. They provided the following detailed instructions to ChatGPT:
@@ -26,11 +28,21 @@ Consider a Software Engineering Technical Lead with rich expertise in a variety 
 > What would you like ChatGPT to know about you to provide better responses?
 
 ```markdown
-I'm a seasoned Software Engineering Technical Lead with expertise in .NET, TypeScript, React, and Kubernetes. My cloud solutions proficiency spans AWS and Azure, especially Azure DevOps and Pipelines. Currently operating out of the United Kingdom, I have a strong inclination towards Clean Architecture and the C4 model, underpinning my commitment to modular and scalable design principles.
+I'm a seasoned Software Engineering Technical Lead with expertise in .NET, TypeScript, React, and Kubernetes.
 
-Engineering excellence is at the heart of what I do, emphasizing best practices, robust security, and peak efficiency. I'm deeply passionate about mentoring and fostering growth in others, always aiming to share knowledge and develop skills. I champion reproducibility in operations, leaning heavily on infrastructure-as-code and comprehensive runbooks.
+My cloud solutions proficiency spans AWS and Azure, especially Azure DevOps and Pipelines.
 
-When it comes to testing, I lean towards xUnit, Moq, and Fluent Assertions to ensure robustness. In my coding endeavours, I prioritize code that's both succinct and highly readable, striking the right balance for maintainability and understanding.
+Currently I am operating out of the United Kingdom, I have a strong inclination towards Clean Architecture and the C4 model, underpinning my commitment to modular and scalable design principles.
+
+Engineering excellence is at the heart of what I do, emphasizing best practices, robust security, and peak efficiency.
+
+I'm deeply passionate about mentoring and fostering growth in others, always aiming to share knowledge and develop skills.
+
+I champion reproducibility in operations, leaning heavily on infrastructure-as-code and comprehensive runbooks.
+
+When it comes to testing, I lean towards xUnit, Moq, and Fluent Assertions to ensure robustness.
+
+In my coding endeavours, I prioritize code that's both succinct and highly readable, striking the right balance for maintainability and understanding.
 ```
 
 The example provides a detailed narrative of their professional background, expertise, and core values. This information is a treasure trove for ChatGPT, enabling it to align its responses with the user's technical acumen and professional ethos. The mention of specific technologies, methodologies, and geographical locations gives ChatGPT a context that is crucial in tailoring the responses.
