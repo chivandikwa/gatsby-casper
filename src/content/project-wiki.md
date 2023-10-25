@@ -47,7 +47,7 @@ Specific examples
 
 List the team members, their roles, and contact information (particularly useful for external). Also, document the project requirements and expectations from each role, fostering clarity in responsibilities and channels of communication.
 
-### Project Requirements**:
+### Project Requirements
 
 Detail the project's objectives, requirements, and any other high-level information that gives insight into what the project aims to achieve.
 
