@@ -20,7 +20,7 @@ This post aims to showcase not just the structural makeup of a well-curated Pull
 
 However, the effectiveness of this practice relies on the quality of the information provided within a PR. An ill-described PR can easily become a hole of iterative clarifications, delayed merges, and potentially missed deadlines. Here's where a Pull Request Template comes into play. A well-structured PR template serves to give clarity, ensuring that every proposed change is accompanied by sufficient context, visual aids, and a checklist ensuring its readiness for review. In essence, a PR template is not just a tool, but a culture-enhancer.
 
-A Pull Request (PR) Template is a predefined file that provides a structured format for developers to fill out when they create a new Pull Request on platforms such as GitHub or Bitbucket. The template is automatically populated in the pull request description field when a new pull request is created. The primary aim is to ensure consistency and quality in the information provided with each pull request, which in turn facilitates a smoother review process and better collaboration among team members.
+A Pull Request (PR) Template is a predefined file that provides a structured format for developers to fill out when they create a new Pull Request on platforms such as GitHub, Azure DevOps or Bitbucket. The template is automatically populated in the pull request description field when a new pull request is created. The primary aim is to ensure consistency and quality in the information provided with each pull request, which in turn facilitates a smoother review process and better collaboration among team members.
 
 Let's see an example of a simplistic yet effective PR template and dissect its potential impact:
 
