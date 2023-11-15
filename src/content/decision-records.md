@@ -11,128 +11,92 @@ excerpt: track all decisions of architectural significance
 
 Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/photos/Q9y3LRuuxmg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-# Adopt decision records
+# Architecture Decision Records (ADRs)
 
-A Decision Record (DR) is a software design choice documentation that addresses a functional or non-functional requirement that is architecturally significant. This might, for instance, be a technology choice (React vs. Angular), a choice of the IDE (Visual Studio Code vs. Visual Studio), a choice between a library (formik vs final form), or a decision on features (infinite undo vs. limited undo).
+An Architecture Decision Record (ADR) is a software design choice documentation that addresses a functional or non-functional requirement that is architecturally significant.
 
 Having this record keeping allows the team to easily go back in time to understand the current status and be better able to pivot with complete knowledge. These prove very useful for new joiners as well. Another key thing is that when the team decides on something and someone is tasked with putting it down as a record, often that could identify gaps or misalignment and allow addressing this early on particularly when examples are involved.
 
-## Template
 
-```markdown
-# NUMBER - Title
+## Example
+---
+# Adopt SQL Temporal Tables for time travel
 
-Created: [YYYY-MM-DD] when the decision was created]
+> Created: 2023-01-01
 
-Updated: [YYYY-MM-DD] when the decision was last updated]
+> Updated: 2023-01-05
 
-Participants: [list involved participants/team]
+> Participants: Entire Tech Team
 
 ## Status
 
-`[Proposed | Rejected | Accepted | Deprecated | … | Superseded by [10-xxx](10-xxx.md)]`
+Accepted
 
 ## Context
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question]
+
+We are building an Analytics databases that needs to keep track of historical data, and we need to decide on the best way to implement this feature.
+
+## Alternatives
+
+- ...
+
+- SQL Temporal Tables: This approach involves using the built-in SQL temporal table feature to automatically track the history of a table. This approach allows for easy querying of historical data, and does not require additional storage as the history is stored in the same table as the current data.
 
 ## Decision
+We will use the SQL Temporal Tables approach for tracking history.
 
-[This is the decision that was made if any alternatives were considered, list them here]
+## Reasoning
+SQL Temporal Tables allow for easy querying of historical data. It also allows to store the history of a table in a transparent way, and easy to use.
 
-## Consequence
+### Pros
 
-[This is the consequence of the decision]
-```
+- Temporal tables allow for easy tracking and querying of historical data.
+- ...
 
-## Guidelines
+### Cons
+
+- Temporal tables can add complexity to a database schema.
+- ...
+---
+
+## Authoring recommendations
 
 ✅ **DO** ensure that the records are immutable. The decisions made in a previously published ADR should not be altered in a way that changes the decision, a new record should be made in the interest of maintaining the history.
 
 ✅ **DO** ensure that each record is specific to one decision only.
 
-✅ **DO** ensure that all decisions are consistent with other team and enterprise agreed-upon principles and standards.
+✅ **DO** ensure that all decisions are consistent with other team and organization agreed-upon principles and standards.
 
-✅ **DO** reference other detailed documentation and supporting artifacts. Particularly avoid duplications.
+✅ **DO** reference other detailed documentation and supporting artifacts to avoid duplications.
 
 ✅ **DO** ensure that you document a clear argument as this is as important as the decision. Outline the position, including things like implementation cost, ownership cost, resource requirements, etc.
 
-✅ **DO** follow a minimalist approach and document only the issues that need addressing.
+✅ **DO** follow a minimalist approach and document only the issues that need addressing or attention.
 
-## Example
+## Template
+---
+# NUMBER - Title
 
-```
-# 2 - Adopt more use of trailing commas
+> Created: [YYYY-MM-DD] when the decision was created
 
-Created: 2021-08-18
+> Updated: [YYYY-MM-DD] when the decision was last updated
 
-Updated: 2021-08-18
-
-Participants: Team
+> Participants: [list involved participants/team]
 
 ## Status
 
-`Accepted`
+Proposed | Rejected | Accepted | Deprecated | … | Superseded by [Another Run Book Link]
 
 ## Context
 
--   Auto merge often results in broken code on addressing addition to lists from multiple branches, particularly with things like constants files, enums, list definitions, etc.
-
--   Diffs appear dirtier as each addition to a list shows the previous line as having changed as well due addition of a comma at the end
+Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question
 
 ## Decision
 
-1. Favor cleaner diff
-
-1. Favor safer merges
-
-We shall add trailing commas where applicable going forward
-
-### Typescript examples
-
-✅ **DO** trailing comma in multiline literals
-
-
-var arr = [
-    1,
-
-    2,
-
-    3,
-];
-
-var object = {
-    foo: "bar",
-
-    baz: "qwerty",
-
-    age: 42,
-};
-
-
-✅ **DO** use a trailing comma with multiline destructuring
-
-
-var o = {
-    p: 42,
-
-    q: true,
-};
-
-
-✅ **DO** use a trailing comma in multiline named imports
-
-
-import { A, B, C } from "D";
-
-
-✅ **DO** use a trailing comma in single-line versions of the examples shown above. This is mainly useful in multiline scenarios but keep in mind as these single-line definitions grow they can be formatted to multiline.
-
-⛔ **DO NOT** use trailing commas in JSON, that would not be valid
-
-⛔ **DO NOT** use trailing comma in function parameters. Given the problem context, this is unlikely to be useful
+This is the decision that was made if any alternatives were considered, list them here
 
 ## Consequence
 
-N/A
-```
+This is the consequence of the decision
+---
