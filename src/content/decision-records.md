@@ -19,6 +19,7 @@ Having this record keeping allows the team to easily go back in time to understa
 
 
 ## Example
+
 ---
 # Adopt SQL Temporal Tables for time travel
 
@@ -44,9 +45,11 @@ We are building an Analytics databases that needs to keep track of historical da
 - SQL Temporal Tables: This approach involves using the built-in SQL temporal table feature to automatically track the history of a table. This approach allows for easy querying of historical data, and does not require additional storage as the history is stored in the same table as the current data.
 
 ## Decision
+
 We will use the SQL Temporal Tables approach for tracking history.
 
 ## Reasoning
+
 SQL Temporal Tables allow for easy querying of historical data. It also allows to store the history of a table in a transparent way, and easy to use.
 
 ### Pros
@@ -75,6 +78,7 @@ SQL Temporal Tables allow for easy querying of historical data. It also allows t
 ✅ **DO** follow a minimalist approach and document only the issues that need addressing or attention.
 
 ## Template
+
 ---
 # NUMBER - Title
 
