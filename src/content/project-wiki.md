@@ -6,7 +6,7 @@ author: [Thulani S. Chivandikwa]
 date: 2023-10-25T00:00:00.000Z
 tags: [wiki, documentation, project wiki]
 draft: false
-excerpt: A Pillar of Project Transparency and Efficiency
+excerpt: Project Transparency and Efficiency
 ---
 
 Photo by <a href="https://unsplash.com/@wesleyphotography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Wesley Tingey</a> on <a href="https://unsplash.com/photos/stack-of-books-on-table-snNHKZ-mGfE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

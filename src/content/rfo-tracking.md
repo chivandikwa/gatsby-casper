@@ -4,7 +4,7 @@ title: Reason for Outage tracking
 image: img/unsplash/ehmitrich-y4aUBTWgzgQ-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
-tags: [production, tracking, incidents]
+tags: [outage tracking, reason for outage, incidents]
 draft: false
 excerpt: history of production issues
 ---

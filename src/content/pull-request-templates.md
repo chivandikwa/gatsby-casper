@@ -6,7 +6,7 @@ author: [Thulani S. Chivandikwa]
 date: 2023-10-25T00:00:00.000Z
 tags: [pull request template, pull request, code review]
 draft: false
-excerpt: Enriching Code Review Culture with Pull Request Templates
+excerpt: Enriching Code Review Culture
 ---
 
 Photo by <a href="https://unsplash.com/@glenncarstenspeters?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/photos/person-writing-bucket-list-on-book-RLw-UC03Gwc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

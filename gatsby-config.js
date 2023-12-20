@@ -148,7 +148,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Ghost's Blog",
+            title: 'Drunk on Monads RSS Feed',
             match: '^/blog/',
           },
         ],

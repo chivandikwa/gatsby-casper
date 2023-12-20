@@ -4,9 +4,9 @@ title: Python type hints
 image: img/unsplash/javier-allegue-barros-C7B-ExXpOIE-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2020-04-01T00:00:00.000Z
-tags: [python]
+tags: [python type hint, python typing]
 draft: false
-excerpt: a primer to statically indicating types in python
+excerpt: Primer to statically indicating types in python
 ---
 
 Photo by <a href="https://unsplash.com/pt-br/@soymeraki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Javier Allegue Barros</a> on <a href="https://unsplash.com/photos/C7B-ExXpOIE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
