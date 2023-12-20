@@ -3,8 +3,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Thulani S. Chivandikwa',
-    description: 'software development banter!',
+    title: 'Drunk on Monads: Great place to navigate the dev landscape',
+    description: 'Explore insightful and practical guides on software development and industry best practices. Join me for engaging and informative content tailored for you!',
     siteUrl: 'http://www.drunkonmonads.com/',
   },
   mapping: {
@@ -93,7 +93,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-casper.netlify.com',
+        siteUrl: 'https://www.drunkonmonads.com',
       },
     },
     'gatsby-plugin-typescript',
