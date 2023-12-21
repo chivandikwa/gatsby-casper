@@ -91,6 +91,21 @@ module.exports = {
     },
     'gatsby-transformer-json',
     {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/*": [
+            "Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self';",
+            "X-Frame-Options: DENY",
+            "X-Content-Type-Options: nosniff",
+            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
+            "X-XSS-Protection: 1; mode=block",
+            "Referrer-Policy: no-referrer-when-downgrade",
+          ],
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: 'https://www.drunkonmonads.com',
