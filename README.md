@@ -37,6 +37,16 @@ Either disable subscribe or setup a mailchimp list and add the form action and h
 
 Now push to whatever repo you want!
 
+```
+npm install
+
+# If you have issues with sharp, run the following command
+npm install sharp
+npm rebuild sharp --force
+
+npm run dev
+```
+
 ### Progress
 
 - [x] emotion / component styles
