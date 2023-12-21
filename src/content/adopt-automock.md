@@ -4,9 +4,9 @@ title: Adopt AutoMock with Autofac and Moq
 image: img/unsplash/sander-sammy-q7ZlbWbDnYo-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
-tags: [automock, autofac, moq]
+tags: [.net unit tests, mocking frameworks, efficient software testing]
 draft: false
-excerpt: hassle free mocking
+excerpt: Learn how AutoMock simplifies mocking of service dependencies, reduces test maintenance, and enhances test suite robustness
 ---
 
 Photo by <a href="https://unsplash.com/@sammywilliams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sander Sammy</a> on <a href="https://unsplash.com/photos/q7ZlbWbDnYo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -15,21 +15,21 @@ Photo by <a href="https://unsplash.com/@sammywilliams?utm_source=unsplash&utm_me
 
 ## Context
 
-- The effort of mocking services is quite high given the typical number of dependencies
+While the effort of manually mocking services in .NET tests can be high, understanding the underlying mechanism of AutoMock can greatly reduce this complexity. AutoMock, when integrated with Autofac and Moq, not only simplifies the process but also provides a more intuitive approach to creating mocks. Here's a deeper exploration of how AutoMock works
 
-- Mocking service dependencies manually in tests creates fragile tests that will need updating each time those dependencies change. Ideally, tests should change when the behavior of interest changes.
+Mocking service dependencies manually in tests creates fragile tests that will need updating each time those dependencies change. Ideally, tests should change when the behaviour of interest changes.
 
 ## Problem scenario:
 
 ```csharp
 
 var sut = new SomeService(
-        Mock.Of<IDependency1>(),
-        Mock.Of<IDependency2>(),
-        Mock.Of<IDependency3>(),
-        Mock.Of<IDependency4>(),
-        dataContext,
-    );
+        Mock.Of<IDependency1>(),
+        Mock.Of<IDependency2>(),
+        Mock.Of<IDependency3>(),
+        Mock.Of<IDependency4>(),
+        dataContext,
+    );
 
 ```
 
@@ -49,7 +49,7 @@ var sut = autoMock.Create<SomeService>();
 
 ```
 
-Now if `SomeService` were to have an additional dependency injected via the ctor which does not affect the behavior we are testing, there is no need to update the test(s) as this will just get auto-mocked, ideally what we would have done manually anyway.
+Now if `SomeService` were to have an additional dependency injected via the ctor which does not affect the behaviour we are testing, there is no need to update the test(s) as this will just get auto-mocked, ideally what we would have done manually anyway.
 
 ### Additional cases:
 
@@ -59,16 +59,16 @@ var autoMock = AutoMock.GetLoose(c =>
 
 {
 
-    // if you need a real instance of a dependency, auto mock will transitively mock the concrete implementation's own dependencies as well
+    //If you need a real instance of a dependency, auto mock will transitively mock the concrete implementation's dependencies as well
 
-    c.RegisterType<Dependency1>().As<IDependency1>();
+    c.RegisterType<Dependency1>().As<IDependency1>();
 
-    c.RegisterInstance(dataContext);
+    c.RegisterInstance(dataContext);
 
 });
 
 
-// setup and verifications can be done on the mocks using Moq's API as
+//Setup and verifications can be done on the mocks using Moq's API as
 
 autoMock.Mock<IDependency1>().Setup(...);
 
@@ -86,4 +86,5 @@ A great thing about Auto mock is that it exposes the Moq API, meaning everything
 
 - The code can be made more succinct and easier to read
 
-> ℹ Often when a service is updated to add a new dependency, this indicates new behavior and likely means you would add new tests, not modify existing ones. With this approach, you do not have to update the tests.
+> ℹ Often when a service is updated to add a new dependency, this indicates new behaviour and likely means you would add new tests, not modify existing ones. With this approach, you do not have to update the tests.
+Is Onboarded To Portal

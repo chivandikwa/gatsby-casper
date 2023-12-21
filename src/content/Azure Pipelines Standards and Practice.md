@@ -4,9 +4,9 @@ title: Azure Pipelines Standards and Practices
 image: img/unsplash/jj-ying-4XvAZN8_WHo-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-02-19T00:00:00.000Z
-tags: [azure, pipelines, ci/cd]
+tags: [Azure DevOps Best Practices, CI/CD Pipeline Optimization, Azure Pipelines Conventions]
 draft: false
-excerpt: Azure pipelines standards and practices
+excerpt: Discover the best practices for setting up and managing Azure Pipelines for your projects.
 ---
 
 Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/photos/4XvAZN8_WHo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -85,7 +85,7 @@ By following a consistent naming standard like this, it's easier to quickly iden
 
 ✅ **DO** that you only download required artefacts to keep your pipelines lean.
 
-🎇 **DO** consider comments in your pipelines for things that may not be easy to understand. However, avoid commenting on every single line and assume a basic understanding of Azure Pipelines as a pre-requisite for any reader.
+🎇 **DO** consider comments in your pipelines for things that may not be easy to understand. However, avoid commenting on every single line and assume a basic understanding of Azure Pipelines as a prerequisite for any reader.
 
 🎇 **DO** consider built-in tasks, particularly platform-independent ones to increase the portability of your pipelines over using things like PowerShell tasks.
 
@@ -183,7 +183,7 @@ variables:
 - group: MyVariableGroup
 
 # Templates can be used to share pipeline configuration across projects
-# In this example, we have separate templates for .NET Core builds, tests, and publish
+# In this example, we have separate templates for .NET Core builds, tests and publish
 # These templates can be reused across different projects with minor modifications
 templates:
 - template: templates/dotnet-core-build.yml
@@ -242,7 +242,7 @@ Here's a breakdown of each component of the naming standard:
   {testType}: the type of test being run, such as unit, integration, or end-to-end.
   - {platform}: the platform being tested on, such as linux-x64 or windows-x64.
 
-By following a consistent naming standard like this, it's easier to quickly identify and locate the   pipelines you need within Azure DevOps.
+By following a consistent naming standard like this, it's easier to quickly identify and locate the pipelines you need within Azure DevOps.
 
 ✅ **DO** use templates to share pipeline configuration across projects. This ensures consistency in pipeline design and makes it easier to maintain pipelines.
 
@@ -270,7 +270,7 @@ By following a consistent naming standard like this, it's easier to quickly iden
 
 > ℹ️ A healthy build and deployment process is only as good as the monitoring and alerting in place. Ensure that you have appropriate notifications and reporting in place so that you can quickly identify and remediate any issues that arise
 
-⛔ **DO NOT** use pipeline variables to store sensitive data such as secrets, keys, or passwords. Instead, use Azure Key Vault or similar secure storage service.
+⛔ **DO NOT** use pipeline variables to store sensitive data such as secrets, keys, or passwords. Instead, use Azure Key Vault or a similar secure storage service.
 
 ⛔ **DO NOT** create overly complex pipelines with unnecessary steps or dependencies. This can lead to longer build times and an increased risk of failure. Keep pipelines simple and focused on the task at hand.
 

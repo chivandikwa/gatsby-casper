@@ -4,9 +4,9 @@ title: AWS Best Practices
 image: img/unsplash/jon-tyson-1Mq4QQaVhis-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-06-30T10:00:00.000Z
-tags: [.net]
+tags: [AWS Best Practices Guide, Cloud Infrastructure Optimization, Security and Compliance in AWS]
 draft: false
-excerpt: navigate the cloud right
+excerpt: Discover the essential AWS best practices to navigate the cloud right.
 ---
 
 Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jon Tyson</a> on <a href="https://unsplash.com/backgrounds/cool/best?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -15,7 +15,7 @@ Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=
 
 ## General
 
-✅ **DO** come up with a complete and documented disaster recovery process for all the services and workloads you utilize in AWS. Regularly review and run through the process to ensure that it stays up to date and the team has the skills to execute it. Have a clear definition of the time to recovery and point of recovery for your workloads.
+✅ **DO** come up with a complete and documented disaster recovery process for all the services and workloads you utilize in AWS. Regularly review and run through the process to ensure that it stays up to date and that the team has the skills to execute it. Have a clear definition of the time to recovery and point of recovery for your workloads.
 
 ## IAM
 
@@ -25,7 +25,7 @@ Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=
 
 ✅ **DO** isolate resources by environment so that generated keys access only have access to the environment it is used in. For example, development keys should not be able to access production stacks.
 
-⛔ **DO NOT** set up any AWS accounts with console access that does not have MFA enabled.
+⛔ **DO NOT** set up any AWS accounts with console access that do not have MFA enabled.
 
 ⛔ **DO NOT** login with a root account for day-to-day operations. IAM users/roles with specific permissions to the operation should be used instead. Root accounts should only be used for operations that cannot be done with any other account.
 
@@ -45,7 +45,7 @@ Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=
 
 > ⚠️ This may not be ideal. The benefit of being able to get the artifacts by release number even months if not years from now may outweigh any cost implications of storing images so make this decision very carefully.
 
-> ⚠️ Unfortunately the current implementation of the policies do not work well with semantic versioning making it difficult to automate a cleanup. There is an [open request](https://github.com/aws/containers-roadmap/issues/1213) to enable regular expression to facilitate this.
+> ⚠️ Unfortunately the current implementation of the policies do not work well with semantic versioning making it difficult to automate a cleanup. There is an [open request](https://github.com/aws/containers-roadmap/issues/1213) to enable regular expression to facilitate this.
 
 ✅ **DO** use semantic versioning for all images pushed to ECR and consistent naming.
 
@@ -61,7 +61,7 @@ Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=
 
 ✅ **DO** ensure that all repositories have the immutability tag enabled to force tag updates on each push and restrict overwriting prior images.
 
-> ⚠️ For reproducibility it is imperative that images are immutable and for security purposes, this thwarts the possibility for attackers to push malicious versions by taking advantage of a tag that is already being pulled.
+> ⚠️ For reproducibility images must be immutable and for security purposes, this thwarts the possibility for attackers to push malicious versions by taking advantage of a tag that is already being pulled.
 
 ## EC2
 
@@ -69,7 +69,7 @@ Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=
 
 ✅ **DO** ensure that instances that have a burstable instance type have the credit specification set to enable unlimited mode.
 
-> ℹ️ If the average CPU utilization over a 24-hour period exceeds the baseline, you incur charges for surplus credits. Which is likely okay and desired for critical workloads.
+> ℹ️ If the average CPU utilization over 24 hours exceeds the baseline, you incur charges for surplus credits. Which is likely okay and desired for critical workloads.
 
 ✅ **DO** ensure that instances have termination protection enabled, which ensures that someone does not accidentally terminate an instance, an action that cannot be undone.
 
@@ -93,7 +93,7 @@ Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=
 
 ✅ **DO** make use of VPCs to logically isolate instances from the rest of the AWS cloud.
 
-✅ **DO** create any key pairs using one of the two supported formats consistently, otherwise, keys can be cross converted between PEM and PPK using tools like putty-gen.
+✅ **DO** create any key pairs using one of the two supported formats consistently, otherwise, keys can be cross-converted between PEM and PPK using tools like putty-gen.
 
 ✅ **DO** make use of the most specific AMI for a workload. AMIs with the least dependencies and features that come packaged/enabled are better as these would have a smaller attack surface area therefore always choose one that provides only what is required.
 
@@ -103,23 +103,23 @@ Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=
 
 ✅ **DO** ensure that the account billing settings have the option to receive AWS Free Tier usage alerts always enabled.
 
-> These AWS Free Tier usage alerts allow AWS to notify you when you're exceeding 85 percent of your usage for the month. This off course can generate noise for non-expiring AWS free tier offerings.
+> These AWS Free Tier usage alerts allow AWS to notify you when you're exceeding 85 per cent of your usage for the month. This of course can generate noise for non-expiring AWS free tier offerings.
 
 > ⚠️ You must avoid browsing the internet on an instance by all means. If you must download something from the internet rather download it on your machine and copy it over. While the security group will act as a firewall for incoming traffic there is a caveat, if the incoming traffic is in response to a request it will come through, which is why one must avoid accessing the internet from any instances to avoid exposing the instance to attackers.
 
 ✅ **DO** regularly patch, update, and secure the operating system and applications on your instance.
 
-✅ **DO** separate Amazon EBS volumes for the Operating System vs and data and further group data on multiple volumes if possible i.e database backups vs database logs.
+✅ **DO** separate Amazon EBS volumes for the Operating System vs data and further group data on multiple volumes if possible i.e. database backups vs database logs.
 
 ⛔ **DO NOT** have any instances without encrypted EBS volumes or snapshots.
 
-⛔ **DO NOT** create any snapshots or AMIs that are in a public catalog.
+⛔ **DO NOT** create any snapshots or AMIs that are in a public catalogue.
 
 ⛔ **DO NOT** create security groups that open any traffic to the internet, including for developer access such as SSH and RDP. Any required access for servers that do not hold production workloads or client data should be via the session manager when possible.
 
 ⛔ **DO NOT** mishandle or lose access to access keys used to create instances. These should be stored securely as they are required to access the instances.
 
-⛔ **DO NOT** disable EC2 instance metadata as this is required by various AWS services including Systems Manager for automated scanning and patching of EC2 instances. This means the `http-endpoint` flag should always be set to `enabled`. To enforce security, however, set the `http-tokens` option to `required` which enforces sending a signed token header with any instance metadata retrieval request and hence requires an IAM role which is harder to be exploited. Additionally the `http-put-response-hop-limit` is also set to `1`.
+⛔ **DO NOT** disable EC2 instance metadata as this is required by various AWS services including Systems Manager for automated scanning and patching of EC2 instances. This means the `http-endpoint` flag should always be set to `enabled`. To enforce security, however, set the `http-tokens` option to `required` which enforces sending a signed token header with any instance metadata retrieval request and hence requires an IAM role which is harder to exploit. Additionally the `http-put-response-hop-limit` is also set to `1`.
 
 ⛔ **DO NOT** make use of Internet Explorer or Chrome on EC2 instances as they are not very secure. Firefox should be the browser used on all instances.
 

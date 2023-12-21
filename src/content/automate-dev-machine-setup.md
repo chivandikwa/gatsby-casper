@@ -4,9 +4,9 @@ title: Automating developer machine setup
 image: img/unsplash/charlesdeluvio-pjAH2Ax4uWk-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T09:00:00.000Z
-tags: [setup, automation, productivity]
+tags: [Developer Machine Setup Automation, Efficient Software Developer Machine Configuration, Developer Productivity Enhancement]
 draft: false
-excerpt: Setup automation
+excerpt: Say goodbye to manual developer machine configuration hassles and discover a more efficient way to set up your developer environment with Chocolatey, and a simple JavaScript script.
 ---
 
 Photo by <a href="https://unsplash.com/@charlesdeluvio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">charlesdeluvio</a> on <a href="https://unsplash.com/photos/pjAH2Ax4uWk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
