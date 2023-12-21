@@ -131,7 +131,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   filter: { frontmatter: { draft: { ne: true } } }
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } }
                 ) {
                   edges {
                     node {
@@ -165,11 +165,11 @@ module.exports = {
       options: {
         trackingIds: ['G-JXKC1BH4DB'],
         pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
+        // Puts tracking script in the head instead of the body
+        head: true,
           // Setting this parameter is also optional
-          respectDNT: true,
-          // Avoids sending pageview hits from custom paths
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
           // exclude: [],
           // Defaults to https://www.googletagmanager.com
           // origin: "YOUR_SELF_HOSTED_ORIGIN",

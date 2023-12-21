@@ -24,9 +24,9 @@ import {
   SiteHeaderStyles,
 } from '../styles/shared';
 import config from '../website-config';
-import { PageContext } from './post';
+import type { PageContext } from './post';
 
-export interface IndexProps {
+export type IndexProps = {
   children: React.ReactNode;
   pageContext: {
     currentPage: number;
@@ -41,7 +41,7 @@ export interface IndexProps {
       }>;
     };
   };
-}
+};
 
 function IndexPage(props: IndexProps) {
   const width = getImage(props.data.header)?.width;
@@ -91,7 +91,7 @@ function IndexPage(props: IndexProps) {
               <SiteTitle className="site-title">
                 {props.data.logo ? (
                   <img
-                    style={{ maxHeight: '55px' }}
+                    style={{ maxHeight: '55px', height: '55px' }}
                     src={getSrc(props.data.logo)}
                     alt={config.title}
                   />
@@ -106,14 +106,13 @@ function IndexPage(props: IndexProps) {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) =>
-                // filter out drafts in production
-                (
-                  (post.node.frontmatter.draft !== true
-                    || process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                  )
-                ),
+              {props.data.allMarkdownRemark.edges.map(
+                (post, index) =>
+                  // filter out drafts in production
+                  (post.node.frontmatter.draft !== true ||
+                    process.env.NODE_ENV !== 'production') && (
+                    <PostCard key={post.node.fields.slug} post={post.node} isLarge={index === 0} />
+                  ),
               )}
             </div>
           </div>
@@ -140,11 +139,11 @@ export const pageQuery = graphql`
     }
     header: file(relativePath: { eq: "img/blog-cover.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 2000, quality: 100, layout: FIXED)
+        gatsbyImageData(width: 2000, quality: 100, layout: FIXED, formats: [AUTO, WEBP, AVIF])
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip
@@ -159,7 +158,7 @@ export const pageQuery = graphql`
             excerpt
             image {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
+                gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP, AVIF])
               }
             }
             author {

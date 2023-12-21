@@ -13,15 +13,15 @@ import { Twitter } from '../icons/twitter';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 
-interface SiteNavProps {
+type SiteNavProps = {
   isHome?: boolean;
   isPost?: boolean;
   post?: any;
-}
+};
 
-interface SiteNavState {
+type SiteNavState = {
   showTitle: boolean;
-}
+};
 
 class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   subscribe = React.createRef<SubscribeModal>();
@@ -48,7 +48,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   }
 
   onScroll = () => {
-    if (!this.titleRef || !this.titleRef.current) {
+    if (!this.titleRef?.current) {
       return;
     }
 
@@ -60,7 +60,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   };
 
   update = () => {
-    if (!this.titleRef || !this.titleRef.current) {
+    if (!this.titleRef?.current) {
       return;
     }
 
