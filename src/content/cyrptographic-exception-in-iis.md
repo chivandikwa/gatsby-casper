@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Resolve Cyrptographic Exception in IIS
+title: Resolve Cryptographic Exceptions in IIS
 image: img/unsplash/etienne-girardet-DOKXRZPyQk0-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
-tags: [IIS]
+tags: [IIS, CryptographicException, Load User Profile]
 draft: false
-excerpt: joys of working with IIS
+excerpt: An IIS deployed application throwing a CryptographicException with the message System cannot find the specified file can be a perplexing issue.
 ---
 
 Photo by <a href="https://unsplash.com/fr/@etiennegirardet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Etienne Girardet</a> on <a href="https://unsplash.com/photos/DOKXRZPyQk0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -33,7 +33,7 @@ The user profile is loaded. This includes their cryptographic store, environment
 
 1. Go to the application pool instance
 
-1. Click advanced settings
+1. Click on Advanced settings
 
 1. Under the Process model, set Load User Profile to true
 

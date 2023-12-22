@@ -95,14 +95,13 @@ module.exports = {
       options: {
         headers: {
           "/*": [
-            "Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self';",
+            "Content-Security-Policy: default-src 'self' *.github.com raw.githubusercontent.com *.raw.githubusercontent.com",
             "X-Frame-Options: DENY",
             "X-Content-Type-Options: nosniff",
             "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
             "X-XSS-Protection: 1; mode=block",
             "Referrer-Policy: no-referrer-when-downgrade",
-            "Content-Security-Policy: default-src 'none'; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; img-src 'self' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';",
-            "Permissions-Policy: geolocation=(), microphone=()",
+            "Permissions-Policy: accelerometer=(), microphone=(), ambient-light-sensor=(), camera=(), gyroscope=(), magnetometer=(), payment=(), usb=(), battery=(), display-capture=(), encrypted-media=(), fullscreen=(self)",
           ],
         },
       },

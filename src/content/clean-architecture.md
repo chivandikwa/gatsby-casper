@@ -4,9 +4,9 @@ title: Clean Architecture
 image: img/unsplash/kimon-maritz-mQiZnKwGXW0-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-03-07T10:00:00.000Z
-tags: [clean architecture, ports & adapters, onion]
+tags: [Clean Architecture, APorts & Adapters, Onion Architecture]
 draft: false
-excerpt: Clean Architecture done right
+excerpt: This article summarizes the principles of Clean Architecture based on my own experiences using this architecture in different scenarios.
 ---
 
 Photo by <a href="https://unsplash.com/@kimonmaritz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kimon Maritz</a> on <a href="https://unsplash.com/photos/mQiZnKwGXW0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -15,7 +15,7 @@ Photo by <a href="https://unsplash.com/@kimonmaritz?utm_source=unsplash&utm_medi
 
 This article summarizes the principles of Clean Architecture based on my own experiences using this architecture in different scenarios. Robert C. Martin's [book](https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/) on this topic was an anchor to my understanding of this topic, especially having discovered the book after working on the architecture for a while. I recently read the book again as a refresher before creating this article and therefore this article serves as a summary of the good parts and additions from my own experiences.
 
-[ChatGPT](https://chat.openai.com/) also played a key role in helping me collect my scattered thoughts on the topic into something more structured and to expand on the content.
+[ChatGPT](https://chat.openai.com/) also played a key role in helping me collect my scattered thoughts on the topic into something more structured and expand on the content.
 
 # Architecture
 
@@ -288,7 +288,7 @@ rectangle.Height.Should.Be(20);
 
 ![](Clean-Architecture-Attachments/lsp-shapes-table.jpg)
 
-To adhere to the LSP in this case, we could create separate Square and Rectangle classes, each with its own `SetWidth` and `SetHeight` methods. Alternatively, we could introduce an abstract Shape class or interface that defines the common properties and behaviours of both Rectangle and Square, and then have separate implementations for each.
+To adhere to the LSP in this case, we could create separate Square and Rectangle classes, each with its own `SetWidth` and `SetHeight` methods. Alternatively, we could introduce an abstract Shape class or interface that defines the common properties and behaviours of both Rectangle and Square and then have separate implementations for each.
 
 The key takeaway here is that the Liskov Substitution Principle is not just about substituting objects of a superclass with objects of its subclasses; it's also about ensuring that the subclasses follow the same contract as the superclass, without introducing impure inheritance hierarchies. By following this principle, we can ensure that our software systems are modular, flexible, and maintainable.
 
@@ -421,7 +421,7 @@ Starting with the most stable, we would have what is critical to our operations,
 
 Next, the Use Cases represent the application-specific business rules that are responsible for orchestrating the flow of information and actions between different components in the system. These rules are typically specific to a given application and may involve many moving parts, including entities, interfaces, and other components.
 
-> ℹ️ The direction of the arrows points into the direction of a dependency. That is to say `A -> B`, should be read as `A` depends on `B`, or that `A` knows of `B`. Inversely, this means `B` does not depend on `A` and is not aware of the existence of `A`. This is not to be confused with flow of control, which will be discussed separately.
+> ℹ️ The direction of the arrows points to the direction of a dependency. That is to say `A -> B`, should be read as `A` depends on `B`, or that `A` knows of `B`. Inversely, this means `B` does not depend on `A` and is not aware of the existence of `A`. This is not to be confused with the flow of control, which will be discussed separately.
 
 In the architecture diagram, the Use Cases are shown as being dependent on the entities, which contain the critical business rules that underpin the entire system. Notice the direction of the arrow, which indicates that the Use Cases depend on the entities, but the entities do not depend on the Use Cases.
 
@@ -525,7 +525,7 @@ The million-dollar question is whether you can break these rules and still be fo
 
 > ©️ Photo by [Tingey Injury Law Firm](https://unsplash.com/@tingeyinjurylawfirm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/veNb0DDegzE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-> ⚠️ The above is a very bold remark but very good advice. Once you have a firm understanding of this and have respected the rules enough to gain experience you will stumble upon interesting scenarios that may require trade-offs, like the classic EF Core problem in . NET. You can make a trade-off and break the rule(s), but tread with care.
+> ⚠️ The above is a very bold remark but very good advice. Once you have a firm understanding of this and have respected the rules enough to gain experience you will stumble upon interesting scenarios that may require trade-offs, like the classic EF Core problem in . NET. You can make a trade-off and break the rule(s) but tread with care.
 
 What if I grossly violate the rules anyway, what could go wrong?
 
@@ -954,13 +954,13 @@ public class VouchersController : ControllerBase
 }
 ```
 
-The code shows how to consume the `Adapters/Infrastructure` in an ASP.NET Core application. The `SetupAdapter` method sets up the necessary adapters and initializes them with the services required for the application to work. The `ApplicationOptions` class is used to define options for the voucher generator adapter. The `VouchersController` is a sample ASP.NET Core controller that demonstrates flow of control.
+The code shows how to consume the `Adapters/Infrastructure` in an ASP.NET Core application. The `SetupAdapter` method sets up the necessary adapters and initializes them with the services required for the application to work. The `ApplicationOptions` class is used to define options for the voucher generator adapter. The `VouchersController` is a sample ASP.NET Core controller that demonstrates the flow of control.
 
 We have all the moving parts, what about the project structure? This is quite flexible, and a decision you can make based on your project context or preferences and can leverage onto other patterns and practices you may be using like CQRS (Command Query Responsibility Segregation), DDD (Domain Driven Design), Vertical Slices etc. The key thing is however to continue to respect the dependencies' rules. Let us look at an example project structure.
 
 ![](Clean-Architecture-Attachments/demo-dependency-diagram.png)
 
-We can observe that Domain is maximally stable as it has no outgoing dependencies but has incoming dependencies, which is desirable as this is our policy. Next, we have the Application that knows of the Domain, followed by two adapters VoucherGenerator and Persistence that know of the Domain, hence transitively know of the Domain. Lastly, we have a Web Host that knows of both adapters, as it needs to bootstrap them, and therefore transitively knows of everything. This know-all scenario is expected for Application Hosts and Tests.
+We can observe that the Domain is maximally stable as it has no outgoing dependencies but has incoming dependencies, which is desirable as this is our policy. Next, we have the Application that knows of the Domain, followed by two adapters VoucherGenerator and Persistence that know of the Domain and, hence transitively know of the Domain. Lastly, we have a Web Host that knows of both adapters, as it needs to bootstrap them, and therefore transitively knows of everything. This know-all scenario is expected for Application Hosts and Tests.
 
 Let's observe this again but with transitive references shown.
 
@@ -1004,7 +1004,7 @@ It is essential to understand that tests are not separate from the system being 
 
 # Summary
 
-Give Clean Architecture a try and evaluate for yourself the claims it makes. Overall, however, we can summarize as follow:
+Give Clean Architecture a try and evaluate for yourself the claims it makes. Overall, however, we can summarize as follows:
 
 - Clean Architecture is good for long-term software life
 

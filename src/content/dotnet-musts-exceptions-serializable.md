@@ -19,11 +19,11 @@ Exceptions are an integral part of any software application, and custom exceptio
 
 ## Why Is This Important?
 
-When an exception occurs in an application, it may need to be propagated across different tiers or processes, or even persisted to a log or database. In such cases, the exception object must be serializable so that it can be transmitted or stored. If the exception object is not serializable, it may not be possible to propagate or store it, resulting in loss of valuable debugging information.
+When an exception occurs in an application, it may need to be propagated across different tiers or processes or even persisted to a log or database. In such cases, the exception object must be serializable so that it can be transmitted or stored. If the exception object is not serializable, it may not be possible to propagate or store it, resulting in the loss of valuable debugging information.
 
 The four core constructors provide a way to initialize an exception object with the necessary information. The parameterless constructor initializes the exception object with default values, while the constructor that takes a string message initializes it with a user-defined message. The constructor that takes a string message and an inner exception initializes it with a user-defined message and the inner exception that caused the current exception. Finally, the constructor that takes a SerializationInfo object and a StreamingContext object is used to initialize an exception object during deserialization.
 
-Enforcing this rule ensure consistency as the expectations will always be the same for all custom Exceptions.
+Enforcing this rule ensures consistency as the expectations will always be the same for all custom Exceptions.
 
 ## Enforcing This Using Unit Tests
 

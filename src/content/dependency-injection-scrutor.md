@@ -4,7 +4,7 @@ title: Dependency injection with Scrutor
 image: img/unsplash/mick-haupt-eQ2Z9ay9Wws-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-05-01T19:00:00.000Z
-tags: [scrutor, dependency injection]
+tags: [Scrutor, Dependency Injection, Microsoft.Extensions.DependencyInjection]
 draft: false
 excerpt: Compliment Microsoft.Extensions.DependencyInjection
 ---

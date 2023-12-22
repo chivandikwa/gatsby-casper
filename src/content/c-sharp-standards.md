@@ -4,16 +4,16 @@ title: C# Standards and Best Practices
 image: img/unsplash/gabriel-vasiliu-K-dqI8-cUMQ-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-24T19:00:00.000Z
-tags: [c#, best practices, standards]
+tags: [C#, Best Practices, Standards and Pracites]
 draft: false
-excerpt: practices for disciplined development
+excerpt: A list of recommendations around working with C# and dotnet that can potentially be adopted by a team as standards.
 ---
 
 Photo by <a href="https://unsplash.com/@gabimedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Gabriel Vasiliu</a> on <a href="https://unsplash.com/photos/K-dqI8-cUMQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # C# Standards and Best Practice
 
-A list of recommendations around working with C# and dotnet that can potentially be adopted by a team as standards. I highly recommend a team has very clear and explicit standards documented as below that are agreed upon and enforced.
+A list of recommendations around working with C# and dotnet that can potentially be adopted by a team as standards. I highly recommend teams should have very clear and explicit standards documented, similar to the one below that is agreed upon and enforced.
 
 There are multiple ways to enforce standards
 
@@ -61,7 +61,7 @@ dotnet_diagnostic.CA1068.severity = error
 
 ⛔ **DO NOT** deploy secrets with an application, ideally these should be accessible through a controlled means like environment variables. This principle is particularly important if you adhere to the [12 Factor App]([The Twelve-Factor App (12factor.net)](https://12factor.net/)) way of managing an application.
 
-⛔ **DO NOT** use the `:` character when working with secrets in flat files to create hierarchy, make use of the `__` sequence which is supported by all platforms.
+⛔ **DO NOT** use the `:` character when working with secrets in flat files to create a hierarchy, make use of the `__` sequence which is supported by all platforms.
 
 # Projects
 
@@ -69,7 +69,7 @@ dotnet_diagnostic.CA1068.severity = error
 
 Do adhere to a strict structure of managing projects and consistently/religiously apply this.
 
-✅ **DO** ensure that projects are located in `/src` and their tests are located in `/test`, not just as projects in VS solution explorer but including the file structure. In addition to a clean separation, the projects and tests have separate `Directory.Build.prop` files and `.editorconfig` files. This will decouple rules around code from tests, meaning for instance that Roslyn's analysis is specific to each group and dependencies are managed differently.
+✅ **DO** ensure that projects are located in `/src` and their tests are located in `/test`, not just as projects in VS Solution Explorer but including the file structure. In addition to a clean separation, the projects and tests have separate `Directory.Build.prop` files and `.editorconfig` files. This will decouple rules around code from tests, meaning for instance that Roslyn's analysis is specific to each group and dependencies are managed differently.
 
 ✅ **Consider** adding changes that affect multiple projects and need to be consolidated such as project version numbers and dependencies to `Directory.Build.props` or `Directory.Build.targets`.
 
@@ -120,7 +120,7 @@ This file is used to define project properties and configuration settings. It is
 </Project>
 ```
 
-In the event that you have multiple layers of `director.build.props` files, you can inherit from a base file, for example if you have one at the solution root and a more specific one in the tests folder root that only applies to tests, you can do the following:
+If you have multiple layers of `director.build.props` files, you can inherit from a base file, for example, if you have one at the solution root and a more specific one in the tests folder root that only applies to tests, you can do the following:
 
 ```xml
 <Project>
@@ -184,13 +184,13 @@ For example, you can add a custom target to run a script before or after the bui
 
 using (logger.BeginScope(new Dictionary<string, object>{
 
-    ["CorrelationId"] = id,
+    ["CorrelationId"] = id,
 
 }))
 
 {
 
-    // other method calls
+    // other method calls
 
 }
 
@@ -200,7 +200,7 @@ using (logger.BeginScope("{Operation} running for department {Department}", oper
 
 {
 
-    // other method calls
+    // other method calls
 
 }
 
@@ -219,7 +219,7 @@ using (logger.BeginScope("{Operation} running for department {Department}", oper
 
 ✅ **DO** pay close attention to the data that is exposed in logs, especially when setting log scopes with object destructuring to avoid leaking sensitive information. Any secrets like passwords/API keys (even when encrypted) and personally identifiable information like email addresses should not end up in logs.
 
-✅ **DO** pay close attention to the size of log or metrics payloads. Overly large data payloads should be avoided. As a safety net where possible set the config of your logger such as `Serilog` to limit the depth of destructuring and caps the string length, but care is still required as this can be bypassed with context and scopes.
+✅ **DO** pay close attention to the size of log or metrics payloads. Overly large data payloads should be avoided. As a safety net where possible set the config of your logger such as `Serilog` to limit the depth of destructuring and cap the string length, but care is still required as this can be bypassed with context and scopes.
 
 Serilog example
 
@@ -274,9 +274,9 @@ Serilog Example
 }
 ```
 
-✅ **DO** bootstrap the logging and the application annotations (read by scrapping agents) in a way that ensures that at minimum logs/metrics are identifiable with what application sent the log, the level of the log, the source of the log (class/controller/action name, etc.), the deployment stack (i.e. k8s namespace) and other information like application region that are applicable. Additional information such as request hostname, accessed resource ids, etc. can further enrich logs.
+✅ **DO** bootstrap the logging and the application annotations (read by scrapping agents) in a way that ensures that at minimum logs/metrics are identifiable with what application sent the log, the level of the log, the source of the log (class/controller/action name, etc.), the deployment stack (i.e. k8s namespace) and other information like application region that are applicable. Additional information such as request hostname, accessed resource IDs, etc. can further enrich logs.
 
-✅ **DO** tag logs that are not useful except in exceptional cases as `Debug` so that these by default are not shipped out to the sink. In the event of the exceptional need for these logs then the configuration can be updated to include `Debug` logs. Examples of these kinds of logs are generated SQL queries from EF Core and transactional logs such as indicating the start of a job.
+✅ **DO** tag logs that are not useful except in exceptional cases as `Debug` so that these by default are not shipped out to the sink. In the event of an exceptional need for these logs then the configuration can be updated to include `Debug` logs. Examples of these kinds of logs are generated SQL queries from EF Core and transactional logs such as indicating the start of a job.
 
 ⛔ **DO NOT** ship logs directly to a log target. In the case of docker-based deployments like Kubernetes, a sidecar agent is responsible for scrapping pod logs and ensuring that they get shipped out to the sink and any other heavy lifting like dealing with network issues, buffering, etc.
 
@@ -284,19 +284,19 @@ Serilog Example
 
 ⛔ **DO NOT** hard code any logger configuration. These values should also be set in the application configuration to allow for flexibility in updating this in production environments without having to create new releases.
 
-⛔ **DO NOT** use highly unique values for metric tags and log context like GUID ids. This applies a strain on indexing of these logs and metrics and while tools in use may apply constraints on these or result in increased cost of usage. Instead use values you would likely be applying bucketing of data on like request method type, response status code, exception type, etc.
+⛔ **DO NOT** use highly unique values for metric tags and log context like GUID IDs. This applies a strain on indexing of these logs and metrics and while tools in use may apply constraints on these or result in increased cost of usage. Instead use values you would likely be applying to bucket of data on like request method type, response status code, exception type, etc.
 
 ⛔ **DO NOT** use string interpolation with logs. Instead, adopt the [message templates](https://messagetemplates.org/) approach of structured logging.
 
 A couple of reasons
 
-- Logs that are highly unique are a strain on log indexes for log targets
+- Highly unique Logs are a strain on log indexes for log targets
 
 ```csharp
 
 _logger.LogInformation($"Deleting file: {job.FileContentId}");
 
-// this creates unique logs for each file
+//This creates unique logs for each file
 
 ```
 
@@ -310,7 +310,7 @@ _logger.LogInformation("Deleting file: {FileContentId}", job.FileContentId);
 
 
 
-// this would allow searching by 'Deleting file: {FileContentId}'
+//This would allow searching by 'Deleting file: {FileContentId}'
 
 ```
 
@@ -324,7 +324,7 @@ _logger.LogInformation("Deleting file: {FileContentId}", job.FileContentId);
 
 - run fast
 - not break often or be flaky
-- not be high maintenance
+- not be high-maintenance
 - easy to read and understand
 - have the same style and diligence as the code being tested
 - be deterministic
@@ -337,17 +337,17 @@ _logger.LogInformation("Deleting file: {FileContentId}", job.FileContentId);
 - 🪄 Magic values
 - 😔 Not writing tests because `they are difficult` or something is `untestable`
 - 🔫 Shotgun surgery (has to use unhealthy ways to perform tasks like reading private methods with reflection)
-- 🌝 Eager test (exposes a lot of irrelevant details about sut that distract the test reader from what affects behavior being tested)
+- 🌝 Eager test (exposes a lot of irrelevant details about SUT that distract the test reader from what affects the behaviour being tested)
 - 😬 Happy path (only tests the paths where things go well)
 - 🦥 Slow Poke (where you grab a coffee while they run)
 - 🦣 Giant (super big test, the day it has issues it's commented out)
 - 🤡 Mockery (mocking on steroids)
 - 🔎 Inspector (violates black box approach)
-- 🪰 Generous left over (when separate tests do a batton exchange of data and often (but not always!) depend on run order)
+- 🪰 Generous left over (when separate tests do a baton exchange of data and often (but not always!) depend on run order)
 - 🦸 Local hero (only passes in a specific environment)
 - 🐜 Nitpicker (much like inspector but focuses on irrelevant specifics that are most likely to change easily/often)
 - 📢 Loud mouth (clutters console with diagnostic messages)
-- 🤥 The liar (skips red-green-refactor, mocked sut, not specific enough leading to false positives)
+- 🤥 The liar (skips red-green-refactor, mocked SUT, not specific enough leading to false positives)
 - 🆓 Free ride (assertions that piggyback on an existing test when that should be split out)
 - 🔮 Mystery guest (test reader is not able to see the cause and effect between act, arrange, and assert because stuff is magically done elsewhere)
 - 🤫 Useless test (Shush) (Shush) (requires manual debugging to figure out what caused a test to fail)
@@ -375,7 +375,7 @@ public static class TestCategories
 }
 ```
 
-In CI, the tests can be targetted with a filer, for example the following command only runs integration tests
+In CI, the tests can be targetted with a filer, for example, the following command only runs integration tests
 
 `dotnet test --filter TestCategory=Integration`
 
@@ -391,11 +391,11 @@ In CI, the tests can be targetted with a filer, for example the following comman
 
 > ℹ In addition to having more test coverage that helps with more confidence to change existing code and ensuring that previously discovered regressions do not occur again, tests are very good at identifying issues, especially around the coupling. Code that violates certain core principles that ensure a healthy and maintainable code base is very difficult to test, writing more tests allows us to see this upfront.
 
-✅ **DO** name mocks vs mock object instances accordingly. Mocks from `automock`, `new Mock<T>()` or `Mock.Of<T>` should have the suffix mock but not the object instances from `mock.Object` i.e userMock for the mock and user for the object.
+✅ **DO** name mocks vs mock object instances accordingly. Mocks from `automock`, `new Mock<T>()` or `Mock.Of<T>` should have the suffix mock but not the object instances from `mock.Object` i.e. userMock for the mock and user for the object.
 
 > ℹ This distinction can go a long way in the readability of tests.
 
-✅ **DO** make use of the name sut for the `system under test`. This small detail shines particularly when the test is heavy in the arranging stage, it needs to be clear what the SUT is.
+✅ **DO** make use of the name SUT for the `system under test`. This small detail shines particularly when the test is heavy in the arranging stage, it needs to be clear what the SUT is.
 
 ```csharp
 var sut = autoMock.Create<SecurityProvider>();
@@ -405,7 +405,7 @@ var token = sut.CreateToken(new SecurityTokenRequest());
 token.Should().NotBeNullOrWhiteSpace();
 ```
 
-✅ **DO** consistently use a builder for `EF Core Data Contexts` for creating a test data context. Having one place to create the data context will make it easier to maintain this over time should you need to make a change to the data context for all tests and removes boilerplate code.
+✅ **DO** consistently use a builder for `EF Core Data Contexts` for creating a test data context. Having one place to create the data context will make it easier to maintain this over time should you need to make a change to the data context for all tests and remove boilerplate code.
 
 ```csharp
     public static class InMemoryDataContextBuilder
@@ -553,7 +553,7 @@ public void Sample(string input, bool expected){}
 
 ✅ **DO** name test projects in the format `[name of project under test].tests` ensuring that the suffix `tests` is always used. This makes it easy to identify test projects especially when you want to apply filters like in `Directory.Builds.props` or in build pipelines.
 
-✅ **DO** name test files with the same name as the file being tested with suffix Tests i.e. `UtilsTests.cs`
+✅ **DO** name test files with the same name as the file being tested with the suffix Tests i.e. `UtilsTests.cs`
 
 ✅ **DO** mirror the folder structure of what is being tested in tests - `/Services/Access/UserAccess.cs` -> `/Services.Tests/Access/UserAccessTests.cs`
 
@@ -569,7 +569,7 @@ public void Sample(string input, bool expected){}
 
 ✅ **DO** use Fluent Assertions for assertions over xUnit assertions. These are more readable, flexible, and powerful.
 
-> The `XUnitToFluentAssertionsAnalyzer` offers Roslyn analysis rule enforcing this, so if you right xUnit assertion the build would fail.
+> The `XUnitToFluentAssertionsAnalyzer` offers a Roslyn analysis rule enforcing this, so if you right xUnit assertion the build would fail.
 >
 > # XFA001: Use FluentAssertions equivalent
 >
@@ -712,7 +712,7 @@ dotnet_diagnostic.xUnit2019.severity = error
 dotnet_diagnostic.XFA001.severity = error
 ```
 
-✅ **DO** favor data driven tests where applicable over duplicated tests. This can be achieved with `Theories` using `InlineData` for compile time constants and `MemberData` for the rest.
+✅ **DO** favour data-driven tests where applicable over duplicated tests. This can be achieved with `Theories` using `InlineData` for compile time constants and `MemberData` for the rest.
 
 ```csharp
 [Theory]
@@ -725,7 +725,7 @@ public void Sample input, bool expected)
 
 {
 
-    ...
+    ...
 
 }
 
@@ -737,7 +737,7 @@ public Sample(string fileName, string expectedExtension)
 
 {
 
-    ...
+    ...
 
 }
 
@@ -747,18 +747,18 @@ public static IEnumerable<object[]> TestCases => new[]
 
 {
 
-    // input, expected
+    // input, expected
 
-    new object[] {"test.txt", ".txt"},
+    new object[] {"test.txt", ".txt"},
 
-    ...
+    ...
 
 };
 ```
 
 ✅ **DO** make it easy to tell apart the `Arrange`, `Act`, and `Assert` sections of your test and in particular to test what the system under test (`sut`) is.
 
-✅ **DO** write tests that assert a single concept. While a single assert per test would be ideal, it is not realistic. Fluent assertions does have constructs in place to avoid situations where you have multiple related asserts that short circuit on the first failure.
+✅ **DO** write tests that assert a single concept. While a single assert per test would be ideal, it is not realistic. Fluent assertions do have constructs in place to avoid situations where you have multiple related asserts that short circuit on the first failure.
 
 ```csharp
 [Fact]
@@ -767,49 +767,49 @@ public void Sample()
 
 {
 
-    var result = ...;
+    var result = ...;
 
 
 
-    // CLASSIC
+    // CLASSIC
 
-    result.Id.Should().Be(id);
+    result.Id.Should().Be(id);
 
-    result.Name.Should().Be(name);
+    result.Name.Should().Be(name);
 
-    result.Value.Should().Be(value);
-
-
-
-    // BETTER
-
-    var expectedResult = ...;
+    result.Value.Should().Be(value);
 
 
 
-    result.Should().BeEquivalentTo(expectedResult);
+    // BETTER
 
-    // can omit properties
-
-    result.Should().BeEquivalentTo(expectedResult, options => options.Excluding(x => x.Name));
+    var expectedResult = ...;
 
 
 
-    // ALTERNATIVE
+    result.Should().BeEquivalentTo(expectedResult);
 
-    // use this approach when absolutely necessary!
+    // can omit properties
 
-    using (var scope = new AssertionScope())
+    result.Should().BeEquivalentTo(expectedResult, options => options.Excluding(x => x.Name));
 
-    {
 
-        result.Id.Should().Be(id);
 
-        result.Name.Should().Be(name);
+    // ALTERNATIVE
 
-        result.Value.Should().Be(value);
+    //Use this approach when necessary!
 
-    }
+    using (var scope = new AssertionScope())
+
+    {
+
+        result.Id.Should().Be(id);
+
+        result.Name.Should().Be(name);
+
+        result.Value.Should().Be(value);
+
+    }
 
 }
 
@@ -853,7 +853,7 @@ More examples [here](https://fluentassertions.com/tips/)
 
 > ℹ There are Roslyn analyzers that ship with the core package to help enforce this.
 
-✅ **DO** inject a `NullLoggerFactory` into tests unless you are actually interested in asserting the logs, then in that case use consider `LoggerFactory` double.
+✅ **DO** inject a `NullLoggerFactory` into tests unless you are interested in asserting the logs, then in that case use consider `LoggerFactory` double.
 
 ✅ **DO** make use of xUnit fixtures for setups that can be shared by an entire test file (Class Fixtures) or multiple test files (Collection Fixtures). The example below is a class fixture that bootstraps `AutoMapper` for use within a single test file.
 
@@ -888,7 +888,7 @@ public interface IDelayService
 
 {
 
-    Task Delay(TimeSpan delayDuration, Action continueWith);
+    Task Delay(TimeSpan delayDuration, Action continueWith);
 
 }
 
@@ -900,17 +900,17 @@ internal class DelayService : IDelayService
 
 {
 
-    public virtual async Task Delay(TimeSpan delayDuration, Action continueWith)
+    public virtual async Task Delay(TimeSpan delayDuration, Action continueWith)
 
-    {
+    {
 
-        await Task.Run(async () => { await Task.Delay(delayDuration); })
+        await Task.Run(async () => { await Task.Delay(delayDuration); })
 
-            .ContinueWith(_ => continueWith())
+            .ContinueWith(_ => continueWith())
 
-            .ConfigureAwait(false);
+            .ConfigureAwait(false);
 
-    }
+    }
 
 }
 
@@ -922,19 +922,19 @@ internal class DelayServiceStub : DelayService
 
 {
 
-    public AutoResetEvent DelayComplete = new AutoResetEvent(false);
+    public AutoResetEvent DelayComplete = new AutoResetEvent(false);
 
 
 
-    public override async Task Delay(TimeSpan delayDuration, Action continueWith)
+    public override async Task Delay(TimeSpan delayDuration, Action continueWith)
 
-    {
+    {
 
-        await base.Delay(TimeSpan.Zero, continueWith);
+        await base.Delay(TimeSpan.Zero, continueWith);
 
-        DelayComplete.Set();
+        DelayComplete.Set();
 
-    }
+    }
 
 }
 
@@ -958,7 +958,7 @@ result.Count.Should.Be(24);
 
 ### Mocking
 
-✅ **DO** use moq to mock necessary dependencies within a test.
+✅ **DO** use Moq to mock necessary dependencies within a test.
 
 ✅ **DO** consider when to use `Mocks` vs `TestDoubles` very carefully. Mocks should be a natural first choice, using doubles in cases where you cannot mock such as when dealing with library concrete classes, abstract classes, etc.
 
@@ -996,13 +996,13 @@ configuration.GetSection(configurationName).Bind(appConfiguration);
 var appConfiguration = configuration.GetSection(configurationName).Get<ApplicationConfiguration>();
 
 
-// now we would get null options if the section is missing and we can handle that case.
+// Now we would get null options if the section is missing and we can handle that case.
 
 ```
 
 # Language Features
 
-✅ **DO** favor types that carry context over the context in the naming or otherwise assumed context. i.e. Favor the use of the `TimeSpan` type over a numerical value with a suffix in the name such `CacheExpiryDays`.
+✅ **DO** favour types that carry context over the context in the naming or otherwise assumed context. i.e. Favor the use of the `TimeSpan` type over a numerical value with a suffix in the name such `CacheExpiryDays`.
 
 > ℹ The `TimeSpan` type, in particular, is handled well in dotnet, for instance, you can use this with configuration and set your string config as `'00:00:00'` without having to worry about type conversions on reading config to a numeric type.
 
@@ -1015,26 +1015,26 @@ public enum UserFlags
 
 {
 
-    None = 0,
+    None = 0,
 
-    SystemAccount = 1,
+    SystemAccount = 1,
 
-    Locked = 2,
+    Locked = 2,
 
-    Disabled = 4,
+    Disabled = 4,
 
-    ...
+    ...
 
 }
 ```
 
-✅ **DO** favor `using` directives instead of fully qualified type names. This helps to make the code cleaner.
+✅ **DO** favour `using` directives instead of fully qualified type names. This helps to make the code cleaner.
 
 ```csharp
 // Avoid this
 System.Collections.Generic.List<string> names = ...
 
-// In favor of this
+// In favour of this
 using System.Collections.Generic;
 
 List<string> names = ...
@@ -1046,7 +1046,7 @@ List<string> names = ...
 
 ✅ **DO** design code for async support upfront for Services/Usecases. Adding async support for a service method that has been reused in many places because there is now an await can be quite the refactor.
 
-✅ **DO** favor `Enumerable.Empty<T>` over new `new List<T>` and `Array.Empty<T>` over `new T[] {}`. The static empty will return a compile-time constant as opposed to making a new empty allocation. This can be particularly troublesome when done in loops at scale and will put pressure on the garbage collector. This is also intent revealing and makes it clear that the case is an empty list with no intent to add elements after
+✅ **DO** favor `Enumerable.Empty<T>` over new `new List<T>` and `Array.Empty<T>` over `new T[] {}`. The static empty will return a compile-time constant as opposed to making a new empty allocation. This can be particularly troublesome when done in loops at scale and will put pressure on the garbage collector. This is also intent-revealing and makes it clear that the case is an empty list with no intent to add elements after
 
 ```csharp
 if (skip) return new List<T>();
@@ -1055,9 +1055,9 @@ if (skip) return new List<T>();
 if (skip) return Enumerable.Empty<T>();
 ```
 
-✅ **DO** favor returning empty collections over nulls, particularly for data that crosses boundaries. An operation like iteration over an empty collection is safe and does not lead to exceptions as would null objects.
+✅ **DO** favour returning empty collections over nulls, particularly for data that crosses boundaries. An operation-like iteration over an empty collection is safe and does not lead to exceptions as would null objects.
 
-✅ **DO** favor the use of file-scoped namespaces over block scoped namespaces particularly to benefit from less indentation.
+✅ **DO** favour the use of file-scoped namespaces over block-scoped namespaces particularly to benefit from less indentation.
 
 ```csharp
 // ditch this
@@ -1088,15 +1088,15 @@ public enum SampleEnum
 
 {
 
-    None = 0,
+    None = 0,
 
-    ...
+    ...
 
 }
 
 ```
 
-✅ **DO** favor using declarations over blocked scoped `usings` thereby reducing indentation and making code more readable.
+✅ **DO** favour using declarations over blocked scoped `usings` thereby reducing indentation and making code more readable.
 
 ```csharp
 // ditch this
@@ -1122,7 +1122,7 @@ public enum SampleEnum
 ⛔ **DO NOT** use negations in code unless necessary as those tend to be harder to read/comprehend
 
 ```csharp
-// This is easer to read
+// This is easier to read
 var response = isValid ? content : null;
 
 // This is harder to read
@@ -1143,7 +1143,7 @@ var name = sample?.child?.child?.name;
 
 ⛔ **DO NOT** use `async void`. void returning async methods have a specific purpose: to make asynchronous event handlers possible. Async void methods have different error-handling semantics. When an exception is thrown out of an async Task or async `Task<T>` method, that exception is captured and placed on the Task object. With async void methods, there is no Task object, so any exceptions thrown out of an async void method will be raised directly on the `SynchronizationContext` that was active when the async void method started.
 
-✅ **DO** make use of dictionaries and lookups in scenarios that call for them. In cases where data is loaded into a collection (list/array) then enumerated for single/first or a group by some key like an id, that would best be a Dictionary for `one key → one value` or Lookup `one key → multiple values` and would give better performance at scale.
+✅ **DO** make use of dictionaries and lookups in scenarios that call for them. In cases where data is loaded into a collection (list/array) and then enumerated for single/first or a group by some key like an id, that would best be a Dictionary for `one key → one value` or Lookup `one key → multiple values` and would give better performance at scale.
 
 ```csharp
 // Before
@@ -1167,7 +1167,7 @@ var name = sample?.child?.child?.name;
 
 // Lookup
 
-        // assuming multiple entities can have the same id
+        // Assuming multiple entities can have the same ID
         ILookup<Guid, string> entities = DataContext.Entity
             .AsNoTracking()
             .Where(a => a.Special)
@@ -1176,7 +1176,7 @@ var name = sample?.child?.child?.name;
         var targetNames = entities[targetId].ToArray();
 ```
 
-✅ **DO** favor the modern ways to test for nullability in C#. `is` and `is not` check for true nulls ignoring any operator overrides. By default the modern checks give a compiler error when the value is not nullable, the legacy gives a warning. This of course can be configured with Roslyn as desired.
+✅ **DO** favour the modern ways to test for nullability in C#. `is` and `is not` check for true nulls ignoring any operator overrides. By default the modern checks give a compiler error when the value is not nullable, the legacy gives a warning. This of course can be configured with Roslyn as desired.
 
 ```csharp
 // legacy
@@ -1250,7 +1250,7 @@ var name = sample?.child?.child?.name;
         .ToListAsync(cancellationToken);
 ```
 
-✅ **DO** favor the modern `switch expressions` over `switch statements. This makes for more succinct code that is easier to read and takes a functional approach.
+✅ **DO** favour the modern `switch expressions` over `switch statements. This makes for more succinct code that is easier to read and takes a functional approach.
 
 ```csharp
 // legacy
@@ -1283,7 +1283,7 @@ var name = sample?.child?.child?.name;
             };
 ```
 
-✅ **DO** favor expression bodies for methods, properties, and ctors for single expressions for a more succinct syntax.
+✅ **DO** favour expression bodies for methods, properties, and ctors for single expressions for a more succinct syntax.
 
 ```csharp
 // legacy
@@ -1318,7 +1318,7 @@ var name = sample?.child?.child?.name;
 
 ✅ **DO** name controllers with a Controller suffix and use plural names for the RESTful APIs, e.g. UsersController instead of UserController.
 
-✅ **DO** inject a cancellation token from the controller action and drill this down to pass to relevant calls that are cancellable. If an async call is canceled no additional CPU/Memory needs to be used and pending processes can be canceled.
+✅ **DO** inject a cancellation token from the controller action and drill this down to pass to relevant calls that are cancellable. If an async call is cancelled no additional CPU/Memory needs to be used and pending processes can be cancelled.
 
 ✅ **DO** make use of the `FromServices` attribute to localize dependency injection in controllers. This is most useful when you have a bloated ctor with dependencies that are only used by all controller actions. This removes injection bloat from the ctor and makes it clear where dependencies are used.
 
@@ -1380,7 +1380,7 @@ public Task<SampleDto> GetSample([FromQuery] SampleRequest request,
 
 > ℹ️Know when you have passed a point of no cancellation to ensure atomic actions
 
-✅ **DO** use the type route constraint for actions. Among many, the following examples show a benefit with endpoint resolution.
+✅ **DO** use the type route constraint for actions. Among many, the following examples show the benefit of endpoint resolution.
 
 ```csharp
 
@@ -1392,27 +1392,27 @@ public class SampleController : ControllerBase
 
 {
 
-    [Route("{id}")]
+    [Route("{id}")]
 
-    public string Sample1(int id)
+    public string Sample1(int id)
 
-    {
+    {
 
-        ...
+        ...
 
-    }
+    }
 
 
 
-    [Route("{name}")]
+    [Route("{name}")]
 
-    public string Sample2(string name)
+    public string Sample2(string name)
 
-    {
+    {
 
-        ...
+        ...
 
-    }
+    }
 
 }
 
@@ -1429,27 +1429,27 @@ public class SampleController : ControllerBase
 
 {
 
-    [Route("{id:int}")]
+    [Route("{id:int}")]
 
-    public string Sample1(int id)
+    public string Sample1(int id)
 
-    {
+    {
 
-        ...
+        ...
 
-    }
+    }
 
 
 
-    [Route("{name:string}")]
+    [Route("{name:string}")]
 
-    public string Sample2(string name)
+    public string Sample2(string name)
 
-    {
+    {
 
-        ...
+        ...
 
-    }
+    }
 
 }
 
@@ -1463,10 +1463,10 @@ public class SampleController : ControllerBase
 
 # GOTCHAS
 
-✨ Apply caution when changing code surrounded by debugger directives. Ideally building with the debug or release config should not make a difference to the build succeeding. However with preprocessor directives if you change code that is only available for release, for instance, it could end up broken and you would not pick it up on your dev machine as you are building in debug. This would of course blow up later when you are making release builds. Be mindful of this scenario.
+✨ Apply caution when changing code surrounded by debugger directives. Ideally building with the debug or release config should not make a difference to the build's succeeding. However with preprocessor directives if you change code that is only available for release, for instance, it could end up broken and you would not pick it up on your dev machine as you are building in debug. This would of course blow up later when you are making release builds. Be mindful of this scenario.
 
-> ⚠ Historically visual studio has not been particularly smart with these scenarios, it could suggest for instance that you remove an unused using that is in fact used in a preprocessor directive for a mode you are currently not running in.
+> ⚠ Historically Visual Studio has not been particularly smart with these scenarios, it could suggest for instance that you remove an unused using that is used in a preprocessor directive for a mode you are currently not running in.
 
 ✨ Apply caution with `CopyToOutputDirectory` option `Always` as this will break incremental builds and cause given projects to always build even when they have not been updated. Do make use of the option `PreserveNewest`. In addition, this option means less IO, particularly for large files which also speeds up builds.
 
-> ℹ️ Such cause is not obvious and an investigation must be conducted to find the glitch. To investigate, in the *Visual Studio > Options > Projects and Solutions > SDK-Style Projects*, set the **_Up to Date Checks_** value from *None* to *Minimal*. Now in the Output window, you will see logs that indicate when incremental builds are not working as expected and why
+> ℹ️ Such cause is not obvious and an investigation must be conducted to find the glitch. To investigate, in the *Visual Studio > Options > Projects and Solutions > SDK-Style Projects*, set the **_Up to Date Checks_** value from *None* to *Minimal*. Now in the Output window, you will see logs that indicate when incremental builds are not working as expected and why

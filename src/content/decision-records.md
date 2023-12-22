@@ -4,9 +4,9 @@ title: Adopting decision records
 image: img/unsplash/maksym-kaharlytskyi-Q9y3LRuuxmg-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-27T00:00:00.000Z
-tags: [decisions, records, documentation]
+tags: [Architecture Decision Records, Software Design, Team Collaboration]
 draft: false
-excerpt: track all decisions of architectural significance
+excerpt: Architecture Decision Records (ADRs) serve as a crucial tool in documenting software design choices that address significant functional or non-functional requirements in architecture.
 ---
 
 Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/photos/Q9y3LRuuxmg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -15,7 +15,7 @@ Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=re
 
 An Architecture Decision Record (ADR) is a software design choice documentation that addresses a functional or non-functional requirement that is architecturally significant.
 
-Having this record keeping allows the team to easily go back in time to understand the current status and be better able to pivot with complete knowledge. These prove very useful for new joiners as well. Another key thing is that when the team decides on something and someone is tasked with putting it down as a record, often that could identify gaps or misalignment and allow addressing this early on particularly when examples are involved.
+Having this record-keeping allows the team to easily go back in time to understand the current status and be better able to pivot with complete knowledge. These prove very useful for new joiners as well. Another key thing is that when the team decides on something and someone is tasked with putting it down as a record, often that could identify gaps or misalignment and allow addressing this early on particularly when examples are involved.
 
 
 ## Example
@@ -36,13 +36,13 @@ Accepted
 ## Context
 
 
-We are building an Analytics databases that needs to keep track of historical data, and we need to decide on the best way to implement this feature.
+We are building an Analytics database that needs to keep track of historical data, and we need to decide on the best way to implement this feature.
 
 ## Alternatives
 
 - ...
 
-- SQL Temporal Tables: This approach involves using the built-in SQL temporal table feature to automatically track the history of a table. This approach allows for easy querying of historical data, and does not require additional storage as the history is stored in the same table as the current data.
+- SQL Temporal Tables: This approach involves using the built-in SQL temporal table feature to automatically track the history of a table. This approach allows for easy querying of historical data and does not require additional storage as the history is stored in the same table as the current data.
 
 ## Decision
 
@@ -50,7 +50,7 @@ We will use the SQL Temporal Tables approach for tracking history.
 
 ## Reasoning
 
-SQL Temporal Tables allow for easy querying of historical data. It also allows to store the history of a table in a transparent way, and easy to use.
+SQL Temporal Tables allow for easy querying of historical data. It also allows storing the history of a table transparently and is easy to use.
 
 ### Pros
 
@@ -71,7 +71,7 @@ SQL Temporal Tables allow for easy querying of historical data. It also allows t
 
 ✅ **DO** ensure that all decisions are consistent with other team and organization agreed-upon principles and standards.
 
-✅ **DO** reference other detailed documentation and supporting artifacts to avoid duplications.
+✅ **DO** reference other detailed documentation and supporting artefacts to avoid duplications.
 
 ✅ **DO** ensure that you document a clear argument as this is as important as the decision. Outline the position, including things like implementation cost, ownership cost, resource requirements, etc.
 
@@ -104,3 +104,7 @@ This is the decision that was made if any alternatives were considered, list the
 
 This is the consequence of the decision
 ---
+
+## Conclusion
+
+In summary, ADRs are instrumental in maintaining a clear and accessible record of architectural decisions, aiding in team alignment, retrospective analysis, and onboarding new members.
