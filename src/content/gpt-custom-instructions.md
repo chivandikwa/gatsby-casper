@@ -4,13 +4,12 @@ title: Tailoring ChatGPT Responses with Custom Instructions
 image: img/unsplash/jamie-templeton-6gQjPGx1uQw-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2023-10-20T00:00:00.000Z
-tags: [chatgpt, custom instructions, gpt]
+tags: [Custom Instructions in ChatGPT, Advanced ChatGPT Customization, ChatGPT for Experienced Developers]
 draft: false
-excerpt: Tailoring ChatGPT Responses with Custom Instructions
+excerpt: Explore how to tailor ChatGPT's responses to fit specialized professional needs, particularly in software engineering.
 ---
 
 Photo by <a href="https://unsplash.com/@jamietempleton?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jamie Templeton</a> on <a href="https://unsplash.com/photos/brown-wooden-plank-fence-with-this-way-signboard-6gQjPGx1uQw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
 
 # Tailoring ChatGPT Responses with Custom Instructions
 
@@ -32,7 +31,7 @@ I'm a seasoned Software Engineering Technical Lead with expertise in .NET, TypeS
 
 My cloud solutions proficiency spans AWS and Azure, especially Azure DevOps and Pipelines.
 
-Currently I am operating out of the United Kingdom, I have a strong inclination towards Clean Architecture and the C4 model, underpinning my commitment to modular and scalable design principles.
+Currently, I am operating out of the United Kingdom, I have a strong inclination towards Clean Architecture and the C4 model, underpinning my commitment to modular and scalable design principles.
 
 Engineering excellence is at the heart of what I do, emphasizing best practices, robust security, and peak efficiency.
 
@@ -77,4 +76,4 @@ The custom instructions significantly elevate the quality of interaction between
 
 The journey of AI is about continuous evolution, and the custom instructions feature in ChatGPT is a significant milestone in this journey. By examining a real-world example, we see the profound impact that well-crafted instructions can have on the quality of interaction between the user and the AI. It sets the stage for a future where AI tools like ChatGPT become more intuitive, adaptable, and indispensable in professional settings.
 
-More information on this feature available [here](https://openai.com/blog/custom-instructions-for-chatgpt).
+More information on this feature is available [here](https://openai.com/blog/custom-instructions-for-chatgpt).

@@ -15,8 +15,6 @@ Photo by <a href="https://unsplash.com/@kimonmaritz?utm_source=unsplash&utm_medi
 
 This article summarizes the principles of Clean Architecture based on my own experiences using this architecture in different scenarios. Robert C. Martin's [book](https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/) on this topic was an anchor to my understanding of this topic, especially having discovered the book after working on the architecture for a while. I recently read the book again as a refresher before creating this article and therefore this article serves as a summary of the good parts and additions from my own experiences.
 
-[ChatGPT](https://chat.openai.com/) also played a key role in helping me collect my scattered thoughts on the topic into something more structured and expand on the content.
-
 # Architecture
 
 When considering architecture, it is crucial to keep in mind several important factors.
