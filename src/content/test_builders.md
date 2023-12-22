@@ -11,7 +11,6 @@ excerpt: test builders to deal with test maintenance hell
 
 Photo by <a href="https://unsplash.com/@alan_rodriguez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alan Rodriguez</a> on <a href="https://unsplash.com/photos/rUtX6dvmCeM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
 While working with DTOs and entities, particularly those that are used throughout your domain and boundaries, you will find that they are required in a multitude of tests. A natural approach is to call the constructor of each when required and hydrate them with required setup. While this is very easy and straightforward there are a couple of challenges. There is always a caveat.
 
 To illustrate these challenges let us introduce an example of a simple domain object. Let's take a dumbed down conceptual take at a financial trade position, that has an identifier and monetary values for fixed and float legs.
@@ -88,7 +87,7 @@ The biggest problems with this pattern however is that it does not communicate i
 
 Finally the tests that use this pattern or none at all tend to be very long and messy to read. By looking at the code at a glance it is not possible to understand what the **arrange** stage is doing, worse still it makes it hard to distinguish clearly the **arrange** from the **act**.
 
-### Get to it already, show me the way!
+### Get to it already, show me the way
 
 Let's get straight to it and look at a different pattern in code.
 
@@ -198,7 +197,7 @@ Let's see some usage examples:
 
 All things considered we can certainly say that this is both simple and powerful. Creating the builders is easy and the pattern fosters for clean code. Using the builders is also very intuitive and the fluent pattern further makes this a pleasure to use.
 
-### Show me the guts!
+### Show me the guts
 
 Let's have a look at what is going on behind the scenes to power this and to also understand some of the calls in the builder examples.
 

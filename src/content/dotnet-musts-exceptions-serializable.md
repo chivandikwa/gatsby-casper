@@ -142,7 +142,6 @@ While ensuring exceptions are serializable and implementing the core constructor
 - Avoid Excessive Details: While detailed exceptions are helpful, avoid including sensitive information like database credentials or encryption keys in the exception details.
 - Documentation: Clearly document each custom exception, specifying when and how it should be used. This clarity is vital for anyone else using or maintaining your code.
 
-
 By adhering to these practices, you not only enhance the functionality of your custom exceptions but also improve the maintainability and clarity of your error handling logic."
 
 Incorporating these enhancements will provide a more comprehensive understanding for readers, making the blog not only a guide but also a best practices reference in the realm of .NET exception handling.

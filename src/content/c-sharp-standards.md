@@ -34,6 +34,7 @@ There are multiple ways to enforce standards
 - **Cross-Editor and Cross-Platform Support**: EditorConfig is supported by a wide range of popular editors, including Visual Studio, Visual Studio Code, and JetBrains IDEs.
 
 Example
+
 ```bash
 root = true
 
@@ -330,7 +331,6 @@ _logger.LogInformation("Deleting file: {FileContentId}", job.FileContentId);
 - be deterministic
 - survive major refactorings
 
-
 🛑 **DO AVOID** the following negative heuristics of tests:
 
 - 🧪 Logic in tests
@@ -359,7 +359,6 @@ _logger.LogInformation("Deleting file: {FileContentId}", job.FileContentId);
 - 🕔 Involving testing late
 - 🤐 Secret catcher (relies on exceptions happening in the code and being caught by the test runner)
 - 🔢 Line hitter (meant to appease the gatekeeper of the code coverage metric)
-
 
 ✅ **DO** make use of **traits** to segment tests, such as marking integration tests separately from unit tests. This brings significant advantages in managing and executing tests, especially in a continuous integration (CI) environment. By using traits, like the ones available in xUnit.NET, you can easily categorize and selectively run tests based on their characteristics. This helps with granular test execution as required, test result analysis and parallel test execution control.
 
@@ -1469,4 +1468,4 @@ public class SampleController : ControllerBase
 
 ✨ Apply caution with `CopyToOutputDirectory` option `Always` as this will break incremental builds and cause given projects to always build even when they have not been updated. Do make use of the option `PreserveNewest`. In addition, this option means less IO, particularly for large files which also speeds up builds.
 
-> ℹ️ Such cause is not obvious and an investigation must be conducted to find the glitch. To investigate, in the *Visual Studio > Options > Projects and Solutions > SDK-Style Projects*, set the **_Up to Date Checks_** value from *None* to *Minimal*. Now in the Output window, you will see logs that indicate when incremental builds are not working as expected and why
+> ℹ️ Such cause is not obvious and an investigation must be conducted to find the glitch. To investigate, in the *Visual Studio > Options > Projects and Solutions > SDK-Style Projects*, set the ***Up to Date Checks*** value from *None* to *Minimal*. Now in the Output window, you will see logs that indicate when incremental builds are not working as expected and why

@@ -11,7 +11,6 @@ excerpt: fun with the pytest framework
 
 Photo by <a href="https://unsplash.com/@hiteshchoudhary?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hitesh Choudhary</a> on <a href="https://unsplash.com/photos/D9Zow2REm8U?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
 Unit testing is one of the most valuable tools we have as developers to ensure that we write working code. I have tried out both the inbuilt unittest and the third party pytest and no doubt have found pytest to shine. At a glance the two appear to be equal and unittest for me personally has a better assertions syntax. However when you start to do some more advanced things like fixtures and mocking then you really see pytest shine and when it comes to control of running tests you will have way more at your disposal with pytest.
 
 This article is not meant to compare the two but instead will be focused on highlighting some key features of pytest.

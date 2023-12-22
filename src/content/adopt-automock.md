@@ -19,7 +19,7 @@ While the effort of manually mocking services in .NET tests can be high, underst
 
 Mocking service dependencies manually in tests creates fragile tests that will need updating each time those dependencies change. Ideally, tests should change when the behaviour of interest changes.
 
-## Problem scenario:
+## Problem scenario
 
 ```csharp
 
@@ -51,7 +51,7 @@ var sut = autoMock.Create<SomeService>();
 
 Now if `SomeService` were to have an additional dependency injected via the ctor which does not affect the behaviour we are testing, there is no need to update the test(s) as this will just get auto-mocked, ideally what we would have done manually anyway.
 
-### Additional cases:
+### Additional cases
 
 ```csharp
 

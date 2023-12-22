@@ -76,7 +76,7 @@ I waited eagerly to have a chat with Richard Campbell, the host of .NET Rocks af
 
 Another notable speaker I got to meet after talks where Venkat Subramaniam. Venkat is a professor at the University of Houston and author of the book [Rediscovering Javascript](https://pragprog.com/titles/ves6/rediscovering-javascript/). He had just given a talk title 'Javascript - The good parts'. I was very excited to see some of the new features in Javascript that really make it much better to work with and like C# many that further embrace functional approaches. What drew me to chat with Venkat however was to complement him for an engaging talk with an interestingly unique presentation style that adds more fine to the class Microsoft live demo approach and to request for his contact details. I intend to follow up with Venkat and know more about his presentation style and giving talks in general. Hint: I intend to also start giving talks soon, starting small.
 
-## The really cool things...
+## The really cool things
 
 To really make my trip complete I ensured that I used every opportunity outside of the NDC programme to see the city of Oslo. The weather was perfect and it really is a lovely city. It was a relief to see some mountains for a change after being in The Netherlands for 7 months. Oslo may just be learning a thing or two from Rotterdam architecture as there are a lot of interesting and new building up plus a whole project in place to redefine the city and particularly water fronts. Everything is a bit pricey out there but all worth the extra penny.
 

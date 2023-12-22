@@ -17,10 +17,10 @@ An Architecture Decision Record (ADR) is a software design choice documentation 
 
 Having this record-keeping allows the team to easily go back in time to understand the current status and be better able to pivot with complete knowledge. These prove very useful for new joiners as well. Another key thing is that when the team decides on something and someone is tasked with putting it down as a record, often that could identify gaps or misalignment and allow addressing this early on particularly when examples are involved.
 
-
 ## Example
 
 ---
+
 # Adopt SQL Temporal Tables for time travel
 
 > Created: 2023-01-01
@@ -34,7 +34,6 @@ Having this record-keeping allows the team to easily go back in time to understa
 Accepted
 
 ## Context
-
 
 We are building an Analytics database that needs to keep track of historical data, and we need to decide on the best way to implement this feature.
 
@@ -61,6 +60,7 @@ SQL Temporal Tables allow for easy querying of historical data. It also allows s
 
 - Temporal tables can add complexity to a database schema.
 - ...
+
 ---
 
 ## Authoring recommendations
@@ -80,6 +80,7 @@ SQL Temporal Tables allow for easy querying of historical data. It also allows s
 ## Template
 
 ---
+
 # NUMBER - Title
 
 > Created: [YYYY-MM-DD] when the decision was created

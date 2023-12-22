@@ -16,6 +16,7 @@ Photo by <a href="https://unsplash.com/ja/@callemac?utm_source=unsplash&utm_medi
 A Run Book / Operations Manual for known maintenance scenarios. These should act as a technical support knowledge base. Run books, often underutilized, serve as a beacon of clarity and order in this chaotic landscape. They are comprehensive, step-by-step guides that detail the processes and actions necessary for handling routine operational tasks and resolving incidents.
 
 Example scenarios include:
+
 - Routine maintenance like database backups
 - Incident response like a security breach
 - Software deployments
@@ -52,7 +53,7 @@ What steps need to be taken to remedy this?
 
 # How to assume an AWS IAM role via the CLI
 
-## You need to assume a role from the AWS CLI.
+## You need to assume a role from the AWS CLI
 
 ## Situation
 

@@ -11,7 +11,6 @@ excerpt: a few simple things in pycharm that can increase your productivity
 
 Photo by <a href="https://unsplash.com/@artturijalli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artturi Jalli</a> on <a href="https://unsplash.com/photos/g5_rxRjvKmg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
 Here are a few interesting features of Pycharm that are otherwise not commonly known or used.
 
 ### Live templates

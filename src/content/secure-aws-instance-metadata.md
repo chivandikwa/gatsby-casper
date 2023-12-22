@@ -17,9 +17,9 @@ Instance metadata is data about your instance that you can use to configure or m
 
 ## Solution
 
--   Do not trust user data in web server configuration. For example in [NGINX configs the $host variable which is set from the 'Host' header can be controlled by an attacker](https://www.nginx.com/blog/trust-no-one-perils-of-trusting-user-input/)
--   Disable instance metadata. This is not always an option, for example, in AWS there are services such as Systems Manager that rely on this metadata to correctly identify instances.
--   Secure the instance metadata. That is what we shall be focusing on.
+- Do not trust user data in web server configuration. For example in [NGINX configs the $host variable which is set from the 'Host' header can be controlled by an attacker](https://www.nginx.com/blog/trust-no-one-perils-of-trusting-user-input/)
+- Disable instance metadata. This is not always an option, for example, in AWS there are services such as Systems Manager that rely on this metadata to correctly identify instances.
+- Secure the instance metadata. That is what we shall be focusing on.
 
 ## Secure instance metadata
 

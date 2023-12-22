@@ -138,7 +138,6 @@ public class NumberConversionClient : BaseClient
 }
 ```
 
-
 ```csharp
 public class BaseClient
 {

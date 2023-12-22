@@ -50,6 +50,7 @@ Photo by <a href="https://unsplash.com/@stijnswinnen?utm_source=unsplash&utm_med
 ✅ **DO** make use of the [suggested changes feature](https://learn.microsoft.com/en-us/azure/devops/repos/git/review-pull-requests?view=azure-devops&tabs=browser#suggest-changes-in-comments) to suggest replacement text for one or more lines in a file which offers convenience for the author to apply the changes by staging a commit if they agree.
 
 ✅ **DO**  make use of [comment statuses](https://learn.microsoft.com/en-us/azure/devops/repos/git/review-pull-requests?view=azure-devops&tabs=browser#change-comment-status) accordingly.
+
 - **Active**: the default status for new comments.
 - **Pending**: the issue in this comment is under review and awaits something else.
 - **Resolved**: the issue in this comment is addressed.
@@ -57,6 +58,7 @@ Photo by <a href="https://unsplash.com/@stijnswinnen?utm_source=unsplash&utm_med
 - **Closed**: the discussion in this comment is closed.
 
 ✅ **DO** use the vote feature as a reviewer to indicate your status of the review.
+
 - Approve: Approve the proposed changes in the PR. This option is just a vote and doesn't approve the PR.
 - Approve with suggestions: Approve the proposed changes in the PR with optional suggestions for improvement. This option is just a vote and doesn't approve the PR.
 - Wait for author: asks the author to review the reviewer's comments. The PR author should let the reviewers know to re-review the code after the PR author has addressed the comments. If a required reviewer sets this vote option, the vote will block PR approval.

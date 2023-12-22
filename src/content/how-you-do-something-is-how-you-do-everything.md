@@ -28,8 +28,8 @@ Over the years I have noticed that teams or individuals that don’t mind droppi
 - Lack of unanimity on what areas are okay to drop the ball on and as such eventually things spiral out of control as everyone makes their own decisions on what to mediocre in.
 - Communication is not great in these teams, and it usually only takes one or two individuals to not do it well and be allowed to, for the whole team to struggle in this area.
 - Tasks that can be done right once and replicated with ease are instead rushed and then repeated haphazardly and without consistency.
--  Lack of consistency in delivery. A tell-tale sign is when you can look at what is delivered and easily tell which team member worked on what.
--  An ever-growing list of things that get put off that no one ever gets to.
+- Lack of consistency in delivery. A tell-tale sign is when you can look at what is delivered and easily tell which team member worked on what.
+- An ever-growing list of things that get put off that no one ever gets to.
 
 A key observation for me has been that the situation increasingly gets worse over time and the same attitude starts to get applied in other areas that are not too apparent but have consequences regardless. The broken windows theory explains why things we put off ultimately spiral out of control by stating that any observable signs of disorder such as broken windows form an environment that encourages even more disorder. Consequently, by ignoring the “little” things you soon forfeit control of much more to this mindset. After all, if you allow your hedge to overgrow, would you really notice when your lawn requires a trim?
 
@@ -51,7 +51,7 @@ Similarly, this is how we can guarantee that we remain committed to delivering a
 
 “How you do anything, is how you do everything” has become a favored quote of mine, and really by contemplating on this often and acting I feel it has served me well. An early experience that helped me to always aspire to do all things well was participating in athletics back in my high school days. I aimed to improve my 100m sprint time and what I noticed in my attempts was that I could not "just" improve it. To achieve that I had to improve everything it took to do the dash, even if by a teeny bit. Surprisingly that meant a whole lot of things would require attention like how well my start was, my stamina, rest, and diet, and many more had to be improved. Interestingly some of the things I had initially put off as being insignificant turned out to have the greatest impact and the success in addressing those created a habit for me to pursue the other changes with the right attitude. Soon I was applying this mindset to my academics, relationships, parenting, and work with similar success.
 
-Contemplate this and see what you can apply to yourself or your team. Here are a few questions that may guide you in that process: 
+Contemplate this and see what you can apply to yourself or your team. Here are a few questions that may guide you in that process:
 
 - Are you applying discipline and structure in all you do?
 - When you put off things are you being critical and objective about why or are you seeking a reason to justify the action?
@@ -59,6 +59,6 @@ Contemplate this and see what you can apply to yourself or your team. Here are a
 - Are you putting off meetings and events because you are too busy?
 - Imagine a backlog of anything you must get done as a trashcan. Do you put off taking five minutes to empty the trashcan and ultimately must deal with a greater situation once the trash starts to spill over?
 
-If you don't do the “unimportant stuff” well, do not be surprised if you cease doing anything well at all. Once you tolerate mediocracy in one area you have simply tolerated it in all your doings, period. It really is all about doing the little things well and consistently. Apply this in your work, personal life, and everything else in between to unlock great success and satisfaction. Of course, keep an eye on doing things well by avoiding cutting corners without necessarily aiming for perfectionism as that can easily burn you out. 
+If you don't do the “unimportant stuff” well, do not be surprised if you cease doing anything well at all. Once you tolerate mediocracy in one area you have simply tolerated it in all your doings, period. It really is all about doing the little things well and consistently. Apply this in your work, personal life, and everything else in between to unlock great success and satisfaction. Of course, keep an eye on doing things well by avoiding cutting corners without necessarily aiming for perfectionism as that can easily burn you out.
 
 In closing recognize this, repetition makes habits!

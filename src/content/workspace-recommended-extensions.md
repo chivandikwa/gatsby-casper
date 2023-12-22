@@ -13,7 +13,7 @@ Photo by <a href="https://unsplash.com/@barnimages?utm_source=unsplash&utm_mediu
 
 Visual Studio Code has support for specifying extension recommendations as part of you workspace. Developers can then see these in the extensions tab and decide what to install.
 
-## Here is how to set it up.
+## Here is how to set it up
 
 ![gif](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/extensions-recommendation.gif)
 

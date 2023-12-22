@@ -18,6 +18,7 @@ This article summarizes the principles of Clean Architecture based on my own exp
 # Architecture
 
 When considering architecture, it is crucial to keep in mind several important factors.
+
 - First and foremost, the system's life cycle should be supported, which involves ensuring that it can be maintained, upgraded, and expanded as needed with minimal complications.
 - Additionally, the system's lifetime cost should be minimized to keep it viable for as long as possible. A well-designed architecture should also prioritize maximizing programmer productivity by enabling them to work more efficiently and effectively.
 - Finally, the architecture should make the operation of the system apparent to developers, who need a clear understanding of how the system works and how it is intended to be used. This is achieved by elevating the use cases, features, and required behaviours of the system to first-class entities that serve as visible landmarks for developers.
@@ -114,7 +115,6 @@ The Calculate Delivery Cost function may be intended for the accounting departme
 The proximity of the code may encourage premature reuse. For example, the calculation of delivery costs may depend on a method that filters deliveries. The delivery team may choose to modify the shared code to exclude deliveries from a collection centre in a postal code that already has other deliveries due on the same day. However, this change may have unintended consequences for accounting, resulting in incorrect reporting and potentially leading to a disgruntled CFO.
 
 This example illustrates the importance of adhering to the Single Responsibility Principle to avoid such coupling of concerns from different actors and the resulting problems.
-
 
 ```csharp
 public class Customer
@@ -240,7 +240,6 @@ public class BuyOneGetOneFreeDiscountStrategy : IDiscountStrategy
 
 By doing this, we ensure that the Order class is closed for modification and open for extension, as new discount types can be added by implementing the Discount interface, without changing the Order class itself. This makes the system more modular, flexible, and easier to maintain.
 
-
 Let's look at another violation. In the given example of a reporting service that pulls data out of a database, massages the data, and sends out an email report with an excel file attached, there is a violation of the Open/Closed Principle.
 
 ![](Clean-Architecture-Attachments/ocp-violation.jpg)
@@ -300,7 +299,6 @@ The ISP states that clients should not be forced to depend on interfaces they do
 
 > ©️ Photo by [John Barkiple](https://unsplash.com/@barkiple?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/l090uFWoPaI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-
 Suppose we have a Customer Operations class that has information about deliveries and payments. We also have two reporting services, a Delivery Reporting Service that consumes information about deliveries, and a Billing Reporting Service that consumes information about payments. The Customer Operations class has a method that returns all the information, and both reporting services depend on this method.
 
 ![](Clean-Architecture-Attachments/isp-violation.jpg)
@@ -316,9 +314,9 @@ By doing this, we have eliminated the unnecessary dependencies between the repor
 By creating focused interfaces, we can improve the modularity and flexibility of the system. We can also make the system easier to test and validate since we only need to test the relevant methods. Additionally, focused interfaces can simplify the implementation of the client code since they only need to implement the necessary methods.
 
 Acknowledge this:
+
 - Interfaces that are simple and focused are easier to understand and consume
 - Interfaces that are focused on a specific behaviour can be more easily tested
-
 
 ## Dependency Inversion Principle
 
@@ -375,7 +373,6 @@ Ultimately, the value of these principles lies in their ability to create compon
 Stability in software components refers to how difficult it is to make changes to that component without affecting other parts of the system. A stable component is less likely to change, and thus less likely to cause cascading changes throughout the system.
 
 It is generally better to depend on stable components than on unstable ones. If a component is unstable, it may change frequently and cause cascading changes in dependent components, leading to more maintenance work and potential issues. On the other hand, stable components are less likely to change frequently and can provide a more reliable foundation for the software system.
-
 
 The formula for calculating stability is
 
@@ -528,6 +525,7 @@ The million-dollar question is whether you can break these rules and still be fo
 What if I grossly violate the rules anyway, what could go wrong?
 
 Then you choose pain or sorts:
+
 - You choose to marry frameworks
 - You choose to marry the UI technology
 - You choose to marry the database
@@ -540,7 +538,6 @@ Then you choose pain or sorts:
 - You choose productivity that is ever-decreasing with each new feature.
 
 🛑 That is a lot of baggage to take on
-
 
 ## Code Demo (C#)
 
@@ -617,6 +614,7 @@ In addition to the structures and enums, there is a method defined within the `V
 Overall, this code provides us with a basic framework for working with vouchers, discounts, and their state as required by our client.
 
 Next let us move to the next circle, the application. We shall require use cases that honour the expected behaviour, namely:
+
 - Generating a new voucher
 - Redeeming a voucher
 - Validating a voucher
@@ -846,7 +844,6 @@ The `InMemoryStore<T>` class is a generic class that provides an in-memory store
 The `PersistenceAdapter` class is a simple adapter class that initializes and sets up the IVoucherRepository object using the VoucherRepository class.
 
 Overall, these classes provide a basic framework for implementing persistence operations.
-
 
 ```csharp
 internal class CodeGenerator : IVoucherGenerator

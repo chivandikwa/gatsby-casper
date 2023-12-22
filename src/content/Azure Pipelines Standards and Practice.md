@@ -11,7 +11,6 @@ excerpt: Discover the best practices for setting up and managing Azure Pipelines
 
 Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/photos/4XvAZN8_WHo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
 # Azure Pipelines - Standards and Practices
 
 ✅ **DO** create pipelines in YAML committed in the relevant project repository and not via the classic UI approach or CLI.
@@ -34,18 +33,18 @@ Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=re
 
 Here's an example of an Azure Pipelines naming standard:
 
-  - Build pipelines: build-{projectName}
-  - Release pipelines: release-{projectName}-{environmentName}
-  - Deployment pipelines: deploy-{projectName}-{environmentName}
-  - Infrastructure pipelines: infra-{infrastructureType}-{projectName}-{environmentName}
+- Build pipelines: build-{projectName}
+- Release pipelines: release-{projectName}-{environmentName}
+- Deployment pipelines: deploy-{projectName}-{environmentName}
+- Infrastructure pipelines: infra-{infrastructureType}-{projectName}-{environmentName}
 
 Here's a breakdown of each component of the naming standard:
 
-  - {projectName}: the name of the project being built, deployed, or tested.
-  - {environmentName}: the name of the environment being deployed or released to.
-  - {infrastructureType}: the type of infrastructure being deployed or managed, such as aks for Azure   Kubernetes Service or appsvc for Azure App Service.
+- {projectName}: the name of the project being built, deployed, or tested.
+- {environmentName}: the name of the environment being deployed or released to.
+- {infrastructureType}: the type of infrastructure being deployed or managed, such as aks for Azure   Kubernetes Service or appsvc for Azure App Service.
   {testType}: the type of test being run, such as unit, integration, or end-to-end.
-  - {platform}: the platform being tested on, such as linux-x64 or windows-x64.
+- {platform}: the platform being tested on, such as linux-x64 or windows-x64.
 
 By following a consistent naming standard like this, it's easier to quickly identify and locate the pipelines you need within Azure DevOps.
 
@@ -229,18 +228,18 @@ resources:
 
 Here's an example of an Azure Pipelines naming standard:
 
-  - Build pipelines: build-{projectName}
-  - Release pipelines: release-{projectName}-{environmentName}
-  - Deployment pipelines: deploy-{projectName}-{environmentName}
-  - Infrastructure pipelines: infra-{infrastructureType}-{projectName}-{environmentName}
+- Build pipelines: build-{projectName}
+- Release pipelines: release-{projectName}-{environmentName}
+- Deployment pipelines: deploy-{projectName}-{environmentName}
+- Infrastructure pipelines: infra-{infrastructureType}-{projectName}-{environmentName}
 
 Here's a breakdown of each component of the naming standard:
 
-  - {projectName}: the name of the project being built, deployed, or tested.
-  - {environmentName}: the name of the environment being deployed or released to.
-  - {infrastructureType}: the type of infrastructure being deployed or managed, such as aks for Azure   Kubernetes Service or appsvc for Azure App Service.
+- {projectName}: the name of the project being built, deployed, or tested.
+- {environmentName}: the name of the environment being deployed or released to.
+- {infrastructureType}: the type of infrastructure being deployed or managed, such as aks for Azure   Kubernetes Service or appsvc for Azure App Service.
   {testType}: the type of test being run, such as unit, integration, or end-to-end.
-  - {platform}: the platform being tested on, such as linux-x64 or windows-x64.
+- {platform}: the platform being tested on, such as linux-x64 or windows-x64.
 
 By following a consistent naming standard like this, it's easier to quickly identify and locate the pipelines you need within Azure DevOps.
 

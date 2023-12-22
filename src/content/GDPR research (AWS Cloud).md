@@ -11,7 +11,7 @@ excerpt: Explore the intricacies of implementing GDPR compliance within the AWS 
 
 Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/photos/FnA5pAzqhMM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-#  GDPR technological implementation research (AWS Cloud)
+# GDPR technological implementation research (AWS Cloud)
 
 The General Data Protection Regulation (GDPR) is a European Union (EU) regulation that came into effect in 2018. It is designed to protect the privacy and personal data of EU citizens by setting strict guidelines for how data should be collected, processed, and stored. The GDPR has far-reaching implications for organizations that handle personal data, including those that use cloud services like Amazon Web Services (AWS). In this research, we aim to explore how the GDPR is translated into engineering, with a specific focus on the AWS Cloud platform. Our goal is to provide technical recommendations and best practices that will help AWS users achieve GDPR compliance and ensure the privacy and security of personal data.
 
@@ -30,7 +30,6 @@ By answering these questions, I hope to provide AWS Cloud users with a better un
 [What is GDPR, the EU’s new data protection law?](https://gdpr.eu/what-is-gdpr/)
 
 [Privacy and Data Protection by Design](https://www.enisa.europa.eu/publications/privacy-and-data-protection-by-design)
-
 
 # Technical
 
@@ -185,7 +184,7 @@ Internally, organizations should implement data handling and security protocols 
   - The subject matter and duration of data processing
   - The nature and purpose of the processing
   - The type of personal data and categories of data
- - The data controller's obligations and rights
+- The data controller's obligations and rights
 - Summary of required policy documents
   - Information security policy
   - Business continuity plan
@@ -206,15 +205,15 @@ Internally, organizations should implement data handling and security protocols 
 
 If a software developer is looking to research GDPR, there are a few steps they could take:
 
-  - Start by reading the official GDPR text to gain a foundational understanding of the regulation. This will help to familiarize the developer with the key terms and concepts of GDPR. The official text of GDPR can be found on the European Union's website.
+- Start by reading the official GDPR text to gain a foundational understanding of the regulation. This will help to familiarize the developer with the key terms and concepts of GDPR. The official text of GDPR can be found on the European Union's website.
 
-  - Explore available online resources and training materials, such as webinars, podcasts, and online courses. These can help to provide more detailed information on specific aspects of GDPR, as well as practical guidance on implementing GDPR in software development.
+- Explore available online resources and training materials, such as webinars, podcasts, and online courses. These can help to provide more detailed information on specific aspects of GDPR, as well as practical guidance on implementing GDPR in software development.
 
-  - Engage with GDPR experts and legal professionals who can provide guidance and advice on GDPR compliance.   This can help to ensure that the developer has a clear understanding of how GDPR applies to their specific situation and can provide guidance on how to implement GDPR-compliant software solutions.
+- Engage with GDPR experts and legal professionals who can provide guidance and advice on GDPR compliance.   This can help to ensure that the developer has a clear understanding of how GDPR applies to their specific situation and can provide guidance on how to implement GDPR-compliant software solutions.
 
-  - Research best practices for GDPR compliance in software development. There are several resources available online that guide how to design, develop, and implement software solutions that comply with GDPR.
+- Research best practices for GDPR compliance in software development. There are several resources available online that guide how to design, develop, and implement software solutions that comply with GDPR.
 
-  - Participate in forums and online communities to share knowledge and experiences with other software developers who are also working on GDPR compliance. This can help to provide insights into the challenges and solutions of GDPR-compliant software development.
+- Participate in forums and online communities to share knowledge and experiences with other software developers who are also working on GDPR compliance. This can help to provide insights into the challenges and solutions of GDPR-compliant software development.
 
 Overall, it's important for software developers to have a comprehensive understanding of GDPR and to stay up to date on any updates or changes to the regulation. By taking these steps, a software developer can research GDPR thoroughly and gain the knowledge and skills needed to design and develop software solutions that comply with GDPR requirements.
 

@@ -11,7 +11,6 @@ excerpt: Enriching Code Review Culture
 
 Photo by <a href="https://unsplash.com/@glenncarstenspeters?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/photos/person-writing-bucket-list-on-book-RLw-UC03Gwc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-
 # Enriching Code Review Culture with Pull Request Templates
 
 The practice of submitting Pull Requests (PRs) is a tradition that not only actions the introduction of changes to the code but also encourages a culture of peer review and collaborative improvement. The elegance of a PR lies in its ability to encapsulate changes, encourage discussions, and ensure a seamless merge with the existing code.
@@ -52,14 +51,15 @@ Implementing a Pull Request template isn't merely about adhering to a set protoc
 In fostering a culture of engineering excellence, tools and practices like a Pull Request template become indispensable allies.
 
 Go ahead and review your team's Pull Request process. These questions can help you establish where you may find value with Pull Request templates.
+
 - What are the things you do very well that you want to continue to encourage?
 - What are some things you can do better or that prove to be common pain points in PRs?
 - What usually causes delays in PRs?
 - What would make it easier or faster for reviewers to go through PRs?
 - What is commonly forgotten by the team when making PRs?
 
-
 Focus on elevating the following areas with Pull Request Templates
+
 - Consistent structure and format
 - Information/context probing
 - Self-check list

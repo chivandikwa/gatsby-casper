@@ -11,7 +11,6 @@ excerpt: Standardize API definitions in ASP.NET
 
 Photo by <a href="https://unsplash.com/@sushioutlaw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brian McGowan</a> on <a href="https://unsplash.com/photos/LObpG0ku8VM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
 # ASP.NET Core Web API Conventions
 
 ASP.NET Core Web API conventions are a set of guidelines that help standardize the most common return types, status codes, and parameters for specific types of actions. Conventions are useful for enhancing the understandability and usability of your API. Moreover, they help to create uniform API documentation, especially when using tools like Swagger.

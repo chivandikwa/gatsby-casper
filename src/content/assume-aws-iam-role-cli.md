@@ -13,7 +13,6 @@ Photo by <a href="https://unsplash.com/pt-br/@enginakyurt?utm_source=unsplash&ut
 
 Assuming an AWS IAM role via the CLI is a crucial part of managing your AWS resources securely. This guide will walk you through the process, step by step, and provide best practices to ensure a smooth experience.
 
-
 ## Approach
 
 Assume/Impersonate a role that has rights you desire using `aws sts` `assume-role` command
@@ -44,6 +43,7 @@ aws_session_token=[Security Token]
 > ⚠️ It's important to note that assuming a role provides a short-lived token. If you suddenly lose access, check that the token has not expired, in which case you will need to assume the role again.
 
 Usage scenarios
+
 - Cross-Account Access: Assume a role in another AWS account to access resources securely.
 - Temporary Permissions: Provide temporary elevated permissions to users or services without sharing long-term access keys.
 

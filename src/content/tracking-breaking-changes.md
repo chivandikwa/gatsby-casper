@@ -11,7 +11,6 @@ excerpt: prevent accidental breaking changes in your public api with roslyn
 
 Photo by <a href="https://unsplash.com/@simmerdownjpg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jackson Simmer</a> on <a href="https://unsplash.com/photos/Vqg809B-SrE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-
 If you have ever maintained a public API, in particular a large one, you may know just how easy it is to accidentally make breaking changes and roll them out. I have found some interesting ways in the past to avoid this, but I won't bore you with those as I found a better way. Microsoft rolled out a Roslyn Analyzer, PublicApiAnalyzers, that solves just this problem.
 
 The Analyzer works via two text files, `PublicAPI.Unshipped.txt` and `PublicAPI.Shipped.txt`. The analyzer once setup gives the option via Visual Studio to track certain entities as being part of the public API. This will be done by serializing as text, a representation of that entity in the PublicAPI.Unshipped.txt. How you use the PublicAPI.Shipped.txt is entirely up to you. Once you have made changes to the API you will see a warning about something not being in the public API, ideally you would choose the option to update the API details. Now each time you see a change in your pull requests that results in this file being changed it is good reflection point to check if all the API changes are safe or intended and as we will cover later, you can also fail the build on some of the changes.

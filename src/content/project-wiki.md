@@ -11,7 +11,6 @@ excerpt: Project Transparency and Efficiency
 
 Photo by <a href="https://unsplash.com/@wesleyphotography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Wesley Tingey</a> on <a href="https://unsplash.com/photos/stack-of-books-on-table-snNHKZ-mGfE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-
 # Cultivating a Comprehensive Project Wiki
 
 In software development, knowledge is both a catalyst and a safeguard. The more organized and accessible our project information is, the smoother our journey towards deployment. A Project Wiki serves as a central knowledge repository, ensuring that every team member, from developers to managers, operates with a shared understanding and easily accessible project resources. So what does a robust Project Wiki encompass? We will dive into this, serving as a guide to establishing a well-documented and insightful Project Wiki.

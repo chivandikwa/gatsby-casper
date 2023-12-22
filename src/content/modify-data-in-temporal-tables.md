@@ -19,7 +19,6 @@ Given this behavior, direct modifications (like DELETE or UPDATE operations) to 
 
 > ⚠️ If you're trying to delete rows from the main table, and an error is being raised, make sure you're not directly targeting the history table by mistake. If you delete rows from the main table, the corresponding rows in the history table will be preserved (that's the whole point of temporal tables). If you're trying to clean up or archive old history data, consider looking into best practices for managing data in temporal tables.
 
-
 If you really need to modify the history table:
 
 ```sql

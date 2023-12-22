@@ -19,7 +19,6 @@ Photo by <a href="https://unsplash.com/@timwildsmith?utm_source=unsplash&utm_med
 - **Faster and Reliable Builds**: By leveraging the `package-lock.json` file, `npm ci` performs faster installations compared to `npm install`. It bypasses dependency resolution, fetching packages directly based on the `lockfile`. Consequently, it reduces network requests, resulting in faster and more reliable builds, which is particularly valuable in time-sensitive CI processes.
 - **CI-Friendly Caching**: In CI environments, caching is vital to optimize build times. With `npm ci`, the `lockfile` integrity check is more straightforward, making it easier to leverage caching mechanisms. By caching the `node_modules` directory and the `package-lock.json` file, subsequent CI builds can benefit from faster dependency restoration, providing efficient pipeline execution
 
-
 # TypeScript and Angular Standards
 
 ⛔ **DO NOT** use string interpolation when creating `HTTP` requests for the request parameters and instead make use of `HttpParams`
@@ -129,30 +128,28 @@ if (!x) {
 
 ✅ **DO** favor the use of the use of modern javascript features over the more classic counterparts. Examples of features to be familiar with:
 
--   Template literals (string interpolation)
--   Rest and spread operators
--   Destructuring assignments
--   Object literals
--   Arrow functions
--   Yield
--   Ternary operator
--   Nullish coalescing operator
--   Promises
--   async and await
-
+- Template literals (string interpolation)
+- Rest and spread operators
+- Destructuring assignments
+- Object literals
+- Arrow functions
+- Yield
+- Ternary operator
+- Nullish coalescing operator
+- Promises
+- async and await
 
 ✅ **DO** familiarize yourself with array methods.
 
--   find
--   some
--   every
--   includes
--   map
--   filter
--   reduce
+- find
+- some
+- every
+- includes
+- map
+- filter
+- reduce
 
 > ℹ Favor functional map, filter, reduce, forEach, some ect over collection mutation
-
 
 # Jest
 

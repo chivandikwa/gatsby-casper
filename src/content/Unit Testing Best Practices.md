@@ -17,10 +17,10 @@ Unit tests are an essential part of software development that help ensure that c
 
 This document provides a comprehensive set of testing best practices for developers to follow to create high-quality and low-maintenance tests that aid in building robust and maintainable codebases.
 
-
 ## General
 
 ✅ **DO** aim for your tests to meet the following positive heuristics
+
 - Run fast
 
   Tests should run quickly so that developers can run them frequently and not be slowed down by the testing process. Slow tests can be a barrier to TDD and other agile practices and can slow down feedback cycles
@@ -48,6 +48,7 @@ This document provides a comprehensive set of testing best practices for develop
 - A good balance between unit tests, integration tests, and end-to-end tests, each serving its purpose in validating different aspects of the system.
 
 🛑 **DO AVOID** the following negative heuristics of tests:
+
 - ⚒️ Heavy work
 
   A heavy reliance on manual testing, with developers spending a lot of time manually testing the system and debugging issues.
@@ -116,6 +117,7 @@ This document provides a comprehensive set of testing best practices for develop
 - 🔏 Using uncleansed data
 
 Using prod data as-is in tests can expose sensitive information and pose a security risk. Always use sanitized or synthetic test data when running tests, to ensure that sensitive information is not exposed.
+
 - ⚙️ Ignoring business needs or issues
 
   Tests that focus only on the technology and ignore business needs or issues can result in software that does not meet business requirements. It is essential to involve stakeholders and understand the requirements of the software before writing tests. Tests should focus on ensuring that the software meets business needs and requirements.
@@ -167,10 +169,10 @@ Using prod data as-is in tests can expose sensitive information and pose a secur
 
 ✅ **DO** write more tests. In particular, areas that require tests at all times are
 
--   Algorithms
--   Intricate business logic
--   Helpers and Utilities
--   Resolved bugs
+- Algorithms
+- Intricate business logic
+- Helpers and Utilities
+- Resolved bugs
 
 > ℹ In addition to having more test coverage that helps with more confidence to change existing code and ensuring that previously discovered regressions do not occur again, tests are very good at identifying issues, especially coupling. Code that violates certain core principles that ensure a healthy and maintainable code base is very difficult to test, writing more tests allows us to see this upfront.
 
@@ -186,9 +188,9 @@ Test metrics can provide valuable insights into the effectiveness of your testin
 
 Data generators like Bogus can be very helpful for creating test data. Test data generation can be time-consuming, especially if the data needs to be complex or varied. By using a data generator, a developer can easily create a large amount of realistic data to use in testing. Paired builders are a common pattern for generating data that have relationships or dependencies between different objects. They can help create data that is more representative of real-world scenarios and make it easier to write tests that cover a variety of use cases.
 
--   Over time the dependency list can grow and it is quite cumbersome to have to modify tests to add new mocks
--   Quite often most of the mocks do not require setup so you do not need to explicitly create the mock, it can be auto-created
--   The code can be made more succinct and easier to read
+- Over time the dependency list can grow and it is quite cumbersome to have to modify tests to add new mocks
+- Quite often most of the mocks do not require setup so you do not need to explicitly create the mock, it can be auto-created
+- The code can be made more succinct and easier to read
 
 > ℹ Often when a service is updated to add a new dependency, this indicates new behaviour and likely means you would add new tests, not modify existing ones. With this approach, you do not have to update the tests.
 
@@ -262,8 +264,8 @@ Instead, tests should be written with a clear, single focus. This allows for bet
 
 Data generators like Bogus can be very helpful for creating test data. Test data generation can be time-consuming, especially if the data needs to be complex or varied. By using a data generator, a developer can easily create a large amount of realistic data to use in testing. Paired builders are a common pattern for generating data that have relationships or dependencies between different objects. They can help create data that is more representative of real-world scenarios and make it easier to write tests that cover a variety of use cases.
 
-  - The effort of mocking services is quite high given the typical number of dependencies
-  - Mocking service dependencies manually in tests creates fragile tests that will need updating each time those dependencies change. Ideally tests should change when behavior of interest changes.
+- The effort of mocking services is quite high given the typical number of dependencies
+- Mocking service dependencies manually in tests creates fragile tests that will need updating each time those dependencies change. Ideally tests should change when behavior of interest changes.
 
 Problem scenario:
 
@@ -525,7 +527,7 @@ This test incorporates best practices such as using clear and concise test descr
 
 ## Recommended reading
 
-- [xUnit Test Patterns(Refactoring Test Code)]https://www.amazon.co.uk/xUnit-Test-Patterns-Refactoring-Signature/dp/0131495054)
+- [xUnit Test Patterns(Refactoring Test Code)]<https://www.amazon.co.uk/xUnit-Test-Patterns-Refactoring-Signature/dp/0131495054>)
 [Unit Testing:Principles, Practices and Patterns: Effective Testing Styles, Patterns, and Reliable Automation for Unit Testing, Mocking, and Integration Testing with Examples in C#](https://www.amazon.co.uk/dp/1617296279/ref=as_li_tl?ie=UTF8&linkCode=gs2&linkId=bbc23e6697b3d4b1c78d3cffc3cc9f3a&creativeASIN=1617296279&tag=booksoncode-21&creative=9325&camp=1789)
 - [C# and .NET Core Test-Driven Development: Dive into TDD to create flexible, maintainable, and production-ready .NET Core applications](https://www.amazon.co.uk/dp/B0772S8R7Q/ref=as_li_tl?ie=UTF8&linkCode=gs2&linkId=8c075ed3114ab84c093b54c5a5353361&creativeASIN=B0772S8R7Q&tag=booksoncode-21&creative=9325&camp=1789)
 

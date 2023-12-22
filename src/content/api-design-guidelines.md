@@ -29,7 +29,6 @@ APIs (Application Programming Interfaces) serve as the bridge between different 
 
 Now, let's dive into the API design principles that can help you achieve these goals.
 
-
 ✅ **DO** prioritize simplicity, comprehensibility, and usability to create an irresistible appeal for consuming engineers.
 
 ✅ **DO** actively improve and maintain API consistency over the long term.
@@ -43,6 +42,7 @@ Now, let's dive into the API design principles that can help you achieve these g
 > Use the string-typed formats `date`, `date-time`, `time`, `duration`, or `period` for the definition of date and time properties. The formats are based on the standard [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) internet profile -- a subset of [ISO 8601](https://datatracker.ietf.org/doc/html/rfc3339#ref-ISO8601)
 
 ✅ **DO** use standard formats for country, language and currency properties.
+
 - [ISO 3166-1-alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for country codes
 - [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for language codes
 - [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) for currency codes
@@ -87,6 +87,7 @@ paths:
 ```
 
 Other examples
+
 - `GET /users` to retrieve a list of users
 - `GET /users/{id}` to retrieve a specific user by ID
 - `POST /users` to create a new user
@@ -118,6 +119,7 @@ Other examples
 ✅ **DO** explicitly name dates with `date` as a suffix or consider suffixes like `at`.
 
 ✅ **DO** use casing consistently across the API for operation ID, query parameters, path parameters, and property names in payloads.
+
 - `camelCase` for operation IDs, paths and schemas properties
 - `snake_case` for parameters
 - Choose a casing and stick to it for body content and stick to it, the preferable `JSON` with camelCase
@@ -129,6 +131,7 @@ Other examples
 ✅ **DO** not return response bodies as a bare array, always nest in an object. As your API evolves and new fields or metadata need to be included in the response, it is easier to extend an object rather than a bare array. Additionally, when responses are nested in an object, it becomes straightforward to include relevant error information alongside the data.
 
 Good
+
 ```json
 {
   "data": [
@@ -179,6 +182,7 @@ GET /api/products?offset=1&limit=20
 🛑 **DO NOT** use `GET` for operations that change state. It should be safe and idempotent, meaning it can be called any number of times without changing the result.
 
 ✅ **DO** use the appropriate HTTP status codes to indicate the outcome of the operation. `2xx` for success, `4xx` for client errors, and `5xx` for server errors. The following are common response types that you will likely need to use:
+
 - `200 OK`: The request has succeeded.
 - `201 Created`: The request has been fulfilled, and a new resource has been created.
 - `202 Accepted`: The request has been accepted for processing, but the processing is not yet complete.
@@ -264,8 +268,6 @@ components:
             $ref: "#/components/schemas/badRequestResponse"
 ```
 
-
-
 ✅ **DO** version your API to allow changes without breaking existing clients. This can be done via the URL (`/v1/users`) or headers (`Accept-version: v1`).
 
 Without versioning, making changes to your API can break existing clients.
@@ -295,6 +297,7 @@ GET /api/users/82556e7a-0d8a-4c87-98e7-7395f0f8a3e6
 GET /users
 Authorization: Bearer <token>
 ```
+
 🛑 **DO NOT** expose sensitive information in error messages, such as database details or confidential data.
 
 🛑 **DO NOT** expose credentials like API keys, passwords, secrets or personally identifiable information (PII) in query parameters.
@@ -423,6 +426,7 @@ The specification is typically written in JSON or YAML format and defines variou
 - **Code Generation**: There are many tools out there that support the generation of server and client code for various platforms and languages which can greatly accelerate development.
 
 ✅ **DO** ensure that the following information is always present in your specification
+
 - Tags, with descriptions
 - API host
 - API schemas
