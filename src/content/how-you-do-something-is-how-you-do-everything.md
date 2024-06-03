@@ -4,7 +4,7 @@ title: How you do something, is how you do everything
 image: img/unsplash/alex-rodriguez-VR-wUq_JYAk-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2022-08-24T18:00:00.000Z
-tags: [philosophy, leadership, accountability]
+tags: [Professional Excellence, Work Ethic and Leadership, Importance of Consistency]
 draft: false
 excerpt: Holding yourself accountable
 ---
@@ -31,9 +31,9 @@ Over the years I have noticed that teams or individuals that don’t mind droppi
 - Lack of consistency in delivery. A tell-tale sign is when you can look at what is delivered and easily tell which team member worked on what.
 - An ever-growing list of things that get put off that no one ever gets to.
 
-A key observation for me has been that the situation increasingly gets worse over time and the same attitude starts to get applied in other areas that are not too apparent but have consequences regardless. The broken windows theory explains why things we put off ultimately spiral out of control by stating that any observable signs of disorder such as broken windows form an environment that encourages even more disorder. Consequently, by ignoring the “little” things you soon forfeit control of much more to this mindset. After all, if you allow your hedge to overgrow, would you really notice when your lawn requires a trim?
+A key observation for me has been that the situation increasingly gets worse over time and the same attitude starts to get applied in other areas that are not too apparent but have consequences regardless. The broken windows theory explains why things we put off ultimately spiral out of control by stating that any observable signs of disorder such as broken windows form an environment that encourages even more disorder. Consequently, by ignoring the “little” things you soon forfeit control of much more to this mindset. After all, if you allow your hedge to overgrow, would you notice when your lawn requires a trim?
 
-So how do we manage this? Well, we tackle this much like Mayor Giuliani tackled the severe issues New York City was facing prior to 1993. Let's glance at some statistics on what he accomplished first (_source: The American Presidency Project_)
+So how do we manage this? Well, we tackle this much like Mayor Giuliani tackled the severe issues New York City was facing before 1993. Let's glance at some statistics on what he accomplished first (_source: The American Presidency Project_)
 
 - In 1993, there were 11,545 major crimes per week; By 2001, that number dropped to 5,072.
 - Between 1993 and 2001, New York City experienced a 66% decline in murders.
@@ -44,12 +44,12 @@ He accomplished all this by "repairing all the broken windows"; tackling vandali
 
 Similarly, this is how we can guarantee that we remain committed to delivering at the highest standard across the board. Once the quality is baked into our minds and there is no tolerance for dropping the ball you will notice consistency, a sort of synergy even within teams as more projects and challenges are taken on. These are a few heuristics to evaluate when this is going well:
 
-- Communication is healthy. We engage in a professional and expressive manner that cultivates strong relations. We return every phone call and reply to every message and email. We express ourselves with empathy and respect.
+- Communication is healthy. We engage professionally and expressively cultivating strong relations. We return every phone call and reply to every message and email. We express ourselves with empathy and respect.
 - Delivery is done once and well. We do not scurry through delivery only to have to rework things at the expense of the next commitment.
 - Processes are regularly reviewed and evaluated to ensure that no broken windows are ignored. This is key to preserving this mindset at least long enough to make it a habit.
 - Doing things well does not have a big impact on the effort or time required to deliver, especially when repeated.
 
-“How you do anything, is how you do everything” has become a favored quote of mine, and really by contemplating on this often and acting I feel it has served me well. An early experience that helped me to always aspire to do all things well was participating in athletics back in my high school days. I aimed to improve my 100m sprint time and what I noticed in my attempts was that I could not "just" improve it. To achieve that I had to improve everything it took to do the dash, even if by a teeny bit. Surprisingly that meant a whole lot of things would require attention like how well my start was, my stamina, rest, and diet, and many more had to be improved. Interestingly some of the things I had initially put off as being insignificant turned out to have the greatest impact and the success in addressing those created a habit for me to pursue the other changes with the right attitude. Soon I was applying this mindset to my academics, relationships, parenting, and work with similar success.
+“How you do anything, is how you do everything” has become a favoured quote of mine, and really by contemplating on this often and acting I feel it has served me well. An early experience that helped me to always aspire to do all things well was participating in athletics back in my high school days. I aimed to improve my 100m sprint time and what I noticed in my attempts was that I could not "just" improve it. To achieve that I had to improve everything it took to do the dash, even if by a teeny bit. Surprisingly that meant a whole lot of things would require attention like how well my start was, my stamina, rest, and diet, and many more had to be improved. Interestingly some of the things I had initially put off as being insignificant turned out to have the greatest impact and the success in addressing those created a habit for me to pursue the other changes with the right attitude. Soon I was applying this mindset to my academics, relationships, parenting, and work with similar success.
 
 Contemplate this and see what you can apply to yourself or your team. Here are a few questions that may guide you in that process:
 
@@ -59,6 +59,6 @@ Contemplate this and see what you can apply to yourself or your team. Here are a
 - Are you putting off meetings and events because you are too busy?
 - Imagine a backlog of anything you must get done as a trashcan. Do you put off taking five minutes to empty the trashcan and ultimately must deal with a greater situation once the trash starts to spill over?
 
-If you don't do the “unimportant stuff” well, do not be surprised if you cease doing anything well at all. Once you tolerate mediocracy in one area you have simply tolerated it in all your doings, period. It really is all about doing the little things well and consistently. Apply this in your work, personal life, and everything else in between to unlock great success and satisfaction. Of course, keep an eye on doing things well by avoiding cutting corners without necessarily aiming for perfectionism as that can easily burn you out.
+If you don't do the “unimportant stuff” well, do not be surprised if you cease doing anything well at all. Once you tolerate mediocracy in one area you have simply tolerated it in all your doings, period. It is all about doing the little things well and consistently. Apply this in your work, personal life, and everything else in between to unlock great success and satisfaction. Of course, keep an eye on doing things well by avoiding cutting corners without necessarily aiming for perfectionism as that can easily burn you out.
 
 In closing recognize this, repetition makes habits!
