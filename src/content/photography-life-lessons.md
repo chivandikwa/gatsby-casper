@@ -3,7 +3,7 @@ layout: post
 title: 3 Key life lessons Photography has taught me.
 image: img/unsplash/nordwood-themes-F3Dde_9thd8-unsplash.jpg
 author: [Thulani S. Chivandikwa]
-date: 2043-07-10T00:00:00.000Z
+date: 2023-07-10T00:00:00.000Z
 tags: [photography, lessons]
 draft: false
 excerpt: 3 Key life lessons Photography has taught me.

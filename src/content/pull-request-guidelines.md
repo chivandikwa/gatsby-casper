@@ -120,5 +120,3 @@ Is this a UX change or can screenshots help the reviewer see the before and afte
 
 💗 Thank you for your contribution!
 ```
-
-Review the Effective Git Management Guide [here](https://dev.azure.com/bscglobal/bsclib/_wiki/wikis/bsclib.wiki/1485/Effective-Git-Management-Guide), a topic that is very related to Pull Requests.

@@ -11,11 +11,6 @@ excerpt: Promote your application through different environments using Azure pip
 
 Photo by <a href="https://unsplash.com/@anna_vi_travel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Anna Vi</a> on <a href="https://unsplash.com/photos/person-driving-a-vehicle-in-the-middle-of-the-road-h7-zoPdyxSk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-
----
-author: T Chivandikwa <tchivandikwa@bscglobal.com>
----
-
 # Promotion deployment strategy pipelines
 
 Are you considering implementing deployment pipelines to multiple environments and unsure about how to structure this? You could have a pipeline per environment and take advantage of [templates](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops&pivots=templates-includes)) for reuse across the pipelines. You will however need to apply the right level of care to ensure that you deploy the right things across the environments. When QA signs off on a release for instance, are you sure you are deploying the right artifacts/branch as was in QA?
