@@ -72,11 +72,11 @@ const getUser = (): User => {
 let fileToLoad = 'documents';
 
 if (connected) {
-  fileToLoad = 'documents-truId';
+  fileToLoad = 'documents-other';
 }
 
 // can be collapsed into
-const fileToLoad = connected ? 'documents' : 'documents-truId';
+const fileToLoad = connected ? 'documents' : 'documents-other';
 
 // easier to read, easier to reason about
 ```

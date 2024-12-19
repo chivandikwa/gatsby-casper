@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Promotion deployment strategy Azure pipelines
-image: img/unsplash/anna-vi-h7-zoPdyxSk-unsplash.png
+image: img/unsplash/anna-vi-h7-zoPdyxSk-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2024-12-28T00:00:00.000Z
 tags: [azure, pipelines, deployment]

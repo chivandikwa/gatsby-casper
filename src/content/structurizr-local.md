@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Structurizr local setup
-image: img/unsplash/amsterdam-city-archives-9tmKEDz03uw-unsplash.png
+image: img/unsplash/amsterdam-city-archives-9tmKEDz03uw-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2024-12-28T00:00:00.000Z
 tags: [structurizr, C4, diagrams as code]

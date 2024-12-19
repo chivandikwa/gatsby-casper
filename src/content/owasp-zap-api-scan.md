@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OWASP ZAP API scan automation with Azure Pipelines
-image: img/unsplash/scott-webb-yekGLpc3vro-unsplash.png
+image: img/unsplash/scott-webb-yekGLpc3vro-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2024-12-28T00:00:00.000Z
 tags: [owasp zap, api scan, azure pipelines, automation]

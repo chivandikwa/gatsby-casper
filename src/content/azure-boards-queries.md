@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Useful Azure DevOps Boards queries
-image: img/unsplash/stephen-dawson-qwtCeJ5cLYs-unsplash.png
+image: img/unsplash/stephen-dawson-qwtCeJ5cLYs-unsplash.jpg
 author: [Thulani S. Chivandikwa]
 date: 2024-12-28T00:00:00.000Z
 tags: [azure devops boards, queries, sprint planning]
