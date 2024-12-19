@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Structurizr local setup
-image: img/unsplash/amsterdam-city-archives-9tmKEDz03uw-unsplash.jpg
+image: img/unsplash/amsterdam-city-archives-9tmKEDz03uw-unsplash.png
 author: [Thulani S. Chivandikwa]
 date: 2024-12-28T00:00:00.000Z
 tags: [structurizr, C4, diagrams as code]
@@ -87,4 +87,4 @@ workspace {
 
 On running this locally, if you see this in [your browser](http://localhost:8080/), the setup is successful
 
-![](img/clean/structurizr.jpg)
+![](img/clean/structurizr.png)
