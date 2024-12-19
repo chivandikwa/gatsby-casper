@@ -87,4 +87,4 @@ workspace {
 
 On running this locally, if you see this in [your browser](http://localhost:8080/), the setup is successful
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/structurizr.jpg)
+![](img/clean/structurizr.jpg)

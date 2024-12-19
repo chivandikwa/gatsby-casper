@@ -21,7 +21,7 @@ Leveraging static and idempotent artefacts like Docker may be a great option as 
 
 Would a single pipeline that progressively promotes to multiple environments be a potential answer? Much like how [Octopus Deploy](https://octopus.com/)) works.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/a.jpg)
+![](img/clean/promotion/a.jpg)
 
 Convinced? Then you are in the right place. Let's explore how Azure Pipelines can be used to implement deployment strategies based on environment promotion, using YAML configurations to manage workflows that traditionally relied on UI-based tools like Azure Deployments.
 
@@ -174,7 +174,7 @@ This can additionally be used with branch protection on the environment. Recomme
 - Allow only `release/*`, `hotfix/*`, `master` and `develop` into QA
 - Allow only `release/*` and `hotfix/*`, into UAT and Prod
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/b.jpg)
+![](img/clean/promotion/b.jpg)
 
 This simple conditional logic in the sample supports complex deployment strategies and mimics the functionality of dedicated deployment tools like Octopus Deploy, which focuses heavily on promoting releases between environments. This is also used hand in hand with branch control on environments, ensuring that certain branches are not promoted past QA, for instance, a developer's feature branch.
 
@@ -185,11 +185,11 @@ In an ideal world, the promotion would strictly follow the steps from left to ri
 
 In such circumstances, you would want the ability to skip stages, which you can do with this structure when you trigger a new run
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/c.jpg)
+![](img/clean/promotion/c.jpg)
 
 The approach motivated here ensures that changes from PR merges only make it as far as the development environment, with a nightly run being the primary way to get changes into QA, coupled with empowering the team to be able to run on demand to get things into QA. In this case however one has to be explicit in this intention by ticking the `Ignore scheduling rules` parameter.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/d.jpg)
+![](img/clean/promotion/d.jpg)
 
 > Having things change under the feet of a busy QA team is usually not a good idea and a motivation to give QA teams control of when to get things, however coupling this with nightly runs ensures that this does not become an entirely manual process.
 
@@ -202,41 +202,41 @@ The approach motivated here ensures that changes from PR merges only make it as 
 
 Before you panic when you see your first approval blocking a pipeline run, note that Azure Pipelines smartly handles this by yielding back the agent used to run the pipeline. Once approval is given, the pipeline stages/jobs that follow will then be scheduled on another agent. Approvals can be pending for multiple days and that is not an issue at all.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/d.jpg)
+![](img/clean/promotion/d.jpg)
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/f.jpg)
+![](img/clean/promotion/f.jpg)
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/g.jpg)
+![](img/clean/promotion/g.jpg)
 
 A nice thing with approvals is that instead of business hours approval checks, you can also have control of when an approved deployment kicks off by scheduling it on approval. This feature is not available when using the Azure Pipelines extension in Microsoft Teams.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/h.jpg)
+![](img/clean/promotion/h.jpg)
 
 Consider the [Azure Pipelines integration with Microsoft Teams](https://learn.microsoft.com/en-us/azure/devops/pipelines/integrations/microsoft-teams?view=azure-devops) to receive notifications of approval requests and provide approvals directly from there.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/i.jpg)
+![](img/clean/promotion/i.jpg)
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/j.jpg)
+![](img/clean/promotion/j.jpg)
 
 ## Screenshots of sample runs
 
 **Manual run with default parameter values**
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/k.jpg)
+![](img/clean/promotion/k.jpg)
 
 **Run with Ignore scheduling rules**
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/l.jpg)
+![](img/clean/promotion/l.jpg)
 
 **Skipping the development environment**
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/m.jpg)
+![](img/clean/promotion/m.jpg)
 
 **Branch control kicking in**
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/n.jpg)
+![](img/clean/promotion/n.jpg)
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/promotion/o.jpg)
+![](img/clean/promotion/o.jpg)
 
 ## What about Azure Releases?
 

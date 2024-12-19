@@ -25,7 +25,7 @@ You can make use of the desktop application, which is available for download [he
 
 At its core, ZAP is what is known as a `man-in-the-middle proxy.` It stands between the tester’s browser and the web application so that it can intercept and inspect messages sent between the browser and web application, modify the contents if needed, and then forward those packets to the destination. It can be used as a stand-alone application and as a daemon process.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/zap/1.jpg)
+![](img/clean/zap/1.jpg)
 
 ZAP ships out multiple docker images that can be used for scanning web apps, of interest `ghcr.io/zaproxy/zaproxy:stable` which is used in this article.
 
@@ -288,7 +288,7 @@ We shall be using the following context file
 
 For the actual scan we will be running we shall simply create a new ASP.NET Core Web API using the default Visual Studio template and tunnel this over the public internet from a development machine so our demonstration Azure Pipeline can access it without the need to deploy somewhere. The scan can be done against an OpenAPI, SOAP or GraphQL spec, in our case the Web API emits a Swagger OpenAPI spec that we will point to.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/zap/2.jpg)
+![](img/clean/zap/2.jpg)
 
 
 The most important being the incregexes which indicates the URL https://c1sjmvgw-7023.uks1.devtunnels.ms/.* This URL will be what we will tunnel our sample API via for scanning over the public internet.
@@ -441,13 +441,13 @@ stages:
 
 This pipeline makes use of Send Grid via curl to send the report as an email. You can edit this step to your requirements. The report file is also available as a published artefact after the pipeline run.
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/zap/3.jpg)
+![](img/clean/zap/3.jpg)
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/zap/4.jpg)
+![](img/clean/zap/4.jpg)
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/zap/5.jpg)
+![](img/clean/zap/5.jpg)
 
-![image](https://raw.githubusercontent.com/chivandikwa/gatsby-casper/master/src/content/img/clean/zap/6.jpg)
+![](img/clean/zap/6.jpg)
 
 ## Conclusion
 
