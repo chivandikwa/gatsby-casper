@@ -63,7 +63,7 @@ You can migrate to use the standalone components using the official tooling `ng 
 
 ## Migrate the material theme
 
-If you are working with material and have updated across Angular material versions that also have an update to the material specification, for example from the material specification 2 to 3, you may need to update your base theme if you are using any as those these target a specific specification, documentation [here](https://material.angular.io/guide/theming). In our scenario we had the deeppurple-amber.css as the base and we chose to move over to azure-blue.css.
+If you are working with material and have updated across Angular material versions that also have an update to the material specification, for example from the material specification 2 to 3, you may need to update your base theme if you are using any, as those target a specific specification, documentation [here](https://material.angular.io/guide/theming). In our scenario we had the deeppurple-amber.css as the base and we chose to move over to azure-blue.css.
 
 ![](img/clean/angular/one.png)
 
