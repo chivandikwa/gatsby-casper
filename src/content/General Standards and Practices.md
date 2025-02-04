@@ -159,6 +159,10 @@ In general, the key is to find a balance between avoiding unnecessary duplicatio
 
 By avoiding overly WET code and finding the right balance between duplication and abstraction, you can create code that is both efficient and maintainable, and that can be a valuable asset for your organization over the long term.
 
+✅ **DO** ensure that all logs are emitted to console as structured and compact json logs. This follows the 12 factor Apps approach to logging and is ideal for log targets to analyze the logs. DO NOT ship logs directly to a log target, in the case of k8s a side car agent is responsible for scrapping pod logs and ensuring that they get shipped out to the sink and any other heavy lifting like dealing with network issues, buffering etc.> A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage log files. Instead, each running process writes its event stream, un-buffered, to stdout.
+
+✅ DO pay close attention to the size of log or metrics payloads. Overly large data payloads should be avoided. As a safety net the config limits the depth of destructuring and caps the string length, but care is still required as this can be bypassed with context and scopes.
+
 🛑 **DO NOT** repeat yourself. This principle states that every piece of knowledge or information within a system should have a single, unambiguous, and authoritative representation.
 
 When information is duplicated or repeated across a system, it can lead to inconsistencies, errors, and maintenance headaches. It can also make it difficult to update or modify the system, as changes may need to be made in multiple places.
