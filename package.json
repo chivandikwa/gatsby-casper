@@ -20,7 +20,7 @@
     "date-fns": "3.0.5",
     "emotion": "11.0.0",
     "emotion-server": "11.0.0",
-    "gatsby": "5.13.0",
+    "gatsby": "5.14.1",
     "gatsby-plugin-canonical-urls": "5.13.0",
     "gatsby-plugin-emotion": "8.13.0",
     "gatsby-plugin-feed": "5.13.0",
